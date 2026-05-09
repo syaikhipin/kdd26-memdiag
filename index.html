@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KDD 2026 Tutorial in Jeju | Memory Diagnosis and Benchmarking</title>
+  <title>KDD 2026 Tutorial | Memory Diagnosis and Benchmarking</title>
   <style>
     :root {
       color-scheme: light;
@@ -60,9 +60,9 @@
 </head>
 <body>
 <header>
-  <div class="eyebrow">KDD 2026 Tutorial · Jeju, South Korea · GitHub Pages Submission Site</div>
+  <div class="eyebrow">KDD 2026 Tutorial · GitHub Pages Submission Site</div>
   <h1>Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research Agents</h1>
-  <p>This page packages the KDD 2026 tutorial materials for Jeju: source code, numbered notebooks, walkthrough, Modal GPU results, semantic evaluation, figures, selected logs, and reproducibility instructions.</p>
+  <p>This page packages the KDD 2026 tutorial materials: source code, numbered notebooks, walkthrough, Modal GPU results, semantic evaluation, figures, selected logs, and reproducibility instructions.</p>
   <div class="hero-actions">
     <a class="button" href="notebooks/WALKTHROUGH.md">Start the walkthrough</a>
     <a class="button secondary" href="notebooks/1_setup_and_timeline.ipynb">Open notebook 1</a>
@@ -82,7 +82,7 @@
       <h2>What participants learn</h2>
       <p>The tutorial teaches how to diagnose memory systems in autonomous research agents using reproducible, low-resource benchmarking. Participants compare memory strategies, inspect retrieval failures, test context utilization, and use results as memory for an autonomous research-agent loop.</p>
       <p><span class="pill ok">INGEST</span><span class="pill ok">INDEX</span><span class="pill ok">SEARCH</span><span class="pill ok">ANSWER</span><span class="pill ok">EVALUATE</span><span class="pill ok">REPORT</span></p>
-      <div class="callout"><strong>Jeju tutorial framing:</strong> The live path is low-resource and notebook-first. The paper-quality path uses Modal GPU to rerun the complete benchmark with full offline semantic coverage.</div>
+      <div class="callout"><strong>Tutorial framing:</strong> The live path is low-resource and notebook-first. The paper-quality path uses Modal GPU to rerun the complete benchmark with full offline semantic coverage.</div>
     </div>
     <div class="diagram" aria-label="Tutorial pipeline diagram">
       <svg width="640" height="300" viewBox="0 0 640 300" role="img" aria-label="Memory diagnosis pipeline">
@@ -105,7 +105,7 @@
   <section>
     <h2>Walkthrough for KDD 2026 tutorial delivery</h2>
     <div class="step-list">
-      <div class="step"><strong>Setup and timeline.</strong> Start with <a href="notebooks/1_setup_and_timeline.ipynb">notebook 1</a> to introduce the Jeju tutorial schedule, goals, and low-resource assumptions.</div>
+      <div class="step"><strong>Setup and timeline.</strong> Start with <a href="notebooks/1_setup_and_timeline.ipynb">notebook 1</a> to introduce the tutorial schedule, goals, and low-resource assumptions.</div>
       <div class="step"><strong>Dataset registry.</strong> Use <a href="notebooks/2_dataset_registry_and_downloads.ipynb">notebook 2</a> to explain which datasets are included, optional, or externally downloaded.</div>
       <div class="step"><strong>Memory architectures.</strong> Use <a href="notebooks/3_memory_architectures.ipynb">notebook 3</a> to compare no-memory, verbatim, extracted facts, episodic, and hybrid strategies.</div>
       <div class="step"><strong>Three diagnostic probes.</strong> Use <a href="notebooks/4_three_probe_diagnostics.ipynb">notebook 4</a> for retrieval relevance, context utilization, and failure root-cause analysis.</div>
@@ -232,6 +232,6 @@ python source/run.py --mode synthetic --backend offline --episodes 5</code></pre
     <p>The full real datasets are not vendored in this clean submission. See <a href="data/README.md">data/README.md</a> for details. API keys must be provided through environment variables only.</p>
   </section>
 </main>
-<footer>KDD 2026 tutorial clean submission bundle · Jeju, South Korea · Static HTML for GitHub Pages.</footer>
+<footer>KDD 2026 tutorial clean submission bundle · Static HTML for GitHub Pages.</footer>
 </body>
 </html>

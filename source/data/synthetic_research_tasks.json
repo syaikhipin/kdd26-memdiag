@@ -1,0 +1,95 @@
+[
+  {
+    "task_id": "tiny_lm",
+    "domain": "single-gpu language-model tuning",
+    "prompt": "Improve validation bits-per-byte under a fixed five-minute training budget.",
+    "constraints": ["single GPU", "fixed wall-clock budget", "avoid OOM", "lower val_bpb is better"],
+    "success_criteria": "Find efficient model and optimizer changes without repeating failed trials.",
+    "useful_actions": {
+      "tune learning rate": 0.11,
+      "reduce depth for throughput": 0.07,
+      "switch to local attention pattern": 0.06,
+      "increase batch moderately": 0.05,
+      "keep muon optimizer": 0.04
+    },
+    "failure_actions": {
+      "double model width": "oom",
+      "increase batch aggressively": "oom",
+      "remove normalization": "unstable_training",
+      "raise learning rate to 0.01": "diverged"
+    },
+    "action_keywords": {
+      "tune learning rate": ["learning", "rate", "lr", "optimizer"],
+      "reduce depth for throughput": ["depth", "throughput", "smaller", "fast"],
+      "switch to local attention pattern": ["attention", "window", "local", "pattern"],
+      "increase batch moderately": ["batch", "tokens", "moderate"],
+      "keep muon optimizer": ["muon", "optimizer"],
+      "double model width": ["width", "wide", "parameters"],
+      "increase batch aggressively": ["batch", "aggressive", "oom"],
+      "remove normalization": ["normalization", "norm"],
+      "raise learning rate to 0.01": ["0.01", "learning", "rate", "diverge"]
+    }
+  },
+  {
+    "task_id": "memory_rag",
+    "domain": "memory retrieval benchmark design",
+    "prompt": "Improve a memory diagnostic benchmark for long-horizon research traces.",
+    "constraints": ["low API budget", "multi-session traces", "measure retrieval and utilization separately"],
+    "success_criteria": "Identify memory designs that reduce redundant experiments and improve diagnostic precision.",
+    "useful_actions": {
+      "separate retrieval and utilization probes": 0.12,
+      "add hybrid lexical semantic retrieval": 0.09,
+      "cache common judge calls": 0.06,
+      "track failure root causes": 0.08,
+      "batch fact extraction": 0.05
+    },
+    "failure_actions": {
+      "summarize everything into one note": "overcompression",
+      "retrieve top 50 memories": "retrieval_noise",
+      "judge every token with llm": "excessive_cost",
+      "ignore no-memory baseline": "invalid_ablation"
+    },
+    "action_keywords": {
+      "separate retrieval and utilization probes": ["retrieval", "utilization", "probe", "separate"],
+      "add hybrid lexical semantic retrieval": ["hybrid", "lexical", "semantic", "bm25"],
+      "cache common judge calls": ["cache", "judge", "cost"],
+      "track failure root causes": ["failure", "root", "cause"],
+      "batch fact extraction": ["batch", "fact", "extraction"],
+      "summarize everything into one note": ["summary", "compress", "one", "note"],
+      "retrieve top 50 memories": ["top", "50", "retrieve", "noise"],
+      "judge every token with llm": ["judge", "token", "cost"],
+      "ignore no-memory baseline": ["baseline", "control", "ablation"]
+    }
+  },
+  {
+    "task_id": "hpo_loop",
+    "domain": "hyperparameter optimization research loop",
+    "prompt": "Choose sequential HPO experiments while avoiding known bad regions.",
+    "constraints": ["limited trials", "mixed fidelity feedback", "avoid repeated failed regions"],
+    "success_criteria": "Converge quickly to promising configurations with low redundancy.",
+    "useful_actions": {
+      "start with low-fidelity screening": 0.10,
+      "exploit best learning-rate region": 0.08,
+      "compare optimizer families": 0.06,
+      "narrow batch-size search": 0.05,
+      "revisit near-miss configuration": 0.07
+    },
+    "failure_actions": {
+      "rerun exact failed configuration": "redundant_experiment",
+      "sample only largest models": "resource_exhaustion",
+      "discard near-miss trials": "lost_signal",
+      "mix incomparable fidelities": "invalid_comparison"
+    },
+    "action_keywords": {
+      "start with low-fidelity screening": ["low", "fidelity", "screening"],
+      "exploit best learning-rate region": ["learning", "rate", "region", "exploit"],
+      "compare optimizer families": ["optimizer", "adam", "muon", "family"],
+      "narrow batch-size search": ["batch", "search", "narrow"],
+      "revisit near-miss configuration": ["near", "miss", "configuration"],
+      "rerun exact failed configuration": ["rerun", "exact", "failed"],
+      "sample only largest models": ["largest", "models", "resource"],
+      "discard near-miss trials": ["discard", "near", "miss"],
+      "mix incomparable fidelities": ["fidelity", "compare", "invalid"]
+    }
+  }
+]

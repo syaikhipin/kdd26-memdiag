@@ -1,0 +1,10 @@
+dataset	strategy	questions	retr_p	retr_r	hit	util	lat_ms	cost	mem	sem_cov	sem	sem_pass	faith	ctx	ans
+LoCoMo	no_memory	1	0.000	0.000	0.000	0.000	0.03	0.1	0	0.000	0.000	0.000	0.000	0.000	0.000
+LoCoMo	verbatim	1	0.200	1.000	1.000	1.000	0.96	0.6	419	0.000	0.000	0.000	0.000	0.000	0.000
+LoCoMo	extracted_facts	1	0.200	1.000	1.000	1.000	0.96	0.6	419	0.000	0.000	0.000	0.000	0.000	0.000
+LoCoMo	episodic	1	0.200	1.000	1.000	1.000	1.04	0.6	419	1.000	1.000	1.000	1.000	1.000	1.000
+LoCoMo	hybrid	1	0.200	1.000	1.000	1.000	0.96	0.6	419	0.000	0.000	0.000	0.000	0.000	0.000
+
+Raw trace: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_150340_real_raw.json
+Metrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_150340_real_metrics.json
+Summary TSV: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_150340_real_summary.tsv

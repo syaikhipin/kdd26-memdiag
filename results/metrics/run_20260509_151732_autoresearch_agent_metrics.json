@@ -1,0 +1,30 @@
+{
+  "autoresearch_agent": {
+    "ideas": 12,
+    "kept": 3,
+    "revised": 3,
+    "discarded": 6,
+    "mean_retrieval_precision": 0.2833,
+    "mean_retrieval_recall": 0.1181,
+    "memory_utilization_rate": 0.5833,
+    "redundant_idea_rate": 0.5,
+    "mean_novelty_score": 0.3432,
+    "failure_modes": {
+      "none": 3,
+      "redundant_idea": 6,
+      "retrieval_miss": 2,
+      "low_signal_prior": 1
+    },
+    "decisions": {
+      "keep": 3,
+      "discard": 6,
+      "revise": 3
+    },
+    "semantic_coverage_rate": 1.0,
+    "mean_semantic_score": 0.3047,
+    "semantic_pass_rate": 0.1667,
+    "semantic_by_evaluator": {
+      "offline_semantic": 12
+    }
+  }
+}

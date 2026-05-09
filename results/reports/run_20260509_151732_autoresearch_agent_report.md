@@ -1,0 +1,28 @@
+# Autoresearch Agent Memory-Debug Report
+
+## KDD tutorial role
+
+This run demonstrates the proposal's autonomous-research-agent loop: generate research ideas, retrieve prior experiment memories, decide keep/revise/discard, and diagnose memory failures.
+
+## Summary
+
+metric	value
+ideas	12
+kept	3
+revised	3
+discarded	6
+mean_retrieval_precision	0.2833
+mean_retrieval_recall	0.1181
+memory_utilization_rate	0.5833
+redundant_idea_rate	0.5
+mean_novelty_score	0.3432
+mean_semantic_score	0.3047
+semantic_pass_rate	0.1667
+failure_modes	{"low_signal_prior": 1, "none": 3, "redundant_idea": 6, "retrieval_miss": 2}
+decisions	{"discard": 6, "keep": 3, "revise": 3}
+
+## Outputs
+
+- Raw trace: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151732_autoresearch_agent_raw.json
+- Metrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151732_autoresearch_agent_metrics.json
+- Summary TSV: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151732_autoresearch_agent_summary.tsv

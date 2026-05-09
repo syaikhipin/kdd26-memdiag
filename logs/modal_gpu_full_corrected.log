@@ -1,0 +1,32 @@
+Figures:
+  /tmp/kdd-modal-results/figure_real_retrieval.png
+  /tmp/kdd-modal-results/figure_semantic_scores.png
+  /tmp/kdd-modal-results/figure_memory_growth.png
+  /tmp/kdd-modal-results/figure_failures.png
+  /tmp/kdd-modal-results/figure_semantic_vs_retrieval.png
+  /tmp/kdd-modal-results/figure_evaluator_coverage.png
+dataset	strategy	questions	retr_p	retr_r	hit	util	lat_ms	cost	mem	sem_cov	sem	sem_pass	faith	ctx	ans
+LoCoMo	no_memory	1540	0.000	0.000	0.000	0.000	0.01	154.0	0	1.000	0.000	0.000	0.000	0.000	0.000
+LoCoMo	verbatim	1540	0.057	0.249	0.277	0.277	3.66	1234.2	568	1.000	0.432	0.277	0.277	0.743	0.277
+LoCoMo	extracted_facts	1540	0.055	0.242	0.271	0.271	3.77	1234.2	568	1.000	0.422	0.271	0.271	0.724	0.271
+LoCoMo	episodic	1540	0.064	0.278	0.311	0.311	3.92	1234.2	568	1.000	0.465	0.311	0.311	0.774	0.311
+LoCoMo	hybrid	1540	0.058	0.256	0.284	0.284	3.76	1234.2	568	1.000	0.435	0.284	0.284	0.736	0.284
+LongMemEval	no_memory	1500	0.000	0.000	0.000	0.000	0.01	150.0	0	1.000	0.000	0.000	0.000	0.000	0.000
+LongMemEval	verbatim	1500	0.393	0.516	0.575	0.575	5.10	531.4	486	1.000	0.636	0.575	0.575	0.760	0.575
+LongMemEval	extracted_facts	1500	0.393	0.515	0.573	0.573	5.16	531.4	486	1.000	0.635	0.573	0.573	0.758	0.573
+LongMemEval	episodic	1500	0.393	0.516	0.575	0.575	5.16	531.4	486	1.000	0.636	0.575	0.575	0.759	0.575
+LongMemEval	hybrid	1500	0.393	0.516	0.575	0.575	5.10	531.4	486	1.000	0.636	0.575	0.575	0.758	0.575
+MemoryArena	no_memory	4850	0.000	0.000	0.000	0.000	0.04	485.0	0	1.000	0.000	0.000	0.000	0.000	0.000
+MemoryArena	verbatim	4850	0.180	0.348	0.356	0.356	0.11	708.3	1	1.000	0.367	0.356	0.356	0.388	0.356
+MemoryArena	extracted_facts	4850	0.613	0.785	0.794	0.794	0.11	752.3	1	1.000	0.804	0.794	0.794	0.823	0.794
+MemoryArena	episodic	4850	0.190	0.350	0.359	0.359	0.11	700.3	1	1.000	0.370	0.359	0.359	0.394	0.359
+MemoryArena	hybrid	4850	0.180	0.347	0.356	0.356	0.14	708.4	1	1.000	0.366	0.356	0.356	0.387	0.356
+
+Raw trace: /tmp/kdd-modal-results/run_20260509_081659_real_raw.json
+Metrics: /tmp/kdd-modal-results/run_20260509_081659_real_metrics.json
+Summary TSV: /tmp/kdd-modal-results/run_20260509_081659_real_summary.tsv
+
+Modal artifacts synced:
+  raw: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151530_real_raw.json
+  metrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151530_real_metrics.json
+  summary: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151530_real_summary.tsv

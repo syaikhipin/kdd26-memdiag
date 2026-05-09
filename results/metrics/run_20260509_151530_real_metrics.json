@@ -1,0 +1,3587 @@
+{
+  "real": {
+    "datasets": {
+      "LoCoMo": {
+        "dataset": "LoCoMo",
+        "records": 200,
+        "by_strategy": {
+          "no_memory": {
+            "questions": 40,
+            "retrieval_precision": 0.0,
+            "retrieval_recall": 0.0,
+            "evidence_hit_rate": 0.0,
+            "utilization_rate": 0.0,
+            "avg_latency_ms": 0.0028,
+            "cost_units": 4.0,
+            "memory_entries": 0,
+            "failure_modes": {
+              "no_memory_available": 40
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 23,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "temporal_reasoning": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "single_hop": {
+                "questions": 13,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "open_domain": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 0.1,
+            "semantic_coverage_rate": 0.1,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 4
+            },
+            "mean_semantic_score": 0.0,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.0,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.0,
+              "mean_semantic_score": 0.0
+            }
+          },
+          "verbatim": {
+            "questions": 40,
+            "retrieval_precision": 0.07,
+            "retrieval_recall": 0.3208,
+            "evidence_hit_rate": 0.35,
+            "utilization_rate": 0.35,
+            "avg_latency_ms": 0.8688,
+            "cost_units": 23.76,
+            "memory_entries": 369,
+            "failure_modes": {
+              "none": 12,
+              "retrieval_miss": 26,
+              "partial_evidence_retrieved": 2
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 23,
+                "retrieval_recall": 0.5217,
+                "evidence_hit_rate": 0.5217
+              },
+              "temporal_reasoning": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "single_hop": {
+                "questions": 13,
+                "retrieval_recall": 0.0256,
+                "evidence_hit_rate": 0.0769
+              },
+              "open_domain": {
+                "questions": 2,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.5
+              }
+            },
+            "semantic_attempt_rate": 0.1,
+            "semantic_coverage_rate": 0.1,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 4
+            },
+            "mean_semantic_score": 0.3996,
+            "semantic_pass_rate": 0.25,
+            "mean_faithfulness_score": 0.25,
+            "mean_context_relevance_score": 0.6989,
+            "mean_answer_correctness_score": 0.25,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.25,
+              "mean_semantic_score": 0.3996
+            }
+          },
+          "extracted_facts": {
+            "questions": 40,
+            "retrieval_precision": 0.075,
+            "retrieval_recall": 0.3458,
+            "evidence_hit_rate": 0.375,
+            "utilization_rate": 0.375,
+            "avg_latency_ms": 0.8607,
+            "cost_units": 23.76,
+            "memory_entries": 369,
+            "failure_modes": {
+              "none": 13,
+              "retrieval_miss": 25,
+              "partial_evidence_retrieved": 2
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 23,
+                "retrieval_recall": 0.5652,
+                "evidence_hit_rate": 0.5652
+              },
+              "temporal_reasoning": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "single_hop": {
+                "questions": 13,
+                "retrieval_recall": 0.0256,
+                "evidence_hit_rate": 0.0769
+              },
+              "open_domain": {
+                "questions": 2,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.5
+              }
+            },
+            "semantic_attempt_rate": 0.1,
+            "semantic_coverage_rate": 0.1,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 4
+            },
+            "mean_semantic_score": 0.3845,
+            "semantic_pass_rate": 0.25,
+            "mean_faithfulness_score": 0.25,
+            "mean_context_relevance_score": 0.6534,
+            "mean_answer_correctness_score": 0.25,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.25,
+              "mean_semantic_score": 0.3845
+            }
+          },
+          "episodic": {
+            "questions": 40,
+            "retrieval_precision": 0.08,
+            "retrieval_recall": 0.3708,
+            "evidence_hit_rate": 0.4,
+            "utilization_rate": 0.4,
+            "avg_latency_ms": 0.9162,
+            "cost_units": 23.76,
+            "memory_entries": 369,
+            "failure_modes": {
+              "none": 14,
+              "retrieval_miss": 24,
+              "partial_evidence_retrieved": 2
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 23,
+                "retrieval_recall": 0.6087,
+                "evidence_hit_rate": 0.6087
+              },
+              "temporal_reasoning": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "single_hop": {
+                "questions": 13,
+                "retrieval_recall": 0.0256,
+                "evidence_hit_rate": 0.0769
+              },
+              "open_domain": {
+                "questions": 2,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.5
+              }
+            },
+            "semantic_attempt_rate": 0.1,
+            "semantic_coverage_rate": 0.1,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 4
+            },
+            "mean_semantic_score": 0.3996,
+            "semantic_pass_rate": 0.25,
+            "mean_faithfulness_score": 0.25,
+            "mean_context_relevance_score": 0.6989,
+            "mean_answer_correctness_score": 0.25,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.25,
+              "mean_semantic_score": 0.3996
+            }
+          },
+          "hybrid": {
+            "questions": 40,
+            "retrieval_precision": 0.08,
+            "retrieval_recall": 0.3708,
+            "evidence_hit_rate": 0.4,
+            "utilization_rate": 0.4,
+            "avg_latency_ms": 0.8733,
+            "cost_units": 23.76,
+            "memory_entries": 369,
+            "failure_modes": {
+              "none": 14,
+              "retrieval_miss": 24,
+              "partial_evidence_retrieved": 2
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 23,
+                "retrieval_recall": 0.6087,
+                "evidence_hit_rate": 0.6087
+              },
+              "temporal_reasoning": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "single_hop": {
+                "questions": 13,
+                "retrieval_recall": 0.0256,
+                "evidence_hit_rate": 0.0769
+              },
+              "open_domain": {
+                "questions": 2,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.5
+              }
+            },
+            "semantic_attempt_rate": 0.1,
+            "semantic_coverage_rate": 0.1,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 4
+            },
+            "mean_semantic_score": 0.4135,
+            "semantic_pass_rate": 0.25,
+            "mean_faithfulness_score": 0.25,
+            "mean_context_relevance_score": 0.7406,
+            "mean_answer_correctness_score": 0.25,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.25,
+              "mean_semantic_score": 0.4135
+            }
+          }
+        }
+      },
+      "LongMemEval": {
+        "dataset": "LongMemEval",
+        "records": 500,
+        "by_strategy": {
+          "no_memory": {
+            "questions": 100,
+            "retrieval_precision": 0.0,
+            "retrieval_recall": 0.0,
+            "evidence_hit_rate": 0.0,
+            "utilization_rate": 0.0,
+            "avg_latency_ms": 0.0027,
+            "cost_units": 10.0,
+            "memory_entries": 0,
+            "failure_modes": {
+              "no_memory_available": 100
+            },
+            "categories": {
+              "temporal-reasoning": {
+                "questions": 60,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "multi-session": {
+                "questions": 40,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 0.03,
+            "semantic_coverage_rate": 0.03,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.0,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.0,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.0,
+              "mean_semantic_score": 0.0
+            }
+          },
+          "verbatim": {
+            "questions": 100,
+            "retrieval_precision": 1.0,
+            "retrieval_recall": 0.9983,
+            "evidence_hit_rate": 1.0,
+            "utilization_rate": 1.0,
+            "avg_latency_ms": 0.0452,
+            "cost_units": 15.545,
+            "memory_entries": 5,
+            "failure_modes": {
+              "none": 99,
+              "partial_evidence_retrieved": 1
+            },
+            "categories": {
+              "temporal-reasoning": {
+                "questions": 60,
+                "retrieval_recall": 0.9972,
+                "evidence_hit_rate": 1.0
+              },
+              "multi-session": {
+                "questions": 40,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              }
+            },
+            "semantic_attempt_rate": 0.03,
+            "semantic_coverage_rate": 0.03,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 1.0,
+            "semantic_pass_rate": 1.0,
+            "mean_faithfulness_score": 1.0,
+            "mean_context_relevance_score": 1.0,
+            "mean_answer_correctness_score": 1.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 1.0,
+              "mean_semantic_score": 1.0
+            }
+          },
+          "extracted_facts": {
+            "questions": 100,
+            "retrieval_precision": 1.0,
+            "retrieval_recall": 0.9983,
+            "evidence_hit_rate": 1.0,
+            "utilization_rate": 1.0,
+            "avg_latency_ms": 0.0454,
+            "cost_units": 15.545,
+            "memory_entries": 5,
+            "failure_modes": {
+              "none": 99,
+              "partial_evidence_retrieved": 1
+            },
+            "categories": {
+              "temporal-reasoning": {
+                "questions": 60,
+                "retrieval_recall": 0.9972,
+                "evidence_hit_rate": 1.0
+              },
+              "multi-session": {
+                "questions": 40,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              }
+            },
+            "semantic_attempt_rate": 0.03,
+            "semantic_coverage_rate": 0.03,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 1.0,
+            "semantic_pass_rate": 1.0,
+            "mean_faithfulness_score": 1.0,
+            "mean_context_relevance_score": 1.0,
+            "mean_answer_correctness_score": 1.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 1.0,
+              "mean_semantic_score": 1.0
+            }
+          },
+          "episodic": {
+            "questions": 100,
+            "retrieval_precision": 1.0,
+            "retrieval_recall": 0.9983,
+            "evidence_hit_rate": 1.0,
+            "utilization_rate": 1.0,
+            "avg_latency_ms": 0.0452,
+            "cost_units": 15.545,
+            "memory_entries": 5,
+            "failure_modes": {
+              "none": 99,
+              "partial_evidence_retrieved": 1
+            },
+            "categories": {
+              "temporal-reasoning": {
+                "questions": 60,
+                "retrieval_recall": 0.9972,
+                "evidence_hit_rate": 1.0
+              },
+              "multi-session": {
+                "questions": 40,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              }
+            },
+            "semantic_attempt_rate": 0.03,
+            "semantic_coverage_rate": 0.03,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 1.0,
+            "semantic_pass_rate": 1.0,
+            "mean_faithfulness_score": 1.0,
+            "mean_context_relevance_score": 1.0,
+            "mean_answer_correctness_score": 1.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 1.0,
+              "mean_semantic_score": 1.0
+            }
+          },
+          "hybrid": {
+            "questions": 100,
+            "retrieval_precision": 1.0,
+            "retrieval_recall": 0.9983,
+            "evidence_hit_rate": 1.0,
+            "utilization_rate": 1.0,
+            "avg_latency_ms": 0.0464,
+            "cost_units": 15.545,
+            "memory_entries": 5,
+            "failure_modes": {
+              "none": 99,
+              "partial_evidence_retrieved": 1
+            },
+            "categories": {
+              "temporal-reasoning": {
+                "questions": 60,
+                "retrieval_recall": 0.9972,
+                "evidence_hit_rate": 1.0
+              },
+              "multi-session": {
+                "questions": 40,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              }
+            },
+            "semantic_attempt_rate": 0.03,
+            "semantic_coverage_rate": 0.03,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 1.0,
+            "semantic_pass_rate": 1.0,
+            "mean_faithfulness_score": 1.0,
+            "mean_context_relevance_score": 1.0,
+            "mean_answer_correctness_score": 1.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 1.0,
+              "mean_semantic_score": 1.0
+            }
+          }
+        }
+      },
+      "MemoryArena": {
+        "dataset": "MemoryArena",
+        "records": 2430,
+        "by_strategy": {
+          "no_memory": {
+            "questions": 486,
+            "retrieval_precision": 0.0,
+            "retrieval_recall": 0.0,
+            "evidence_hit_rate": 0.0,
+            "utilization_rate": 0.0,
+            "avg_latency_ms": 0.0186,
+            "cost_units": 48.6,
+            "memory_entries": 0,
+            "failure_modes": {
+              "no_memory_available": 486
+            },
+            "categories": {
+              "baking_item_0": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_1": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_2": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_3": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_4": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_5": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_6": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_7": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_8": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_9": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_10": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_11": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_12": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_13": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_14": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_15": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_16": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2503.19064": {
+                "questions": 5,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2510.16976": {
+                "questions": 5,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2312.05134_part_2": {
+                "questions": 8,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2408.12186": {
+                "questions": 10,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2410.01101": {
+                "questions": 11,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2406.19617": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2309.02236_part_2": {
+                "questions": 10,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2307.10959": {
+                "questions": 5,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2305.11283_part_1": {
+                "questions": 13,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2502.13283_part_1": {
+                "questions": 7,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2411.17668": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2412.14310": {
+                "questions": 8,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2402.01258": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "0000.0001": {
+                "questions": 3,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2507.7811": {
+                "questions": 12,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2503.13599": {
+                "questions": 8,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2309.15922": {
+                "questions": 3,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2111.01267": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2404.07704": {
+                "questions": 3,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "1105.6063": {
+                "questions": 3,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "0000.0002": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2307.08563": {
+                "questions": 5,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2505.18074": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "1801.04273": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "0000.0004": {
+                "questions": 3,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "0011047": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2310.20045": {
+                "questions": 9,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "0000.0003": {
+                "questions": 3,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2401.09908": {
+                "questions": 3,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "1304.1806": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2004.01171": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2010.06947": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "0000.0000": {
+                "questions": 3,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "group_travel_planner": {
+                "questions": 100,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "progressive_search": {
+                "questions": 100,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 0.0062,
+            "semantic_coverage_rate": 0.0062,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.0,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.0,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.0,
+              "mean_semantic_score": 0.0
+            }
+          },
+          "verbatim": {
+            "questions": 486,
+            "retrieval_precision": 0.2158,
+            "retrieval_recall": 0.4095,
+            "evidence_hit_rate": 0.4136,
+            "utilization_rate": 0.4136,
+            "avg_latency_ms": 0.0491,
+            "cost_units": 72.054,
+            "memory_entries": 1,
+            "failure_modes": {
+              "no_memory_available": 168,
+              "none": 195,
+              "retrieval_miss": 117,
+              "partial_evidence_retrieved": 6
+            },
+            "categories": {
+              "baking_item_0": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_1": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_2": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_3": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_4": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_5": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "baking_item_6": {
+                "questions": 6,
+                "retrieval_recall": 0.1667,
+                "evidence_hit_rate": 0.1667
+              },
+              "baking_item_7": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_8": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_9": {
+                "questions": 6,
+                "retrieval_recall": 0.1667,
+                "evidence_hit_rate": 0.1667
+              },
+              "baking_item_10": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "baking_item_11": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_12": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_13": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_14": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_15": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_16": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2503.19064": {
+                "questions": 5,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2510.16976": {
+                "questions": 5,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2312.05134_part_2": {
+                "questions": 8,
+                "retrieval_recall": 0.375,
+                "evidence_hit_rate": 0.375
+              },
+              "2408.12186": {
+                "questions": 10,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2410.01101": {
+                "questions": 11,
+                "retrieval_recall": 0.3636,
+                "evidence_hit_rate": 0.3636
+              },
+              "2406.19617": {
+                "questions": 6,
+                "retrieval_recall": 0.8333,
+                "evidence_hit_rate": 0.8333
+              },
+              "2309.02236_part_2": {
+                "questions": 10,
+                "retrieval_recall": 0.4,
+                "evidence_hit_rate": 0.4
+              },
+              "2307.10959": {
+                "questions": 5,
+                "retrieval_recall": 0.6,
+                "evidence_hit_rate": 0.6
+              },
+              "2305.11283_part_1": {
+                "questions": 13,
+                "retrieval_recall": 0.1538,
+                "evidence_hit_rate": 0.1538
+              },
+              "2502.13283_part_1": {
+                "questions": 7,
+                "retrieval_recall": 0.4286,
+                "evidence_hit_rate": 0.4286
+              },
+              "2411.17668": {
+                "questions": 6,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "2412.14310": {
+                "questions": 8,
+                "retrieval_recall": 0.625,
+                "evidence_hit_rate": 0.625
+              },
+              "2402.01258": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "0000.0001": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "2507.7811": {
+                "questions": 12,
+                "retrieval_recall": 0.0833,
+                "evidence_hit_rate": 0.0833
+              },
+              "2503.13599": {
+                "questions": 8,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "2309.15922": {
+                "questions": 3,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2111.01267": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "2404.07704": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "1105.6063": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "0000.0002": {
+                "questions": 2,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2307.08563": {
+                "questions": 5,
+                "retrieval_recall": 0.4,
+                "evidence_hit_rate": 0.4
+              },
+              "2505.18074": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "1801.04273": {
+                "questions": 4,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "0000.0004": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "0011047": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "2310.20045": {
+                "questions": 9,
+                "retrieval_recall": 0.2222,
+                "evidence_hit_rate": 0.2222
+              },
+              "0000.0003": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "2401.09908": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "1304.1806": {
+                "questions": 2,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2004.01171": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "2010.06947": {
+                "questions": 4,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "0000.0000": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "group_travel_planner": {
+                "questions": 100,
+                "retrieval_recall": 0.71,
+                "evidence_hit_rate": 0.73
+              },
+              "progressive_search": {
+                "questions": 100,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 0.0062,
+            "semantic_coverage_rate": 0.0062,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.0,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.0,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.0,
+              "mean_semantic_score": 0.0
+            }
+          },
+          "extracted_facts": {
+            "questions": 486,
+            "retrieval_precision": 0.5083,
+            "retrieval_recall": 0.7181,
+            "evidence_hit_rate": 0.7222,
+            "utilization_rate": 0.7222,
+            "avg_latency_ms": 0.0492,
+            "cost_units": 76.014,
+            "memory_entries": 1,
+            "failure_modes": {
+              "none": 345,
+              "retrieval_miss": 112,
+              "partial_evidence_retrieved": 6,
+              "no_memory_available": 23
+            },
+            "categories": {
+              "baking_item_0": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_1": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_2": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_3": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_4": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_5": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_6": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_7": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_8": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_9": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_10": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_11": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_12": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_13": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_14": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_15": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_16": {
+                "questions": 4,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2503.19064": {
+                "questions": 5,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2510.16976": {
+                "questions": 5,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2312.05134_part_2": {
+                "questions": 8,
+                "retrieval_recall": 0.625,
+                "evidence_hit_rate": 0.625
+              },
+              "2408.12186": {
+                "questions": 10,
+                "retrieval_recall": 0.4,
+                "evidence_hit_rate": 0.4
+              },
+              "2410.01101": {
+                "questions": 11,
+                "retrieval_recall": 0.3636,
+                "evidence_hit_rate": 0.3636
+              },
+              "2406.19617": {
+                "questions": 6,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "2309.02236_part_2": {
+                "questions": 10,
+                "retrieval_recall": 0.2,
+                "evidence_hit_rate": 0.2
+              },
+              "2307.10959": {
+                "questions": 5,
+                "retrieval_recall": 0.8,
+                "evidence_hit_rate": 0.8
+              },
+              "2305.11283_part_1": {
+                "questions": 13,
+                "retrieval_recall": 0.2308,
+                "evidence_hit_rate": 0.2308
+              },
+              "2502.13283_part_1": {
+                "questions": 7,
+                "retrieval_recall": 0.2857,
+                "evidence_hit_rate": 0.2857
+              },
+              "2411.17668": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2412.14310": {
+                "questions": 8,
+                "retrieval_recall": 0.625,
+                "evidence_hit_rate": 0.625
+              },
+              "2402.01258": {
+                "questions": 6,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "0000.0001": {
+                "questions": 3,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2507.7811": {
+                "questions": 12,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "2503.13599": {
+                "questions": 8,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2309.15922": {
+                "questions": 3,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2111.01267": {
+                "questions": 4,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2404.07704": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "1105.6063": {
+                "questions": 3,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "0000.0002": {
+                "questions": 2,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2307.08563": {
+                "questions": 5,
+                "retrieval_recall": 0.6,
+                "evidence_hit_rate": 0.6
+              },
+              "2505.18074": {
+                "questions": 4,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "1801.04273": {
+                "questions": 4,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "0000.0004": {
+                "questions": 3,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "0011047": {
+                "questions": 4,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2310.20045": {
+                "questions": 9,
+                "retrieval_recall": 0.1111,
+                "evidence_hit_rate": 0.1111
+              },
+              "0000.0003": {
+                "questions": 3,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2401.09908": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "1304.1806": {
+                "questions": 2,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2004.01171": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "2010.06947": {
+                "questions": 4,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "0000.0000": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "group_travel_planner": {
+                "questions": 100,
+                "retrieval_recall": 0.74,
+                "evidence_hit_rate": 0.76
+              },
+              "progressive_search": {
+                "questions": 100,
+                "retrieval_recall": 0.77,
+                "evidence_hit_rate": 0.77
+              }
+            },
+            "semantic_attempt_rate": 0.0062,
+            "semantic_coverage_rate": 0.0062,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 1.0,
+            "semantic_pass_rate": 1.0,
+            "mean_faithfulness_score": 1.0,
+            "mean_context_relevance_score": 1.0,
+            "mean_answer_correctness_score": 1.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 1.0,
+              "mean_semantic_score": 1.0
+            }
+          },
+          "episodic": {
+            "questions": 486,
+            "retrieval_precision": 0.2117,
+            "retrieval_recall": 0.3395,
+            "evidence_hit_rate": 0.3436,
+            "utilization_rate": 0.3436,
+            "avg_latency_ms": 0.0492,
+            "cost_units": 68.434,
+            "memory_entries": 1,
+            "failure_modes": {
+              "no_memory_available": 168,
+              "none": 161,
+              "retrieval_miss": 151,
+              "partial_evidence_retrieved": 6
+            },
+            "categories": {
+              "baking_item_0": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_1": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_2": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_3": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_4": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_5": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "baking_item_6": {
+                "questions": 6,
+                "retrieval_recall": 0.1667,
+                "evidence_hit_rate": 0.1667
+              },
+              "baking_item_7": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_8": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_9": {
+                "questions": 6,
+                "retrieval_recall": 0.1667,
+                "evidence_hit_rate": 0.1667
+              },
+              "baking_item_10": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "baking_item_11": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_12": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_13": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_14": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_15": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_16": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2503.19064": {
+                "questions": 5,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2510.16976": {
+                "questions": 5,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2312.05134_part_2": {
+                "questions": 8,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "2408.12186": {
+                "questions": 10,
+                "retrieval_recall": 0.4,
+                "evidence_hit_rate": 0.4
+              },
+              "2410.01101": {
+                "questions": 11,
+                "retrieval_recall": 0.1818,
+                "evidence_hit_rate": 0.1818
+              },
+              "2406.19617": {
+                "questions": 6,
+                "retrieval_recall": 0.1667,
+                "evidence_hit_rate": 0.1667
+              },
+              "2309.02236_part_2": {
+                "questions": 10,
+                "retrieval_recall": 0.2,
+                "evidence_hit_rate": 0.2
+              },
+              "2307.10959": {
+                "questions": 5,
+                "retrieval_recall": 0.6,
+                "evidence_hit_rate": 0.6
+              },
+              "2305.11283_part_1": {
+                "questions": 13,
+                "retrieval_recall": 0.1538,
+                "evidence_hit_rate": 0.1538
+              },
+              "2502.13283_part_1": {
+                "questions": 7,
+                "retrieval_recall": 0.1429,
+                "evidence_hit_rate": 0.1429
+              },
+              "2411.17668": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2412.14310": {
+                "questions": 8,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2402.01258": {
+                "questions": 6,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "0000.0001": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "2507.7811": {
+                "questions": 12,
+                "retrieval_recall": 0.0833,
+                "evidence_hit_rate": 0.0833
+              },
+              "2503.13599": {
+                "questions": 8,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "2309.15922": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "2111.01267": {
+                "questions": 4,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "2404.07704": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "1105.6063": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "0000.0002": {
+                "questions": 2,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2307.08563": {
+                "questions": 5,
+                "retrieval_recall": 0.4,
+                "evidence_hit_rate": 0.4
+              },
+              "2505.18074": {
+                "questions": 4,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "1801.04273": {
+                "questions": 4,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "0000.0004": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "0011047": {
+                "questions": 4,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "2310.20045": {
+                "questions": 9,
+                "retrieval_recall": 0.1111,
+                "evidence_hit_rate": 0.1111
+              },
+              "0000.0003": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "2401.09908": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "1304.1806": {
+                "questions": 2,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2004.01171": {
+                "questions": 4,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "2010.06947": {
+                "questions": 4,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "0000.0000": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "group_travel_planner": {
+                "questions": 100,
+                "retrieval_recall": 0.73,
+                "evidence_hit_rate": 0.75
+              },
+              "progressive_search": {
+                "questions": 100,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 0.0062,
+            "semantic_coverage_rate": 0.0062,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.0,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.0,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.0,
+              "mean_semantic_score": 0.0
+            }
+          },
+          "hybrid": {
+            "questions": 486,
+            "retrieval_precision": 0.2158,
+            "retrieval_recall": 0.4095,
+            "evidence_hit_rate": 0.4136,
+            "utilization_rate": 0.4136,
+            "avg_latency_ms": 0.0498,
+            "cost_units": 72.054,
+            "memory_entries": 1,
+            "failure_modes": {
+              "no_memory_available": 168,
+              "none": 195,
+              "retrieval_miss": 117,
+              "partial_evidence_retrieved": 6
+            },
+            "categories": {
+              "baking_item_0": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_1": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_2": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_3": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_4": {
+                "questions": 6,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "baking_item_5": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "baking_item_6": {
+                "questions": 6,
+                "retrieval_recall": 0.1667,
+                "evidence_hit_rate": 0.1667
+              },
+              "baking_item_7": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_8": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_9": {
+                "questions": 6,
+                "retrieval_recall": 0.1667,
+                "evidence_hit_rate": 0.1667
+              },
+              "baking_item_10": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "baking_item_11": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_12": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_13": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_14": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_15": {
+                "questions": 6,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "baking_item_16": {
+                "questions": 4,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "2503.19064": {
+                "questions": 5,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2510.16976": {
+                "questions": 5,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2312.05134_part_2": {
+                "questions": 8,
+                "retrieval_recall": 0.375,
+                "evidence_hit_rate": 0.375
+              },
+              "2408.12186": {
+                "questions": 10,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "2410.01101": {
+                "questions": 11,
+                "retrieval_recall": 0.3636,
+                "evidence_hit_rate": 0.3636
+              },
+              "2406.19617": {
+                "questions": 6,
+                "retrieval_recall": 0.8333,
+                "evidence_hit_rate": 0.8333
+              },
+              "2309.02236_part_2": {
+                "questions": 10,
+                "retrieval_recall": 0.4,
+                "evidence_hit_rate": 0.4
+              },
+              "2307.10959": {
+                "questions": 5,
+                "retrieval_recall": 0.6,
+                "evidence_hit_rate": 0.6
+              },
+              "2305.11283_part_1": {
+                "questions": 13,
+                "retrieval_recall": 0.1538,
+                "evidence_hit_rate": 0.1538
+              },
+              "2502.13283_part_1": {
+                "questions": 7,
+                "retrieval_recall": 0.4286,
+                "evidence_hit_rate": 0.4286
+              },
+              "2411.17668": {
+                "questions": 6,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "2412.14310": {
+                "questions": 8,
+                "retrieval_recall": 0.625,
+                "evidence_hit_rate": 0.625
+              },
+              "2402.01258": {
+                "questions": 6,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "0000.0001": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "2507.7811": {
+                "questions": 12,
+                "retrieval_recall": 0.0833,
+                "evidence_hit_rate": 0.0833
+              },
+              "2503.13599": {
+                "questions": 8,
+                "retrieval_recall": 0.25,
+                "evidence_hit_rate": 0.25
+              },
+              "2309.15922": {
+                "questions": 3,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2111.01267": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "2404.07704": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "1105.6063": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "0000.0002": {
+                "questions": 2,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2307.08563": {
+                "questions": 5,
+                "retrieval_recall": 0.4,
+                "evidence_hit_rate": 0.4
+              },
+              "2505.18074": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "1801.04273": {
+                "questions": 4,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "0000.0004": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "0011047": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "2310.20045": {
+                "questions": 9,
+                "retrieval_recall": 0.2222,
+                "evidence_hit_rate": 0.2222
+              },
+              "0000.0003": {
+                "questions": 3,
+                "retrieval_recall": 0.3333,
+                "evidence_hit_rate": 0.3333
+              },
+              "2401.09908": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "1304.1806": {
+                "questions": 2,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "2004.01171": {
+                "questions": 4,
+                "retrieval_recall": 0.75,
+                "evidence_hit_rate": 0.75
+              },
+              "2010.06947": {
+                "questions": 4,
+                "retrieval_recall": 1.0,
+                "evidence_hit_rate": 1.0
+              },
+              "0000.0000": {
+                "questions": 3,
+                "retrieval_recall": 0.6667,
+                "evidence_hit_rate": 0.6667
+              },
+              "group_travel_planner": {
+                "questions": 100,
+                "retrieval_recall": 0.71,
+                "evidence_hit_rate": 0.73
+              },
+              "progressive_search": {
+                "questions": 100,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 0.0062,
+            "semantic_coverage_rate": 0.0062,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.0,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.0,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.0,
+              "mean_semantic_score": 0.0
+            }
+          }
+        }
+      }
+    },
+    "combined": {
+      "dataset": "LoCoMo",
+      "records": 3130,
+      "by_strategy": {
+        "no_memory": {
+          "questions": 626,
+          "retrieval_precision": 0.0,
+          "retrieval_recall": 0.0,
+          "evidence_hit_rate": 0.0,
+          "utilization_rate": 0.0,
+          "avg_latency_ms": 0.015,
+          "cost_units": 62.6,
+          "memory_entries": 0,
+          "failure_modes": {
+            "no_memory_available": 626
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 23,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "temporal_reasoning": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "single_hop": {
+              "questions": 13,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "open_domain": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "temporal-reasoning": {
+              "questions": 60,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "multi-session": {
+              "questions": 40,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_0": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_1": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_2": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_3": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_4": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_5": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_6": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_7": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_8": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_9": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_10": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_11": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_12": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_13": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_14": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_15": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_16": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2503.19064": {
+              "questions": 5,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2510.16976": {
+              "questions": 5,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2312.05134_part_2": {
+              "questions": 8,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2408.12186": {
+              "questions": 10,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2410.01101": {
+              "questions": 11,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2406.19617": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2309.02236_part_2": {
+              "questions": 10,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2307.10959": {
+              "questions": 5,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2305.11283_part_1": {
+              "questions": 13,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2502.13283_part_1": {
+              "questions": 7,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2411.17668": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2412.14310": {
+              "questions": 8,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2402.01258": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "0000.0001": {
+              "questions": 3,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2507.7811": {
+              "questions": 12,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2503.13599": {
+              "questions": 8,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2309.15922": {
+              "questions": 3,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2111.01267": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2404.07704": {
+              "questions": 3,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "1105.6063": {
+              "questions": 3,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "0000.0002": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2307.08563": {
+              "questions": 5,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2505.18074": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "1801.04273": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "0000.0004": {
+              "questions": 3,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "0011047": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2310.20045": {
+              "questions": 9,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "0000.0003": {
+              "questions": 3,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2401.09908": {
+              "questions": 3,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "1304.1806": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2004.01171": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2010.06947": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "0000.0000": {
+              "questions": 3,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "group_travel_planner": {
+              "questions": 100,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "progressive_search": {
+              "questions": 100,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 0.016,
+          "semantic_coverage_rate": 0.016,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 10
+          },
+          "mean_semantic_score": 0.0,
+          "semantic_pass_rate": 0.0,
+          "mean_faithfulness_score": 0.0,
+          "mean_context_relevance_score": 0.0,
+          "mean_answer_correctness_score": 0.0,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 1.0,
+            "mean_retrieval_recall": 0.0,
+            "mean_semantic_score": 0.0
+          }
+        },
+        "verbatim": {
+          "questions": 626,
+          "retrieval_precision": 0.3318,
+          "retrieval_recall": 0.4979,
+          "evidence_hit_rate": 0.5032,
+          "utilization_rate": 0.5032,
+          "avg_latency_ms": 0.1008,
+          "cost_units": 111.359,
+          "memory_entries": 1,
+          "failure_modes": {
+            "none": 306,
+            "retrieval_miss": 143,
+            "partial_evidence_retrieved": 9,
+            "no_memory_available": 168
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 23,
+              "retrieval_recall": 0.5217,
+              "evidence_hit_rate": 0.5217
+            },
+            "temporal_reasoning": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "single_hop": {
+              "questions": 13,
+              "retrieval_recall": 0.0256,
+              "evidence_hit_rate": 0.0769
+            },
+            "open_domain": {
+              "questions": 2,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.5
+            },
+            "temporal-reasoning": {
+              "questions": 60,
+              "retrieval_recall": 0.9972,
+              "evidence_hit_rate": 1.0
+            },
+            "multi-session": {
+              "questions": 40,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_0": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_1": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_2": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_3": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_4": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_5": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "baking_item_6": {
+              "questions": 6,
+              "retrieval_recall": 0.1667,
+              "evidence_hit_rate": 0.1667
+            },
+            "baking_item_7": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_8": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_9": {
+              "questions": 6,
+              "retrieval_recall": 0.1667,
+              "evidence_hit_rate": 0.1667
+            },
+            "baking_item_10": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "baking_item_11": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_12": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_13": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_14": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_15": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_16": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2503.19064": {
+              "questions": 5,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2510.16976": {
+              "questions": 5,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2312.05134_part_2": {
+              "questions": 8,
+              "retrieval_recall": 0.375,
+              "evidence_hit_rate": 0.375
+            },
+            "2408.12186": {
+              "questions": 10,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2410.01101": {
+              "questions": 11,
+              "retrieval_recall": 0.3636,
+              "evidence_hit_rate": 0.3636
+            },
+            "2406.19617": {
+              "questions": 6,
+              "retrieval_recall": 0.8333,
+              "evidence_hit_rate": 0.8333
+            },
+            "2309.02236_part_2": {
+              "questions": 10,
+              "retrieval_recall": 0.4,
+              "evidence_hit_rate": 0.4
+            },
+            "2307.10959": {
+              "questions": 5,
+              "retrieval_recall": 0.6,
+              "evidence_hit_rate": 0.6
+            },
+            "2305.11283_part_1": {
+              "questions": 13,
+              "retrieval_recall": 0.1538,
+              "evidence_hit_rate": 0.1538
+            },
+            "2502.13283_part_1": {
+              "questions": 7,
+              "retrieval_recall": 0.4286,
+              "evidence_hit_rate": 0.4286
+            },
+            "2411.17668": {
+              "questions": 6,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "2412.14310": {
+              "questions": 8,
+              "retrieval_recall": 0.625,
+              "evidence_hit_rate": 0.625
+            },
+            "2402.01258": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "0000.0001": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "2507.7811": {
+              "questions": 12,
+              "retrieval_recall": 0.0833,
+              "evidence_hit_rate": 0.0833
+            },
+            "2503.13599": {
+              "questions": 8,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "2309.15922": {
+              "questions": 3,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2111.01267": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "2404.07704": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "1105.6063": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "0000.0002": {
+              "questions": 2,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2307.08563": {
+              "questions": 5,
+              "retrieval_recall": 0.4,
+              "evidence_hit_rate": 0.4
+            },
+            "2505.18074": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "1801.04273": {
+              "questions": 4,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "0000.0004": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "0011047": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "2310.20045": {
+              "questions": 9,
+              "retrieval_recall": 0.2222,
+              "evidence_hit_rate": 0.2222
+            },
+            "0000.0003": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "2401.09908": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "1304.1806": {
+              "questions": 2,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2004.01171": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "2010.06947": {
+              "questions": 4,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "0000.0000": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "group_travel_planner": {
+              "questions": 100,
+              "retrieval_recall": 0.71,
+              "evidence_hit_rate": 0.73
+            },
+            "progressive_search": {
+              "questions": 100,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 0.016,
+          "semantic_coverage_rate": 0.016,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 10
+          },
+          "mean_semantic_score": 0.4598,
+          "semantic_pass_rate": 0.4,
+          "mean_faithfulness_score": 0.4,
+          "mean_context_relevance_score": 0.5796,
+          "mean_answer_correctness_score": 0.4,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 1.0,
+            "mean_retrieval_recall": 0.4,
+            "mean_semantic_score": 0.4598
+          }
+        },
+        "extracted_facts": {
+          "questions": 626,
+          "retrieval_precision": 0.5592,
+          "retrieval_recall": 0.7391,
+          "evidence_hit_rate": 0.7444,
+          "utilization_rate": 0.7444,
+          "avg_latency_ms": 0.1004,
+          "cost_units": 115.319,
+          "memory_entries": 1,
+          "failure_modes": {
+            "none": 457,
+            "retrieval_miss": 137,
+            "partial_evidence_retrieved": 9,
+            "no_memory_available": 23
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 23,
+              "retrieval_recall": 0.5652,
+              "evidence_hit_rate": 0.5652
+            },
+            "temporal_reasoning": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "single_hop": {
+              "questions": 13,
+              "retrieval_recall": 0.0256,
+              "evidence_hit_rate": 0.0769
+            },
+            "open_domain": {
+              "questions": 2,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.5
+            },
+            "temporal-reasoning": {
+              "questions": 60,
+              "retrieval_recall": 0.9972,
+              "evidence_hit_rate": 1.0
+            },
+            "multi-session": {
+              "questions": 40,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_0": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_1": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_2": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_3": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_4": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_5": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_6": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_7": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_8": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_9": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_10": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_11": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_12": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_13": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_14": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_15": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_16": {
+              "questions": 4,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2503.19064": {
+              "questions": 5,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2510.16976": {
+              "questions": 5,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2312.05134_part_2": {
+              "questions": 8,
+              "retrieval_recall": 0.625,
+              "evidence_hit_rate": 0.625
+            },
+            "2408.12186": {
+              "questions": 10,
+              "retrieval_recall": 0.4,
+              "evidence_hit_rate": 0.4
+            },
+            "2410.01101": {
+              "questions": 11,
+              "retrieval_recall": 0.3636,
+              "evidence_hit_rate": 0.3636
+            },
+            "2406.19617": {
+              "questions": 6,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "2309.02236_part_2": {
+              "questions": 10,
+              "retrieval_recall": 0.2,
+              "evidence_hit_rate": 0.2
+            },
+            "2307.10959": {
+              "questions": 5,
+              "retrieval_recall": 0.8,
+              "evidence_hit_rate": 0.8
+            },
+            "2305.11283_part_1": {
+              "questions": 13,
+              "retrieval_recall": 0.2308,
+              "evidence_hit_rate": 0.2308
+            },
+            "2502.13283_part_1": {
+              "questions": 7,
+              "retrieval_recall": 0.2857,
+              "evidence_hit_rate": 0.2857
+            },
+            "2411.17668": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2412.14310": {
+              "questions": 8,
+              "retrieval_recall": 0.625,
+              "evidence_hit_rate": 0.625
+            },
+            "2402.01258": {
+              "questions": 6,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "0000.0001": {
+              "questions": 3,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2507.7811": {
+              "questions": 12,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "2503.13599": {
+              "questions": 8,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2309.15922": {
+              "questions": 3,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2111.01267": {
+              "questions": 4,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2404.07704": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "1105.6063": {
+              "questions": 3,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "0000.0002": {
+              "questions": 2,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2307.08563": {
+              "questions": 5,
+              "retrieval_recall": 0.6,
+              "evidence_hit_rate": 0.6
+            },
+            "2505.18074": {
+              "questions": 4,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "1801.04273": {
+              "questions": 4,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "0000.0004": {
+              "questions": 3,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "0011047": {
+              "questions": 4,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2310.20045": {
+              "questions": 9,
+              "retrieval_recall": 0.1111,
+              "evidence_hit_rate": 0.1111
+            },
+            "0000.0003": {
+              "questions": 3,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2401.09908": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "1304.1806": {
+              "questions": 2,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2004.01171": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "2010.06947": {
+              "questions": 4,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "0000.0000": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "group_travel_planner": {
+              "questions": 100,
+              "retrieval_recall": 0.74,
+              "evidence_hit_rate": 0.76
+            },
+            "progressive_search": {
+              "questions": 100,
+              "retrieval_recall": 0.77,
+              "evidence_hit_rate": 0.77
+            }
+          },
+          "semantic_attempt_rate": 0.016,
+          "semantic_coverage_rate": 0.016,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 10
+          },
+          "mean_semantic_score": 0.7538,
+          "semantic_pass_rate": 0.7,
+          "mean_faithfulness_score": 0.7,
+          "mean_context_relevance_score": 0.8614,
+          "mean_answer_correctness_score": 0.7,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 1.0,
+            "mean_retrieval_recall": 0.7,
+            "mean_semantic_score": 0.7538
+          }
+        },
+        "episodic": {
+          "questions": 626,
+          "retrieval_precision": 0.3292,
+          "retrieval_recall": 0.4468,
+          "evidence_hit_rate": 0.4521,
+          "utilization_rate": 0.4521,
+          "avg_latency_ms": 0.1039,
+          "cost_units": 107.739,
+          "memory_entries": 1,
+          "failure_modes": {
+            "none": 274,
+            "retrieval_miss": 175,
+            "partial_evidence_retrieved": 9,
+            "no_memory_available": 168
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 23,
+              "retrieval_recall": 0.6087,
+              "evidence_hit_rate": 0.6087
+            },
+            "temporal_reasoning": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "single_hop": {
+              "questions": 13,
+              "retrieval_recall": 0.0256,
+              "evidence_hit_rate": 0.0769
+            },
+            "open_domain": {
+              "questions": 2,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.5
+            },
+            "temporal-reasoning": {
+              "questions": 60,
+              "retrieval_recall": 0.9972,
+              "evidence_hit_rate": 1.0
+            },
+            "multi-session": {
+              "questions": 40,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_0": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_1": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_2": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_3": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_4": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_5": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "baking_item_6": {
+              "questions": 6,
+              "retrieval_recall": 0.1667,
+              "evidence_hit_rate": 0.1667
+            },
+            "baking_item_7": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_8": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_9": {
+              "questions": 6,
+              "retrieval_recall": 0.1667,
+              "evidence_hit_rate": 0.1667
+            },
+            "baking_item_10": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "baking_item_11": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_12": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_13": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_14": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_15": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_16": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2503.19064": {
+              "questions": 5,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2510.16976": {
+              "questions": 5,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2312.05134_part_2": {
+              "questions": 8,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "2408.12186": {
+              "questions": 10,
+              "retrieval_recall": 0.4,
+              "evidence_hit_rate": 0.4
+            },
+            "2410.01101": {
+              "questions": 11,
+              "retrieval_recall": 0.1818,
+              "evidence_hit_rate": 0.1818
+            },
+            "2406.19617": {
+              "questions": 6,
+              "retrieval_recall": 0.1667,
+              "evidence_hit_rate": 0.1667
+            },
+            "2309.02236_part_2": {
+              "questions": 10,
+              "retrieval_recall": 0.2,
+              "evidence_hit_rate": 0.2
+            },
+            "2307.10959": {
+              "questions": 5,
+              "retrieval_recall": 0.6,
+              "evidence_hit_rate": 0.6
+            },
+            "2305.11283_part_1": {
+              "questions": 13,
+              "retrieval_recall": 0.1538,
+              "evidence_hit_rate": 0.1538
+            },
+            "2502.13283_part_1": {
+              "questions": 7,
+              "retrieval_recall": 0.1429,
+              "evidence_hit_rate": 0.1429
+            },
+            "2411.17668": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2412.14310": {
+              "questions": 8,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2402.01258": {
+              "questions": 6,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "0000.0001": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "2507.7811": {
+              "questions": 12,
+              "retrieval_recall": 0.0833,
+              "evidence_hit_rate": 0.0833
+            },
+            "2503.13599": {
+              "questions": 8,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "2309.15922": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "2111.01267": {
+              "questions": 4,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "2404.07704": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "1105.6063": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "0000.0002": {
+              "questions": 2,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2307.08563": {
+              "questions": 5,
+              "retrieval_recall": 0.4,
+              "evidence_hit_rate": 0.4
+            },
+            "2505.18074": {
+              "questions": 4,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "1801.04273": {
+              "questions": 4,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "0000.0004": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "0011047": {
+              "questions": 4,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "2310.20045": {
+              "questions": 9,
+              "retrieval_recall": 0.1111,
+              "evidence_hit_rate": 0.1111
+            },
+            "0000.0003": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "2401.09908": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "1304.1806": {
+              "questions": 2,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2004.01171": {
+              "questions": 4,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "2010.06947": {
+              "questions": 4,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "0000.0000": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "group_travel_planner": {
+              "questions": 100,
+              "retrieval_recall": 0.73,
+              "evidence_hit_rate": 0.75
+            },
+            "progressive_search": {
+              "questions": 100,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 0.016,
+          "semantic_coverage_rate": 0.016,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 10
+          },
+          "mean_semantic_score": 0.4598,
+          "semantic_pass_rate": 0.4,
+          "mean_faithfulness_score": 0.4,
+          "mean_context_relevance_score": 0.5796,
+          "mean_answer_correctness_score": 0.4,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 1.0,
+            "mean_retrieval_recall": 0.4,
+            "mean_semantic_score": 0.4598
+          }
+        },
+        "hybrid": {
+          "questions": 626,
+          "retrieval_precision": 0.3324,
+          "retrieval_recall": 0.5011,
+          "evidence_hit_rate": 0.5064,
+          "utilization_rate": 0.5064,
+          "avg_latency_ms": 0.1018,
+          "cost_units": 111.359,
+          "memory_entries": 1,
+          "failure_modes": {
+            "none": 308,
+            "retrieval_miss": 141,
+            "partial_evidence_retrieved": 9,
+            "no_memory_available": 168
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 23,
+              "retrieval_recall": 0.6087,
+              "evidence_hit_rate": 0.6087
+            },
+            "temporal_reasoning": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "single_hop": {
+              "questions": 13,
+              "retrieval_recall": 0.0256,
+              "evidence_hit_rate": 0.0769
+            },
+            "open_domain": {
+              "questions": 2,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.5
+            },
+            "temporal-reasoning": {
+              "questions": 60,
+              "retrieval_recall": 0.9972,
+              "evidence_hit_rate": 1.0
+            },
+            "multi-session": {
+              "questions": 40,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_0": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_1": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_2": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_3": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_4": {
+              "questions": 6,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "baking_item_5": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "baking_item_6": {
+              "questions": 6,
+              "retrieval_recall": 0.1667,
+              "evidence_hit_rate": 0.1667
+            },
+            "baking_item_7": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_8": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_9": {
+              "questions": 6,
+              "retrieval_recall": 0.1667,
+              "evidence_hit_rate": 0.1667
+            },
+            "baking_item_10": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "baking_item_11": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_12": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_13": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_14": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_15": {
+              "questions": 6,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "baking_item_16": {
+              "questions": 4,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "2503.19064": {
+              "questions": 5,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2510.16976": {
+              "questions": 5,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2312.05134_part_2": {
+              "questions": 8,
+              "retrieval_recall": 0.375,
+              "evidence_hit_rate": 0.375
+            },
+            "2408.12186": {
+              "questions": 10,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "2410.01101": {
+              "questions": 11,
+              "retrieval_recall": 0.3636,
+              "evidence_hit_rate": 0.3636
+            },
+            "2406.19617": {
+              "questions": 6,
+              "retrieval_recall": 0.8333,
+              "evidence_hit_rate": 0.8333
+            },
+            "2309.02236_part_2": {
+              "questions": 10,
+              "retrieval_recall": 0.4,
+              "evidence_hit_rate": 0.4
+            },
+            "2307.10959": {
+              "questions": 5,
+              "retrieval_recall": 0.6,
+              "evidence_hit_rate": 0.6
+            },
+            "2305.11283_part_1": {
+              "questions": 13,
+              "retrieval_recall": 0.1538,
+              "evidence_hit_rate": 0.1538
+            },
+            "2502.13283_part_1": {
+              "questions": 7,
+              "retrieval_recall": 0.4286,
+              "evidence_hit_rate": 0.4286
+            },
+            "2411.17668": {
+              "questions": 6,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "2412.14310": {
+              "questions": 8,
+              "retrieval_recall": 0.625,
+              "evidence_hit_rate": 0.625
+            },
+            "2402.01258": {
+              "questions": 6,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "0000.0001": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "2507.7811": {
+              "questions": 12,
+              "retrieval_recall": 0.0833,
+              "evidence_hit_rate": 0.0833
+            },
+            "2503.13599": {
+              "questions": 8,
+              "retrieval_recall": 0.25,
+              "evidence_hit_rate": 0.25
+            },
+            "2309.15922": {
+              "questions": 3,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2111.01267": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "2404.07704": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "1105.6063": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "0000.0002": {
+              "questions": 2,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2307.08563": {
+              "questions": 5,
+              "retrieval_recall": 0.4,
+              "evidence_hit_rate": 0.4
+            },
+            "2505.18074": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "1801.04273": {
+              "questions": 4,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "0000.0004": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "0011047": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "2310.20045": {
+              "questions": 9,
+              "retrieval_recall": 0.2222,
+              "evidence_hit_rate": 0.2222
+            },
+            "0000.0003": {
+              "questions": 3,
+              "retrieval_recall": 0.3333,
+              "evidence_hit_rate": 0.3333
+            },
+            "2401.09908": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "1304.1806": {
+              "questions": 2,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "2004.01171": {
+              "questions": 4,
+              "retrieval_recall": 0.75,
+              "evidence_hit_rate": 0.75
+            },
+            "2010.06947": {
+              "questions": 4,
+              "retrieval_recall": 1.0,
+              "evidence_hit_rate": 1.0
+            },
+            "0000.0000": {
+              "questions": 3,
+              "retrieval_recall": 0.6667,
+              "evidence_hit_rate": 0.6667
+            },
+            "group_travel_planner": {
+              "questions": 100,
+              "retrieval_recall": 0.71,
+              "evidence_hit_rate": 0.73
+            },
+            "progressive_search": {
+              "questions": 100,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 0.016,
+          "semantic_coverage_rate": 0.016,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 10
+          },
+          "mean_semantic_score": 0.4654,
+          "semantic_pass_rate": 0.4,
+          "mean_faithfulness_score": 0.4,
+          "mean_context_relevance_score": 0.5962,
+          "mean_answer_correctness_score": 0.4,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 1.0,
+            "mean_retrieval_recall": 0.4,
+            "mean_semantic_score": 0.4654
+          }
+        }
+      }
+    },
+    "records": 3130
+  }
+}

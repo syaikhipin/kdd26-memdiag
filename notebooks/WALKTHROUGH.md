@@ -36,6 +36,21 @@ Run the notebooks in this order:
 10_external_testing_integrations.ipynb  # optional maintainer notebook
 ```
 
+Open the notebooks in Colab from GitHub:
+
+| # | Colab link |
+|---:|---|
+| 1 | [Open notebook 1 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/1_setup_and_timeline.ipynb) |
+| 2 | [Open notebook 2 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/2_dataset_registry_and_downloads.ipynb) |
+| 3 | [Open notebook 3 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/3_memory_architectures.ipynb) |
+| 4 | [Open notebook 4 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/4_three_probe_diagnostics.ipynb) |
+| 5 | [Open notebook 5 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/5_full_real_benchmark.ipynb) |
+| 6 | [Open notebook 6 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/6_visualization_dashboard.ipynb) |
+| 7 | [Open notebook 7 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/7_autoresearch_agent_loop.ipynb) |
+| 8 | [Open notebook 8 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/8_kdd_timeline_fit_analysis.ipynb) |
+| 9 | [Open notebook 9 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/9_colab_guidance_and_next_steps.ipynb) |
+| 10 | [Open notebook 10 in Colab](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/10_external_testing_integrations.ipynb) |
+
 Executed local copies are saved as:
 
 ```text

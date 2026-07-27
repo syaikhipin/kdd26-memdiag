@@ -229,14 +229,14 @@ LLM-based techniques use an OpenAI-compatible endpoint; offline fallbacks are al
 <h3>Phase 1 notebooks (8)</h3>
 <table>
 <tr><th>#</th><th>Notebook</th><th>Covers</th><th>LLM demos</th></tr>
-<tr><td>01</td><td><code>01_short_term_memory</code></td><td>Buffer, sliding, summary, token budget</td><td>03 summary</td></tr>
-<tr><td>02</td><td><code>02_long_term_memory</code></td><td>Vector, entity, KG, episodic, semantic, procedural</td><td>07 entity</td></tr>
-<tr><td>03</td><td><code>03_cognitive_architectures</code></td><td>Working, hierarchical, consolidation, forgetting</td><td>via providers</td></tr>
-<tr><td>04</td><td><code>04_retrieval_multi_agent</code></td><td>Retrieval patterns, cross-session, multi-agent, tools</td><td>&mdash;</td></tr>
-<tr><td>05</td><td><code>05_frameworks</code></td><td>Graphiti, Mem0, Letta, Zep (descriptions)</td><td>&mdash;</td></tr>
-<tr><td>06</td><td><code>06_evaluation_production</code></td><td>Evaluation, benchmarks, production</td><td>&mdash;</td></tr>
-<tr><td>07</td><td><code>07_capstone</code></td><td>4 architectures compared on one conversation</td><td>via providers</td></tr>
-<tr><td>08</td><td><code>08_exercise</code></td><td><strong>Hands-on:</strong> build a support-agent memory system</td><td>yes</td></tr>
+<tr><td>01</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/01_short_term_memory.ipynb"><code>01_short_term_memory</code> 🔬</a></td><td>Buffer, sliding, summary, token budget</td><td>03 summary</td></tr>
+<tr><td>02</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/02_long_term_memory.ipynb"><code>02_long_term_memory</code> 🔬</a></td><td>Vector, entity, KG, episodic, semantic, procedural</td><td>07 entity</td></tr>
+<tr><td>03</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/03_cognitive_architectures.ipynb"><code>03_cognitive_architectures</code> 🔬</a></td><td>Working, hierarchical, consolidation, forgetting</td><td>via providers</td></tr>
+<tr><td>04</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/04_retrieval_multi_agent.ipynb"><code>04_retrieval_multi_agent</code> 🔬</a></td><td>Retrieval patterns, cross-session, multi-agent, tools</td><td>&mdash;</td></tr>
+<tr><td>05</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/05_frameworks.ipynb"><code>05_frameworks</code> 🔬</a></td><td>Graphiti, Mem0, Letta, Zep (descriptions)</td><td>&mdash;</td></tr>
+<tr><td>06</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/06_evaluation_production.ipynb"><code>06_evaluation_production</code> 🔬</a></td><td>Evaluation, benchmarks, production</td><td>&mdash;</td></tr>
+<tr><td>07</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/07_capstone.ipynb"><code>07_capstone</code> 🔬</a></td><td>4 architectures compared on one conversation</td><td>via providers</td></tr>
+<tr><td>08</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/08_exercise.ipynb"><code>08_exercise</code> 🔬</a></td><td><strong>Hands-on:</strong> build a support-agent memory system</td><td>yes</td></tr>
 </table>
 <h2 id="phase2"><span class="pill p2">Phase 2</span> Public Datasets (60 min, offline)</h2>
 <p><strong>Goal:</strong> diagnose retrieval vs utilization failures on real benchmarks, then benchmark
@@ -255,11 +255,11 @@ retrieved" &mdash; making utilization just retrieval in disguise. Our 3-arm read
 <h3>Phase 2 notebooks (5)</h3>
 <table>
 <tr><th>#</th><th>Notebook</th><th>What</th><th>Time</th></tr>
-<tr><td>01</td><td><code>diagnostic_framework</code></td><td>Exercise 1: diagnose failures</td><td>1.4s</td></tr>
-<tr><td>02</td><td><code>utilization_lab</code></td><td>3-arm utilization lab + inspect a failure</td><td>&lt;1s</td></tr>
-<tr><td>03</td><td><code>benchmarking</code></td><td>Exercise 2: benchmark providers</td><td>4.2s</td></tr>
-<tr><td>04</td><td><code>llm_as_judge_lab</code></td><td><strong>Live LLM judge</strong> vs offline proxy</td><td>25s</td></tr>
-<tr><td>05</td><td><code>question_type_analysis</code></td><td>Per-type: which architecture wins where</td><td>&lt;1s</td></tr>
+<tr><td>01</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase2_public_datasets/01_diagnostic_framework.ipynb"><code>diagnostic_framework</code> 🔬</a></td><td>Exercise 1: diagnose failures</td><td>1.4s</td></tr>
+<tr><td>02</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase2_public_datasets/02_utilization_lab.ipynb"><code>utilization_lab</code> 🔬</a></td><td>3-arm utilization lab + inspect a failure</td><td>&lt;1s</td></tr>
+<tr><td>03</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase2_public_datasets/03_benchmarking.ipynb"><code>benchmarking</code> 🔬</a></td><td>Exercise 2: benchmark providers</td><td>4.2s</td></tr>
+<tr><td>04</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase2_public_datasets/04_llm_as_judge_lab.ipynb"><code>llm_as_judge_lab</code> 🔬</a></td><td><strong>Live LLM judge</strong> vs offline proxy</td><td>25s</td></tr>
+<tr><td>05</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase2_public_datasets/05_question_type_analysis.ipynb"><code>question_type_analysis</code> 🔬</a></td><td>Per-type: which architecture wins where</td><td>&lt;1s</td></tr>
 </table>
 <h2 id="phase3"><span class="pill p3">Phase 3</span> Autoresearch (60 min, Modal L4)</h2>
 <p><strong>Goal:</strong> run a real LLM-pretraining sweep on a cloud GPU, aggregate across groups,
@@ -275,10 +275,10 @@ and diagnose memory failures.</p>
 <h3>Phase 3 notebooks (4)</h3>
 <table>
 <tr><th>#</th><th>Notebook</th><th>What</th><th>Time</th></tr>
-<tr><td>01</td><td><code>autoresearch_loop</code></td><td>The loop + why we split into groups</td><td>&lt;1s</td></tr>
-<tr><td>02</td><td><code>run_your_group</code></td><td>Run YOUR slice on Modal L4</td><td>~14.5 min</td></tr>
-<tr><td>03</td><td><code>aggregate_and_debug</code></td><td>Aggregate sweep + keep/revise/discard</td><td>8s</td></tr>
-<tr><td>04</td><td><code>memory_diagnostic</code></td><td>5-condition interventional diagnostic</td><td>pilot</td></tr>
+<tr><td>01</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase3_autoresearch/01_autoresearch_loop.ipynb"><code>autoresearch_loop</code> 🔬</a></td><td>The loop + why we split into groups</td><td>&lt;1s</td></tr>
+<tr><td>02</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase3_autoresearch/02_run_your_group.ipynb"><code>run_your_group</code> 🔬</a></td><td>Run YOUR slice on Modal L4</td><td>~14.5 min</td></tr>
+<tr><td>03</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase3_autoresearch/03_aggregate_and_debug.ipynb"><code>aggregate_and_debug</code> 🔬</a></td><td>Aggregate sweep + keep/revise/discard</td><td>8s</td></tr>
+<tr><td>04</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase3_autoresearch/04_memory_diagnostic.ipynb"><code>memory_diagnostic</code> 🔬</a></td><td>5-condition interventional diagnostic</td><td>pilot</td></tr>
 </table>
 <h2 id="results">Results (honest, tutorial-scale)</h2>
 <div class="note"><strong>Teaching sample</strong> (LoCoMo 40 / LongMemEval 50 / MemoryArena 86 questions).

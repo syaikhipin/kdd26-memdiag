@@ -279,7 +279,7 @@ and diagnose memory failures.</p>
 </table>
 <h2 id="results">Results (honest, tutorial-scale)</h2>
 <div class="note"><strong>Teaching sample</strong> (LoCoMo 40 / LongMemEval 50 / MemoryArena 86 questions).
-Full provenance in <a href="results/RESULTS_MANIFEST.md">RESULTS_MANIFEST.md</a>.</div>
+Full provenance in the note below.</div>
 <h3>LoCoMo &mdash; where the 4 architectures are distinct</h3>
 <table>
 <tr><th>Strategy</th><th>Precision</th><th>Recall</th><th>Hit</th><th>Memory size</th></tr>
@@ -337,6 +337,15 @@ novelty scores of generated ideas (Phase 3 autoresearch-agent loop).</figcaption
 </table>
 <p>Memory helps by <strong>+10pp</strong> accuracy (provider vs no-memory). The oracle ceiling
 (0.60) shows room for improvement &mdash; better retrieval/representation could close the gap.</p>
+
+<div class="note" style="margin-top:12px">
+<strong>Provenance:</strong> The committed sample was produced by the rebuilt providers
+(4 genuine architectures, non-circular metrics). Scale: LoCoMo 20 questions,
+LongMemEval 50 items (stratified subset), MemoryArena 50 items (formal_reasoning_phys).
+This is a <strong>teaching sample</strong>, not paper-scale. Pre-refactor numbers
+were removed (they used prefix-string strategies + circular utilization metrics).
+</div>
+
 <h2 id="cli">CLI Package</h2>
 <pre><code>pip install -e source # offline deps
 pip install -e "source[api]" # + openai/tiktoken
@@ -360,6 +369,22 @@ proxy misses. This is the proposal's headline evaluation protocol, demonstrated 
 <div class="tip"><strong>Key finding:</strong> any history cuts OOM proposals by 76%.
 <strong>Retrieval filtering is counterproductive</strong> (loses cross-task context, increases OOMs 2.5x).
 Structured rules approach oracle performance.</div>
+
+<h2 id="schedule">3-Phase Schedule (180 min)</h2>
+<div class="card">
+<table>
+<tr><th>Time</th><th>Phase</th><th>Activity</th></tr>
+<tr><td>0:00&ndash;1:00</td><td><span class="pill p1">1</span></td><td>30 memory techniques (8 notebooks) + hands-on exercise</td></tr>
+<tr><td>1:00&ndash;1:10</td><td>&mdash;</td><td>Break (install Modal for Phase 3)</td></tr>
+<tr><td>1:10&ndash;2:10</td><td><span class="pill p2">2</span></td><td>Diagnose + benchmark (5 notebooks) + LLM-as-judge lab + type analysis</td></tr>
+<tr><td>2:10&ndash;3:00</td><td><span class="pill p3">3</span></td><td>Autoresearch groups (4 notebooks) + memory diagnostic + presentations</td></tr>
+</table>
+<p style="font-size:.85em;color:var(--muted);margin-top:8px">
+Prerequisites: Python 3.10+, 8 GB RAM, no GPU for Phases 1&ndash;2. Phase 3 uses Modal L4 (~$0.5&ndash;1/group).
+An OpenAI-compatible API key enables richer LLM demos in Phase 1 (offline fallbacks always available).
+</p>
+</div>
+
 <h2 id="timing">Timing &amp; Pacing</h2>
 <table>
 <tr><th>Phase</th><th>Execution</th><th>Speech (3s/cell)</th><th>Total</th></tr>
@@ -376,7 +401,7 @@ heuristics. Phase 2 is fully offline. Phase 3 uses Modal (cloud GPU).</p></div>
 <div class="collapsible" onclick="toggleCollapsible(this)">Do I need a GPU?</div>
 <div class="collapsible-content"><p>No for Phases 1-2. Phase 3 uses a cloud L4 via Modal (~$0.5-1/group, ~15 min).</p></div>
 <div class="collapsible" onclick="toggleCollapsible(this)">Are these results publishable?</div>
-<div class="collapsible-content"><p>No &mdash; tutorial-scale (40-86 questions). Full-scale needs complete datasets + Modal. See RESULTS_MANIFEST.md.</p></div>
+<div class="collapsible-content"><p>No &mdash; tutorial-scale (40-86 questions). Full-scale needs complete datasets + Modal.</p></div>
 <div class="collapsible" onclick="toggleCollapsible(this)">Can I use the providers in my project?</div>
 <div class="collapsible-content"><p>Yes &mdash; <code>pip install -e source</code> then <code>from providers import build_provider</code>. MIT-licensed.</p></div>
 <h2 id="credits">Authors &amp; Credits</h2>
@@ -416,12 +441,12 @@ implementations inspired by techniques 06/10/09/13. MIT-licensed.</li>
 
 <div class="note"><strong>This is a tutorial, not a research paper.</strong> Results are tutorial-scale
 samples (LoCoMo 40 / LongMemEval 50 / MemoryArena 86 questions). Full-scale runs require the
-complete datasets + the Modal GPU runner. See <code>results/RESULTS_MANIFEST.md</code> for provenance.</div>
+complete datasets + the Modal GPU runner. See the provenance note above.</div>
 <div class="footer">
 <p>KDD'26 &middot; Jeju Island &middot; August 2026 &middot;
 <a href="#quick">Run Guide</a> &middot; <a href="#schedule">Schedule</a> &middot;
 <a href="#faq">FAQ</a> &middot;
-<a href="slides/main.pdf">Slides (PDF)</a></p>
+Slides (see repo /slides/)</p>
 </div>
 </div>
 </div>

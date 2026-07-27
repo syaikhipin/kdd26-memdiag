@@ -1,5 +1,7 @@
 # Phase 2 - Public datasets (3 independent notebooks)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/experiment/github_submission/phase2_public_datasets/)
+
 Each notebook is **self-contained** — open any one in Google Colab (or locally) and run top-to-bottom. The setup cell auto-clones the repo + installs deps in Colab.
 
 | Notebook | Covers |

@@ -1,5 +1,7 @@
 # Phase 1 — 30 agent-memory techniques (8 independent notebooks)
 
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/experiment/github_submission/phase1_memory_architectures/)
+
 Each notebook is **self-contained** — open any one in Google Colab (or locally) and run top-to-bottom.
 The setup cell auto-clones the repo + installs deps, and uses the LLM gateway when a key is set
 (falls back to offline heuristics without one).

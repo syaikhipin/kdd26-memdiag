@@ -62,7 +62,7 @@ img{width:100%;display:block}
 <body>
 <div class="layout">
 <nav class="sidebar" id="sidebar">
- <div class="logo">\u{1F9E0} KDD'26 Tutorial</div>
+ <div class="logo">🧠 KDD'26 Tutorial</div>
  <h4>Getting Started</h4>
  <a href="#overview" class="active">Overview</a>
  <a href="#what">What You'll Learn</a>
@@ -85,6 +85,56 @@ img{width:100%;display:block}
 <h1 id="overview">Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research Agents: A Low-Resource Framework</h1>
 <p><strong>A hands-on KDD'26 tutorial</strong> &mdash; diagnose, benchmark, and improve memory systems for
 autonomous research agents. Everything runs on a laptop; no GPU required for Phases 1&ndash;2.</p>
+
+<div class="card" style="background:var(--card);border-left:4px solid var(--accent)">
+<p><strong>KDD'26 &middot; Jeju Island, Republic of Korea &middot; August 9&ndash;13, 2026</strong></p>
+<p style="font-size:.95em;margin-top:8px">
+ <strong>Nur Arifin Akbar</strong><sup>1</sup> &middot;
+ <strong>Rahool Dembani</strong><sup>2</sup> &middot;
+ <strong>Gregorius Airlangga</strong><sup>3</sup> &middot;
+ <strong>Ripto Mukti Wibowo</strong><sup>3</sup><br>
+ <strong>Biagio Lenzitti</strong><sup>1</sup> &middot;
+ <strong>Domenico Tegolo</strong><sup>1</sup>
+</p>
+<p style="font-size:.82em;color:var(--muted);margin-top:4px">
+ <sup>1</sup> Universit&aacute; degli Studi di Palermo, Italy &nbsp;
+ <sup>2</sup> Singularlogic, Athens, Greece &nbsp;
+ <sup>3</sup> Atma Jaya Catholic University of Indonesia, Jakarta
+</p>
+<p style="font-size:.82em;color:var(--muted)">
+ DOI: 10.1145/3770855.3816477 &middot; ISBN: 979-8-4007-2259-2/2026/08
+</p>
+</div>
+
+<h3>Tutorial Workflow</h3>
+<div class="card" style="font-family:monospace;font-size:.82em;line-height:1.8;background:var(--card)">
+<pre style="background:none;border:none;padding:0;margin:0">
+┌─────────────────────────────────────────────────────────────────────┐
+│                    3-PHASE HANDS-ON TUTORIAL                        │
+├─────────────┬──────────────────┬───────────────────────────────────┤
+│  Phase 1    │    Phase 2       │          Phase 3                  │
+│  (60 min)   │    (60 min)      │          (60 min)                 │
+│             │                  │                                   │
+│  30 memory  │  Diagnose +      │  Real LLM-pretraining             │
+│  techniques │  Benchmark       │  sweep on Modal L4                │
+│  (6 families│  on public data  │  (groups split by depth/batch)    │
+│  × 8 books) │  (5 notebooks)   │  (4 notebooks + diagnostic)       │
+│             │                  │                                   │
+│  LLM demos  │  3-probe diag.   │  Memory diagnostic:               │
+│  (offline   │  Utilization lab │  5 conditions × K=5 probes        │
+│   fallback) │  LLM-as-judge    │  (M0→M4, real LLM agent)         │
+│             │  Type analysis   │                                   │
+├─────────────┼──────────────────┼───────────────────────────────────┤
+│     Agent Memory       │     Memory Diagnosis     │   Autoresearch  │
+│     Techniques          │     & Benchmarking       │   Memory Debug  │
+│     (Apache-2.0)        │     (MIT)                │   (Modal L4)    │
+└─────────────────────────┴──────────────────────────┴────────────────┘
+         ↑                         ↑                        ↑
+    4 genuine providers:  verbatim | extracted_facts | episodic | hybrid
+    Honest metrics:  util ≠ hit  |  semantic_pass ≠ hit  |  3-arm reader
+</pre>
+</div>
+
 <div class="card">
 <p><strong>You are here:</strong> this is the complete documentation. Follow the sections in the sidebar
 left-to-right, or jump to any phase.</p>
@@ -250,11 +300,43 @@ No single strategy dominates.</p>
 <tr><td>10</td><td>32</td><td>1.661</td></tr>
 </table>
 <div class="figures">
-<figure><img src="results/figures/figure_real_retrieval.png" alt="Retrieval"><figcaption>Retrieval diagnostics</figcaption></figure>
-<figure><img src="results/figures/figure_locomo_retrieval.png" alt="LoCoMo"><figcaption>LoCoMo detail</figcaption></figure>
-<figure><img src="results/figures/figure_failures.png" alt="Failures"><figcaption>Failure modes</figcaption></figure>
-<figure><img src="results/figures/figure_memory_growth.png" alt="Growth"><figcaption>Memory growth</figcaption></figure>
+<figure><img src="results/figures/figure_real_retrieval.png" alt="Retrieval diagnostics">
+<figcaption><strong>Retrieval diagnostics.</strong> Evidence hit rate across datasets &amp; strategies.
+No single architecture dominates &mdash; the core benchmarking message.</figcaption></figure>
+<figure><img src="results/figures/figure_locomo_retrieval.png" alt="LoCoMo retrieval">
+<figcaption><strong>LoCoMo detail.</strong> The long-conversation setting where architectures differ most.
+Verbatim hits 0.30; episodic misses (session summaries lose specific dia_ids).</figcaption></figure>
+<figure><img src="results/figures/figure_failures.png" alt="Failure modes">
+<figcaption><strong>Failure analysis.</strong> Breakdown by failure category:
+retrieval_miss, partial_evidence, retrieved_but_answer_absent, no_memory_available.</figcaption></figure>
+<figure><img src="results/figures/figure_memory_growth.png" alt="Memory growth">
+<figcaption><strong>Memory growth.</strong> Storage cost per architecture:
+verbatim (419), extracted_facts (1282), episodic (19), hybrid (438). 10&times; difference.</figcaption></figure>
+<figure><img src="results/figures/figure_semantic_scores.png" alt="Semantic scores">
+<figcaption><strong>Semantic scores.</strong> Non-circular token-overlap evaluation
+(context-only; never reads evidence_hit). Decoupled from retrieval metrics.</figcaption></figure>
+<figure><img src="results/figures/figure_semantic_vs_retrieval.png" alt="Semantic vs retrieval">
+<figcaption><strong>Semantic vs retrieval alignment.</strong> Shows whether stronger retrieval
+recall translates into more faithful/evaluable answers. The gap is the utilization signal.</figcaption></figure>
+<figure><img src="results/figures/figure_evaluator_coverage.png" alt="Evaluator coverage">
+<figcaption><strong>Evaluator coverage.</strong> Offline semantic evaluation coverage
+across all datasets and strategies &mdash; complete (1.000) for the tutorial sample.</figcaption></figure>
+<figure><img src="results/figures/figure_idea_novelty.png" alt="Idea novelty">
+<figcaption><strong>Idea novelty.</strong> Autonomous research-agent case study:
+novelty scores of generated ideas (Phase 3 autoresearch-agent loop).</figcaption></figure>
 </div>
+
+<h3>3-arm utilization lab results</h3>
+<table>
+<tr><th>Strategy</th><th>p0 (baseline)</th><th>Oracle (ceiling)</th><th>Provider</th><th>Net gain</th><th>Beneficial</th><th>Harmful</th></tr>
+<tr><td>no_memory</td><td>0.25</td><td>0.60</td><td>0.25</td><td>0.00</td><td>0</td><td>0</td></tr>
+<tr><td>verbatim</td><td>0.25</td><td>0.60</td><td><strong>0.35</strong></td><td><strong>+0.10</strong></td><td>7</td><td>3</td></tr>
+<tr><td>extracted_facts</td><td>0.25</td><td>0.60</td><td>0.325</td><td>+0.075</td><td>6</td><td>3</td></tr>
+<tr><td>episodic</td><td>0.25</td><td>0.60</td><td><strong>0.35</strong></td><td><strong>+0.10</strong></td><td>5</td><td>1</td></tr>
+<tr><td>hybrid</td><td>0.25</td><td>0.60</td><td><strong>0.35</strong></td><td><strong>+0.10</strong></td><td>7</td><td>3</td></tr>
+</table>
+<p>Memory helps by <strong>+10pp</strong> accuracy (provider vs no-memory). The oracle ceiling
+(0.60) shows room for improvement &mdash; better retrieval/representation could close the gap.</p>
 <h2 id="cli">CLI Package</h2>
 <pre><code>pip install -e source # offline deps
 pip install -e "source[api]" # + openai/tiktoken
@@ -297,14 +379,44 @@ heuristics. Phase 2 is fully offline. Phase 3 uses Modal (cloud GPU).</p></div>
 <div class="collapsible-content"><p>No &mdash; tutorial-scale (40-86 questions). Full-scale needs complete datasets + Modal. See RESULTS_MANIFEST.md.</p></div>
 <div class="collapsible" onclick="toggleCollapsible(this)">Can I use the providers in my project?</div>
 <div class="collapsible-content"><p>Yes &mdash; <code>pip install -e source</code> then <code>from providers import build_provider</code>. MIT-licensed.</p></div>
-<h2 id="credits">Credits</h2>
+<h2 id="credits">Authors &amp; Credits</h2>
+<div class="card">
+<h3>Tutorial Authors</h3>
+<table>
+<tr><th>Name</th><th>Affiliation</th></tr>
+<tr><td><strong>Nur Arifin Akbar</strong></td><td>Universit&aacute; degli Studi di Palermo, Italy</td></tr>
+<tr><td><strong>Rahool Dembani</strong></td><td>Singularlogic, Athens, Greece</td></tr>
+<tr><td><strong>Gregorius Airlangga</strong></td><td>Atma Jaya Catholic University of Indonesia</td></tr>
+<tr><td><strong>Ripto Mukti Wibowo</strong></td><td>Atma Jaya Catholic University of Indonesia</td></tr>
+<tr><td><strong>Biagio Lenzitti</strong></td><td>Universit&aacute; degli Studi di Palermo, Italy</td></tr>
+<tr><td><strong>Domenico Tegolo</strong></td><td>Universit&aacute; degli Studi di Palermo, Italy</td></tr>
+</table>
+<p style="font-size:.85em;color:var(--muted);margin-top:8px">
+Funded by the European Union's Horizon research and innovation programme under the
+Marie Sk&lstrok;odowska-Curie grant agreement No. 101073381.
+</p>
+</div>
+
+<h3>Software &amp; Data Attribution</h3>
 <ul>
-<li><strong>Phase 1</strong> adapted from <em>Agent Memory Techniques</em> by Nir Diamant
-(<a href="https://github.com/NirDiamant/Agent_Memory_Techniques">GitHub</a>, Apache-2.0).</li>
-<li>All other code is original (MIT). See <code>source/pyproject.toml</code>.</li>
-<li>Datasets retain upstream licenses (<code>data/README.md</code>).</li>
+<li><strong>Phase 1 techniques</strong> adapted from <em>Agent Memory Techniques</em> by Nir Diamant
+(<a href="https://github.com/NirDiamant/Agent_Memory_Techniques">GitHub</a>, Apache-2.0).
+Six curated notebooks vendored under <code>tutorial/phase1_memory_architectures/amt_curated/</code>
+with full NOTICE.</li>
+<li><strong>Memory providers</strong> (verbatim, extracted_facts, episodic, hybrid) &mdash; original
+implementations inspired by techniques 06/10/09/13. MIT-licensed.</li>
+<li><strong>LoCoMo</strong> &mdash; snap-research/locomo (research use).</li>
+<li><strong>LongMemEval</strong> &mdash; xiaowu0162/longmemeval-cleaned (research use).</li>
+<li><strong>MemoryArena</strong> &mdash; ZexueHe/memoryarena (research use).</li>
+<li><strong>Autoresearch</strong> &mdash; Karpathy's nanochat-derived pretraining loop
+(<a href="https://github.com/syaikhipin/kdd26-memdiag">our fork</a>).</li>
+<li><strong>CLI package</strong> (<code>memory-diagnostic-toolkit</code>) &mdash; original, MIT.</li>
+<li>All other code is original to the tutorial authors.</li>
 </ul>
-<div class="note"><strong>This is a tutorial, not a research paper.</strong> Results are tutorial-scale.</div>
+
+<div class="note"><strong>This is a tutorial, not a research paper.</strong> Results are tutorial-scale
+samples (LoCoMo 40 / LongMemEval 50 / MemoryArena 86 questions). Full-scale runs require the
+complete datasets + the Modal GPU runner. See <code>results/RESULTS_MANIFEST.md</code> for provenance.</div>
 <div class="footer">
 <p>KDD'26 &middot; Jeju Island &middot; August 2026 &middot;
 <a href="RUN.html">Run Guide</a> &middot; <a href="SCHEDULE.md">Schedule</a> &middot;

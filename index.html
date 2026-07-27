@@ -56,6 +56,8 @@ li{margin:4px 0}
 figure{margin:0;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
 figcaption{padding:8px 12px;font-size:.85em;color:var(--muted)}
 img{width:100%;display:block}
+abbr{cursor:help;border-bottom:1px dotted var(--muted);text-decoration:none}
+abbr:hover{color:var(--accent);border-bottom-color:var(--accent)}
 @media(max-width:768px){.sidebar{display:none}.main{margin-left:0;padding:16px}}
 </style>
 </head>
@@ -74,17 +76,18 @@ img{width:100%;display:block}
  <a href="#phase3">Phase 3: Autoresearch</a>
  <h4>Reference</h4>
  <a href="#results">Results</a>
- <a href="#cli">CLI Package</a>
+ <a href="#cli"><abbr title="Command-Line Interface">CLI</abbr> Package</a>
  <a href="#judge">LLM-as-Judge</a>
  <a href="#diagnostic">Memory Diagnostic</a>
  <a href="#timing">Timing & Pacing</a>
  <a href="#faq">FAQ</a>
+ <a href="#glossary">Glossary</a>
  <a href="#credits">Credits</a>
 </nav>
 <div class="main">
 <h1 id="overview">Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research Agents: A Low-Resource Framework</h1>
 <p><strong>A hands-on KDD'26 tutorial</strong> &mdash; diagnose, benchmark, and improve memory systems for
-autonomous research agents. Everything runs on a laptop; no GPU required for Phases 1&ndash;2.</p>
+autonomous research agents. Everything runs on a laptop; no <abbr title="Graphics Processing Unit: used here for parallel computation">GPU</abbr> required for Phases 1&ndash;2.</p>
 
 <div class="card" style="background:var(--card);border-left:4px solid var(--accent)">
 <p><strong>KDD'26 &middot; Jeju Island, Republic of Korea &middot; August 9&ndash;13, 2026</strong></p>
@@ -120,7 +123,7 @@ autonomous research agents. Everything runs on a laptop; no GPU required for Pha
 │  (6 families│  on public data  │  (groups split by depth/batch)    │
 │  × 8 books) │  (5 notebooks)   │  (4 notebooks + diagnostic)       │
 │             │                  │                                   │
-│  LLM demos  │  3-probe diag.   │  Memory diagnostic:               │
+│  <abbr title="Large Language Model">LLM</abbr> demos  │  3-probe diag.   │  Memory diagnostic:               │
 │  (offline   │  Utilization lab │  5 conditions × K=5 probes        │
 │   fallback) │  LLM-as-judge    │  (M0→M4, real LLM agent)         │
 │             │  Type analysis   │                                   │
@@ -176,7 +179,7 @@ cloud notebook — the setup cell auto-clones the repo and installs dependencies
 <tr><td><strong>Python</strong></td><td>3.10 or later</td></tr>
 <tr><td><strong>RAM</strong></td><td>8 GB+ (16 GB recommended for Phase 3)</td></tr>
 <tr><td><strong>GPU</strong></td><td>Not required for Phases 1&ndash;2. Phase 3 uses a cloud L4 (Modal).</td></tr>
-<tr><td><strong>API key (Phase 1)</strong></td><td>Free OpenAI-compatible endpoint: <code>OPENAI_API_KEY</code> + <code>OPENAI_BASE_URL=https://api.openai.com/v1</code></td></tr>
+<tr><td><strong><abbr title="Application Programming Interface">API</abbr> key (Phase 1)</strong></td><td>Free OpenAI-compatible endpoint: <code>OPENAI_API_KEY</code> + <code>OPENAI_BASE_URL=https://api.openai.com/v1</code></td></tr>
 <tr><td><strong>Modal (Phase 3)</strong></td><td><code>pip install modal &amp;&amp; modal setup</code> (~$0.5&ndash;1/group)</td></tr>
 </table>
 <h3>Install</h3>
@@ -242,7 +245,7 @@ the 4 providers. No API key needed.</p>
 <div class="card">
 <table>
 <tr><th>Probe</th><th>Measures</th><th>How</th></tr>
-<tr><td><strong>1. Retrieval relevance</strong></td><td>Did the system retrieve the right evidence?</td><td>P/R/F1 vs gold evidence IDs</td></tr>
+<tr><td><strong>1. Retrieval relevance</strong></td><td>Did the system retrieve the right evidence?</td><td>P/R/<abbr title="F1 score: harmonic mean of precision and recall">F1</abbr> vs gold evidence IDs</td></tr>
 <tr><td><strong>2. Context utilization</strong></td><td>Did the agent <em>use</em> the memory?</td><td>3-arm reader (no-context / oracle / provider)</td></tr>
 <tr><td><strong>3. Failure root-cause</strong></td><td>Where did it break?</td><td>retrieval_miss / partial / retrieved-but-unused</td></tr>
 </table>
@@ -266,7 +269,7 @@ and diagnose memory failures.</p>
 <tr><th>Group</th><th>Configs (depth, batch)</th><th>Why</th></tr>
 <tr><td>A</td><td>(4,32), (6,32)</td><td>Shallow, safe</td></tr>
 <tr><td>B</td><td>(8,32), (10,32)</td><td>Medium depth</td></tr>
-<tr><td>C</td><td>(12,16), (14,16)</td><td>Deep &mdash; batch 16 recovers the OOM</td></tr>
+<tr><td>C</td><td>(12,16), (14,16)</td><td>Deep &mdash; batch 16 recovers the <abbr title="Out Of Memory: a CUDA error when the GPU runs out of <abbr title="Video RAM: memory on the GPU">VRAM</abbr>">OOM</abbr></td></tr>
 <tr><td>D</td><td>(16,16), (18,16)</td><td>Deepest</td></tr>
 </table>
 <h3>Phase 3 notebooks (4)</h3>
@@ -293,7 +296,7 @@ Full provenance in the note below.</div>
 No single strategy dominates.</p>
 <h3>Autoresearch trace (real L4)</h3>
 <table>
-<tr><th>Depth</th><th>Batch</th><th>val_bpb (lower = better)</th></tr>
+<tr><th>Depth</th><th>Batch</th><th><abbr title="validation bits-per-byte: a compression metric for language models (lower is better)">val_bpb</abbr> (lower = better)</th></tr>
 <tr><td>4</td><td>32</td><td><strong>1.254</strong></td></tr>
 <tr><td>6</td><td>32</td><td>1.296</td></tr>
 <tr><td>8</td><td>32</td><td>1.433</td></tr>
@@ -404,6 +407,32 @@ heuristics. Phase 2 is fully offline. Phase 3 uses Modal (cloud GPU).</p></div>
 <div class="collapsible-content"><p>No &mdash; tutorial-scale (40-86 questions). Full-scale needs complete datasets + Modal.</p></div>
 <div class="collapsible" onclick="toggleCollapsible(this)">Can I use the providers in my project?</div>
 <div class="collapsible-content"><p>Yes &mdash; <code>pip install -e source</code> then <code>from providers import build_provider</code>. MIT-licensed.</p></div>
+
+<h2 id="glossary">Glossary</h2>
+<div class="card">
+<table>
+<tr><th>Term</th><th>Meaning</th></tr>
+<tr><td><abbr title="Retrieval-Augmented Generation">RAG</abbr></td><td>Retrieving context from a memory store to augment an LLM's answer</td></tr>
+<tr><td><abbr title="Large Language Model">LLM</abbr></td><td>Large Language Model (e.g. GPT, Claude, Llama)</td></tr>
+<tr><td><abbr title="Term Frequency-Inverse Document Frequency">TF-IDF</abbr></td><td>Lexical text similarity: matches by word overlap, not meaning</td></tr>
+<tr><td><abbr title="Out Of Memory">OOM</abbr></td><td>CUDA error when the GPU runs out of VRAM</td></tr>
+<tr><td><abbr title="validation bits-per-byte">val_bpb</abbr></td><td>Compression metric for language models (lower = better). Independent of vocabulary size.</td></tr>
+<tr><td><abbr title="Video RAM">VRAM</abbr></td><td>Memory on the GPU (e.g. 22 GB on an NVIDIA L4)</td></tr>
+<tr><td><abbr title="F1 score">F1</abbr></td><td>Harmonic mean of precision and recall. Balanced retrieval metric.</td></tr>
+<tr><td><abbr title="Precision">P</abbr></td><td>Of retrieved items, how many are relevant. High = few false positives.</td></tr>
+<tr><td><abbr title="Recall">R</abbr></td><td>Of relevant items, how many were retrieved. High = few misses.</td></tr>
+<tr><td><abbr title="Continuous Integration">CI</abbr></td><td>Automated testing on every code push (GitHub Actions)</td></tr>
+<tr><td><abbr title="Command-Line Interface">CLI</abbr></td><td>Run tools from the terminal (e.g. <code>diagnostic-framework diagnose</code>)</td></tr>
+<tr><td><abbr title="Graphics Processing Unit">GPU</abbr></td><td>Parallel processor for ML training. Phase 3 uses an NVIDIA L4 via Modal.</td></tr>
+<tr><td><abbr title="Scaled Dot-Product Attention">SDPA</abbr></td><td>PyTorch's built-in attention mechanism (replaces Hopper-only flash-attn-3)</td></tr>
+<tr><td>dia_id</td><td>Dialogue turn ID in LoCoMo (identifies a specific turn in a conversation)</td></tr>
+<tr><td>evidence_hit</td><td>Whether the system retrieved the gold evidence turn (an ID match)</td></tr>
+<tr><td>memory_utilized</td><td>Whether the agent actually used the retrieved memory (a content match, independent of evidence_hit)</td></tr>
+<tr><td>3-arm reader</td><td>The contrastive utilization probe: tests no-context / oracle / provider conditions</td></tr>
+<tr><td>provider</td><td>A memory architecture (verbatim, extracted_facts, episodic, hybrid)</td></tr>
+</table>
+</div>
+
 <h2 id="credits">Authors &amp; Credits</h2>
 <div class="card">
 <h3>Tutorial Authors</h3>

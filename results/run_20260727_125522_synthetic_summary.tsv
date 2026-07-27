@@ -1,0 +1,6 @@
+strategy	best	conv	redund	explore	retr_p	retr_r	util	lat_ms	cost	mem
+no_memory	0.557	None	0.000	1.000	0.000	0.000	0.000	0.01	0.3	0
+verbatim	0.577	None	0.000	1.000	0.000	0.000	0.667	0.05	0.4	3
+extracted_facts	0.577	None	0.000	1.000	0.000	0.000	0.667	0.02	0.4	3
+episodic	0.577	None	0.000	1.000	0.000	0.000	0.667	0.02	0.4	3
+hybrid	0.577	None	0.000	1.000	0.000	0.000	0.667	0.03	0.5	9

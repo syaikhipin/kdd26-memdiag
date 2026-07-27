@@ -1,0 +1,5 @@
+trial_id	depth	batch	val_bpb	status
+ar_trial_000	4	32	1.253309	ok
+ar_trial_001	6	32	1.296344	ok
+ar_trial_002	8	32	1.433032	ok
+ar_trial_003	10	32	1.661178	ok

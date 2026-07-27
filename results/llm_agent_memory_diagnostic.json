@@ -1,0 +1,921 @@
+{
+  "model": "dahono/claude-sonnet-4.5-free",
+  "n_episodes": 10,
+  "total_proposals": 80,
+  "total_ooms": 13,
+  "oom_classifications": {
+    "unpredictable": 12,
+    "inconclusive_placebo_changed": 1
+  },
+  "records": [
+    {
+      "ep": 0,
+      "step": 0,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 0,
+      "step": 1,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 0,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 0,
+      "step": 3,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 0,
+      "step": 4,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 0,
+      "step": 5,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 0,
+      "step": 6,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 0,
+      "step": 7,
+      "proposal": [
+        12,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 16}\n``` [FALLBACK]",
+      "classification": "ok"
+    },
+    {
+      "ep": 1,
+      "step": 0,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 1,
+      "step": 1,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 1,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 1,
+      "step": 3,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 1,
+      "step": 4,
+      "proposal": [
+        12,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 1,
+      "step": 5,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 1,
+      "step": 6,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 1,
+      "step": 7,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 2,
+      "step": 0,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 2,
+      "step": 1,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 2,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 2,
+      "step": 3,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 2,
+      "step": 4,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 2,
+      "step": 5,
+      "proposal": [
+        16,
+        16
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 16, \"batch_size\": 16}\n```",
+      "vram_predicted": 12399.2,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 2,
+      "step": 6,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 2,
+      "step": 7,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 3,
+      "step": 0,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 3,
+      "step": 1,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 3,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 3,
+      "step": 3,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 3,
+      "step": 4,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 3,
+      "step": 5,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 3,
+      "step": 6,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 3,
+      "step": 7,
+      "proposal": [
+        12,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 16}\n``` [FALLBACK]",
+      "classification": "ok"
+    },
+    {
+      "ep": 4,
+      "step": 0,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 4,
+      "step": 1,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 4,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 4,
+      "step": 3,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 4,
+      "step": 4,
+      "proposal": [
+        12,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 4,
+      "step": 5,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 4,
+      "step": 6,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 4,
+      "step": 7,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 5,
+      "step": 0,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 5,
+      "step": 1,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 5,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 5,
+      "step": 3,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 5,
+      "step": 4,
+      "proposal": [
+        12,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 5,
+      "step": 5,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 5,
+      "step": 6,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 5,
+      "step": 7,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 6,
+      "step": 0,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 6,
+      "step": 1,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 6,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 6,
+      "step": 3,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 6,
+      "step": 4,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 6,
+      "step": 5,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 6,
+      "step": 6,
+      "proposal": [
+        12,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 16}\n``` [FALLBACK]",
+      "classification": "ok"
+    },
+    {
+      "ep": 6,
+      "step": 7,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 16}\n``` [FALLBACK]",
+      "classification": "ok"
+    },
+    {
+      "ep": 7,
+      "step": 0,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 7,
+      "step": 1,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 7,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 7,
+      "step": 3,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 7,
+      "step": 4,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 7,
+      "step": 5,
+      "proposal": [
+        16,
+        16
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 16, \"batch_size\": 16}\n```",
+      "vram_predicted": 12399.2,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 7,
+      "step": 6,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 7,
+      "step": 7,
+      "proposal": [
+        18,
+        16
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 18, \"batch_size\": 16}\n```",
+      "vram_predicted": 16396.5,
+      "prior_failure": [
+        16,
+        16
+      ],
+      "placebo_proposal": [
+        2,
+        32
+      ],
+      "warned_proposal": [
+        2,
+        32
+      ],
+      "constrained_proposal": [
+        2,
+        32
+      ],
+      "classification": "inconclusive_placebo_changed"
+    },
+    {
+      "ep": 8,
+      "step": 0,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 8,
+      "step": 1,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 8,
+      "step": 2,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 8,
+      "step": 3,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 8,
+      "step": 4,
+      "proposal": [
+        12,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 8,
+      "step": 5,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 8,
+      "step": 6,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 8,
+      "step": 7,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 9,
+      "step": 0,
+      "proposal": [
+        6,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 9,
+      "step": 1,
+      "proposal": [
+        12,
+        32
+      ],
+      "is_oom": true,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+      "vram_predicted": null,
+      "classification": "unpredictable"
+    },
+    {
+      "ep": 9,
+      "step": 2,
+      "proposal": [
+        8,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 9,
+      "step": 3,
+      "proposal": [
+        10,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 9,
+      "step": 4,
+      "proposal": [
+        12,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 12, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 9,
+      "step": 5,
+      "proposal": [
+        4,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 9,
+      "step": 6,
+      "proposal": [
+        2,
+        32
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 2, \"batch_size\": 32}\n```",
+      "classification": "ok"
+    },
+    {
+      "ep": 9,
+      "step": 7,
+      "proposal": [
+        14,
+        16
+      ],
+      "is_oom": false,
+      "raw_response": "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+      "classification": "ok"
+    }
+  ]
+}

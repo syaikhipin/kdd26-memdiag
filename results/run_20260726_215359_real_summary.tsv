@@ -1,0 +1,5 @@
+dataset	strategy	questions	retr_p	retr_r	hit	util	lat_ms	cost	mem	sem_cov	sem	sem_pass	faith	ctx	ans
+MemoryArena	verbatim	20	0.950	0.950	0.950	0.950	0.03	2.4	1	1.000	0.445	0.300	0.474	0.385	0.474
+MemoryArena	extracted_facts	20	0.950	0.950	0.950	0.950	0.06	4.1	6	1.000	0.287	0.050	0.281	0.298	0.281
+MemoryArena	episodic	20	0.950	0.950	0.950	0.900	0.03	2.4	1	1.000	0.135	0.050	0.158	0.089	0.158
+MemoryArena	hybrid	20	0.950	0.950	0.950	0.950	0.06	2.4	2	1.000	0.445	0.300	0.474	0.385	0.474

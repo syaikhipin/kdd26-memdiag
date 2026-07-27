@@ -24,18 +24,18 @@ Open notebook 1 from the table above, then run the remaining notebooks in order.
 For a fast participant run, prefer the low-resource command from notebook 9:
 
 ```bash
-python experiment/run.py \
-  --mode real \
-  --backend offline \
-  --datasets locomo longmemeval memoryarena \
-  --longmemeval-files longmemeval_oracle.json \
-  --max-conversations 2 \
-  --max-questions 20 \
-  --max-items 100 \
-  --top-k 5 \
-  --eval-backend offline \
-  --eval-limit 50 \
-  --visualize
+python source/run.py \
+ --mode real \
+ --backend offline \
+ --datasets locomo longmemeval memoryarena \
+ --longmemeval-files longmemeval_oracle.json \
+ --max-conversations 2 \
+ --max-questions 20 \
+ --max-items 100 \
+ --top-k 5 \
+ --eval-backend offline \
+ --eval-limit 50 \
+ --visualize
 ```
 
 For the full local run, use the complete command in notebook 5. The full LongMemEval medium file is large, so it is better suited to Modal or local maintainer machines than live Colab sessions.

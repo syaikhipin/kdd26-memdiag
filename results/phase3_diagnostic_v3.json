@@ -1,0 +1,1807 @@
+{
+  "model": "dahono/claude-sonnet-4.5-free",
+  "n_points": 8,
+  "K": 5,
+  "results": [
+    {
+      "point_idx": 0,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M0_no_memory",
+      "n_history": 3,
+      "vram_predicted_mb": 143867,
+      "vram_eval": {
+        "false_positive_rate": 0.5714285714285714,
+        "false_negative_rate": 0.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 0,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M1_raw_history",
+      "n_history": 3,
+      "vram_predicted_mb": 143867,
+      "vram_eval": {
+        "false_positive_rate": 0.5714285714285714,
+        "false_negative_rate": 0.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 0,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M2_retrieved",
+      "n_history": 3,
+      "vram_predicted_mb": 143867,
+      "vram_eval": {
+        "false_positive_rate": 0.5714285714285714,
+        "false_negative_rate": 0.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 0,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M3_structured",
+      "n_history": 3,
+      "vram_predicted_mb": 143867,
+      "vram_eval": {
+        "false_positive_rate": 0.5714285714285714,
+        "false_negative_rate": 0.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 0,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M4_oracle",
+      "n_history": 3,
+      "vram_predicted_mb": 143867,
+      "vram_eval": {
+        "false_positive_rate": 0.5714285714285714,
+        "false_negative_rate": 0.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 1,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M0_no_memory",
+      "n_history": 4,
+      "vram_predicted_mb": 11633,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 1.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 1,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M1_raw_history",
+      "n_history": 4,
+      "vram_predicted_mb": 11633,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 1,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M2_retrieved",
+      "n_history": 4,
+      "vram_predicted_mb": 11633,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 1,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M3_structured",
+      "n_history": 4,
+      "vram_predicted_mb": 11633,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 1,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M4_oracle",
+      "n_history": 4,
+      "vram_predicted_mb": 11633,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 2,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M0_no_memory",
+      "n_history": 5,
+      "vram_predicted_mb": 14756,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 1.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 2,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M1_raw_history",
+      "n_history": 5,
+      "vram_predicted_mb": 14756,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 2,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M2_retrieved",
+      "n_history": 5,
+      "vram_predicted_mb": 14756,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 2,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M3_structured",
+      "n_history": 5,
+      "vram_predicted_mb": 14756,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 2,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M4_oracle",
+      "n_history": 5,
+      "vram_predicted_mb": 14756,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 3,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M0_no_memory",
+      "n_history": 6,
+      "vram_predicted_mb": 17674,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 1.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 3,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M1_raw_history",
+      "n_history": 6,
+      "vram_predicted_mb": 17674,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 3,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M2_retrieved",
+      "n_history": 6,
+      "vram_predicted_mb": 17674,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 3,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M3_structured",
+      "n_history": 6,
+      "vram_predicted_mb": 17674,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 3,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M4_oracle",
+      "n_history": 6,
+      "vram_predicted_mb": 17674,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 4,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M0_no_memory",
+      "n_history": 7,
+      "vram_predicted_mb": 20415,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 1.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 4,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M1_raw_history",
+      "n_history": 7,
+      "vram_predicted_mb": 20415,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 1.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 4,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M2_retrieved",
+      "n_history": 7,
+      "vram_predicted_mb": 20415,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 1.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 4,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M3_structured",
+      "n_history": 7,
+      "vram_predicted_mb": 20415,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.4,
+      "any_oom_proposal_rate": 0.4,
+      "proposals": [
+        [
+          4,
+          32
+        ],
+        [
+          4,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          4,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 4, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 4,
+      "target": [
+        12,
+        32
+      ],
+      "condition": "M4_oracle",
+      "n_history": 7,
+      "vram_predicted_mb": 20415,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 16, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 16, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 16, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 16, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 16, \"batch_size\": 16}\n```"
+      ]
+    },
+    {
+      "point_idx": 5,
+      "target": [
+        16,
+        16
+      ],
+      "condition": "M0_no_memory",
+      "n_history": 3,
+      "vram_predicted_mb": 17975,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 5,
+      "target": [
+        16,
+        16
+      ],
+      "condition": "M1_raw_history",
+      "n_history": 3,
+      "vram_predicted_mb": 17975,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 5,
+      "target": [
+        16,
+        16
+      ],
+      "condition": "M2_retrieved",
+      "n_history": 3,
+      "vram_predicted_mb": 17975,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 5,
+      "target": [
+        16,
+        16
+      ],
+      "condition": "M3_structured",
+      "n_history": 3,
+      "vram_predicted_mb": 17975,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 5,
+      "target": [
+        16,
+        16
+      ],
+      "condition": "M4_oracle",
+      "n_history": 3,
+      "vram_predicted_mb": 17975,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 6,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M0_no_memory",
+      "n_history": 4,
+      "vram_predicted_mb": 20230,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 6,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M1_raw_history",
+      "n_history": 4,
+      "vram_predicted_mb": 20230,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 6,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M2_retrieved",
+      "n_history": 4,
+      "vram_predicted_mb": 20230,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          14,
+          16
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 14, \"batch_size\": 16}\n```"
+      ]
+    },
+    {
+      "point_idx": 6,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M3_structured",
+      "n_history": 4,
+      "vram_predicted_mb": 20230,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          14,
+          16
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 14, \"batch_size\": 16}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 6,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M4_oracle",
+      "n_history": 4,
+      "vram_predicted_mb": 20230,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 1.0
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 7,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M0_no_memory",
+      "n_history": 5,
+      "vram_predicted_mb": 28054,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 1.0,
+      "proposals": [
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 7,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M1_raw_history",
+      "n_history": 5,
+      "vram_predicted_mb": 28054,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 7,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M2_retrieved",
+      "n_history": 5,
+      "vram_predicted_mb": 28054,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.4,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          12,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 12, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 7,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M3_structured",
+      "n_history": 5,
+      "vram_predicted_mb": 28054,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          8,
+          32
+        ],
+        [
+          8,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          8,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 8, \"batch_size\": 32}\n```"
+      ]
+    },
+    {
+      "point_idx": 7,
+      "target": [
+        18,
+        16
+      ],
+      "condition": "M4_oracle",
+      "n_history": 5,
+      "vram_predicted_mb": 28054,
+      "vram_eval": {
+        "false_positive_rate": 0.0,
+        "false_negative_rate": 0.3333333333333333
+      },
+      "target_proposal_rate": 0.0,
+      "any_oom_proposal_rate": 0.0,
+      "proposals": [
+        [
+          10,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          10,
+          32
+        ],
+        [
+          6,
+          32
+        ],
+        [
+          10,
+          32
+        ]
+      ],
+      "raw_responses": [
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 6, \"batch_size\": 32}\n```",
+        "```json\n{\"depth\": 10, \"batch_size\": 32}\n```"
+      ]
+    }
+  ]
+}

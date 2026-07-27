@@ -1,0 +1,163 @@
+{
+ "topic": "autoresearch",
+ "source": "autoresearch/train.py on Modal L4 (SDPA patch; real LLM-pretraining val_bpb)",
+ "metric": "val_bpb (lower is better)",
+ "n_trials": 10,
+ "best_trial_id": "ar_trial_001",
+ "best_val_bpb": 1.259363,
+ "trials": [
+ {
+ "trial_id": "ar_trial_000",
+ "config": {
+ "depth": 2,
+ "device_batch_size": 32
+ },
+ "val_bpb": 1.34918,
+ "training_seconds": 300.3,
+ "peak_vram_mb": 1733.4,
+ "num_steps": 709,
+ "num_params_M": 3.5,
+ "status": "ok",
+ "failure_type": "none",
+ "error_tail": ""
+ },
+ {
+ "trial_id": "ar_trial_001",
+ "config": {
+ "depth": 4,
+ "device_batch_size": 32
+ },
+ "val_bpb": 1.259363,
+ "training_seconds": 300.6,
+ "peak_vram_mb": 3713.3,
+ "num_steps": 291,
+ "num_params_M": 11.5,
+ "status": "ok",
+ "failure_type": "none",
+ "error_tail": ""
+ },
+ {
+ "trial_id": "ar_trial_002",
+ "config": {
+ "depth": 6,
+ "device_batch_size": 32
+ },
+ "val_bpb": 1.302786,
+ "training_seconds": 302.0,
+ "peak_vram_mb": 7031.6,
+ "num_steps": 140,
+ "num_params_M": 26.3,
+ "status": "ok",
+ "failure_type": "none",
+ "error_tail": ""
+ },
+ {
+ "trial_id": "ar_trial_003",
+ "config": {
+ "depth": 8,
+ "device_batch_size": 32
+ },
+ "val_bpb": 1.442658,
+ "training_seconds": 302.9,
+ "peak_vram_mb": 11702.0,
+ "num_steps": 82,
+ "num_params_M": 50.3,
+ "status": "ok",
+ "failure_type": "none",
+ "error_tail": ""
+ },
+ {
+ "trial_id": "ar_trial_004",
+ "config": {
+ "depth": 10,
+ "device_batch_size": 32
+ },
+ "val_bpb": 1.669901,
+ "training_seconds": 304.3,
+ "peak_vram_mb": 17777.5,
+ "num_steps": 53,
+ "num_params_M": 85.9,
+ "status": "ok",
+ "failure_type": "none",
+ "error_tail": ""
+ },
+ {
+ "trial_id": "ar_trial_005",
+ "config": {
+ "depth": 12,
+ "device_batch_size": 32
+ },
+ "val_bpb": null,
+ "training_seconds": null,
+ "peak_vram_mb": null,
+ "num_steps": null,
+ "num_params_M": null,
+ "status": "fail",
+ "failure_type": "oom",
+ "error_tail": "thon3.10/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 129, in call_func_at_runtime_with_args\n out = normalize_as_list(f(args))\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 526, in wrapper\n return compiled_fn(runtime_args)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 724, in inner_fn\n outs = compiled_fn(args)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/output_code.py\", line 613, in __call__\n return self.current_callable(inputs)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/utils.py\", line 3017, in run\n out = model(new_inputs)\n File \"/tmp/torchinductor_root/vg/cvghox626jjeoylnhq7p4mo5t3dqze5dgoanu7rexuhgyz3wq5oh.py\", line 3631, in call\n buf453 = empty_strided_cuda((65536, 3072), (3072, 1), torch.bfloat16)\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 384.00 MiB. GPU 0 has a total capacity of 22.03 GiB of which 31.12 MiB is free. Process 1 has 22.00 GiB memory in use. Of the allocated memory 21.76 GiB is allocated by PyTorch, and 7.85 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation. See documentation for Memory Management (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+ },
+ {
+ "trial_id": "ar_trial_006",
+ "config": {
+ "depth": 12,
+ "device_batch_size": 16
+ },
+ "val_bpb": 1.779997,
+ "training_seconds": 308.4,
+ "peak_vram_mb": 13463.3,
+ "num_steps": 39,
+ "num_params_M": 135.3,
+ "status": "ok",
+ "failure_type": "none",
+ "error_tail": ""
+ },
+ {
+ "trial_id": "ar_trial_007",
+ "config": {
+ "depth": 14,
+ "device_batch_size": 16
+ },
+ "val_bpb": 1.849885,
+ "training_seconds": 309.9,
+ "peak_vram_mb": 18326.7,
+ "num_steps": 30,
+ "num_params_M": 200.9,
+ "status": "ok",
+ "failure_type": "none",
+ "error_tail": ""
+ },
+ {
+ "trial_id": "ar_trial_008",
+ "config": {
+ "depth": 16,
+ "device_batch_size": 16
+ },
+ "val_bpb": null,
+ "training_seconds": null,
+ "peak_vram_mb": null,
+ "num_steps": null,
+ "num_params_M": null,
+ "status": "fail",
+ "failure_type": "oom",
+ "error_tail": "thon3.10/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 129, in call_func_at_runtime_with_args\n out = normalize_as_list(f(args))\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 526, in wrapper\n return compiled_fn(runtime_args)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 724, in inner_fn\n outs = compiled_fn(args)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/output_code.py\", line 613, in __call__\n return self.current_callable(inputs)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/utils.py\", line 3017, in run\n out = model(new_inputs)\n File \"/tmp/torchinductor_root/mv/cmvqkpxceohiwyr452invxmml6gg25emnoxs6txey4ielkwpisef.py\", line 4504, in call\n buf608 = empty_strided_cuda((32768, 1024), (1024, 1), torch.bfloat16)\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 64.00 MiB. GPU 0 has a total capacity of 22.03 GiB of which 33.12 MiB is free. Process 1 has 21.99 GiB memory in use. Of the allocated memory 21.73 GiB is allocated by PyTorch, and 27.21 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation. See documentation for Memory Management (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+ },
+ {
+ "trial_id": "ar_trial_009",
+ "config": {
+ "depth": 18,
+ "device_batch_size": 16
+ },
+ "val_bpb": null,
+ "training_seconds": null,
+ "peak_vram_mb": null,
+ "num_steps": null,
+ "num_params_M": null,
+ "status": "fail",
+ "failure_type": "oom",
+ "error_tail": "hon3.10/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 129, in call_func_at_runtime_with_args\n out = normalize_as_list(f(args))\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 526, in wrapper\n return compiled_fn(runtime_args)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 724, in inner_fn\n outs = compiled_fn(args)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/output_code.py\", line 613, in __call__\n return self.current_callable(inputs)\n File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/utils.py\", line 3017, in run\n out = model(new_inputs)\n File \"/tmp/torchinductor_root/k3/ck3dlwokjwp37z3t4drfro5lup6mqwyjm5upcziqyab6jbridiem.py\", line 4882, in call\n buf565 = empty_strided_cuda((32768, 4608), (4608, 1), torch.bfloat16)\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB. GPU 0 has a total capacity of 22.03 GiB of which 17.12 MiB is free. Process 1 has 22.01 GiB memory in use. Of the allocated memory 21.71 GiB is allocated by PyTorch, and 72.93 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation. See documentation for Memory Management (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+ }
+ ],
+ "n_ok": 7,
+ "n_fail": 3,
+ "note": "frozen outcome surface; all trials retained (incl. OOM/crash) for the experiment-history-memory benchmark."
+}

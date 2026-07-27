@@ -28,6 +28,7 @@ from data_loaders import (
 )
 from diagnostics import novelty_score, precision_recall
 from evaluators import make_evaluators, redact_secret
+from embedder import make_embedder
 from idea_generator import generate_ideas
 from llm_client import LLMConfig, make_client
 from metrics import (
@@ -71,7 +72,7 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--longmemeval-files", nargs="+", default=["longmemeval_oracle.json", "longmemeval_s_cleaned.json", "longmemeval_m_cleaned.json"])
     parser.add_argument("--memoryarena-dir", type=Path, default=DEFAULT_MEMORYARENA_DIR)
     parser.add_argument("--max-items", type=int, default=None)
-    parser.add_argument("--use-cases", nargs="+", default=DEFAULT_USE_CASES, choices=["locomo", "autoresearch", "hpo", "memoryarena", "longmemeval", "lcbench"])
+    parser.add_argument("--use-cases", nargs="+", default=DEFAULT_USE_CASES, choices=["locomo", "autoresearch", "memoryarena", "longmemeval"])
     parser.add_argument("--ideas-per-case", type=int, default=2)
     parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
     parser.add_argument("--model", default=DEFAULT_MODEL)
@@ -182,16 +183,41 @@ def run_synthetic(args: argparse.Namespace) -> None:
     print("\nAPI key required: no for synthetic/offline mode.")
 
 
+def _recompute_utilization(records):
+    for record in records:
+        gold = set(tokenize(str(record.get("gold_answer", ""))))
+        context_tokens = set()
+        for text in record.get("retrieved_texts", []):
+            context_tokens.update(tokenize(str(text)))
+        retrieved = bool(record.get("retrieved_texts"))
+        used = bool(gold & context_tokens) if gold else retrieved
+        record["memory_utilized"] = used
+        if not retrieved:
+            record["utilization_category"] = "no_memory_available"
+        elif used:
+            record["utilization_category"] = "context_mentions_answer"
+        else:
+            record["utilization_category"] = "retrieved_but_answer_absent"
+
+def _make_embedder_and_llm(args):
+    from llm_client import LLMConfig, make_client as _mc
+    llm = _mc(LLMConfig(backend=args.backend, base_url=args.base_url, model=args.model, api_key_env=args.api_key_env, api_key=args.api_key))
+    embedder = make_embedder(backend=args.backend, base_url=args.base_url, api_key=args.api_key or os.environ.get(args.api_key_env), model="text-embedding-3-small")
+    return embedder, llm
+
 def run_locomo(args: argparse.Namespace) -> tuple[dict, dict]:
     conversations = load_locomo(args.locomo_path)
+    embedder, llm = _make_embedder_and_llm(args)
     records, memories = run_locomo_memory_debug(
         conversations=conversations,
         strategy_names=args.strategies,
         top_k=args.top_k,
         max_conversations=args.max_conversations,
         max_questions=args.max_questions,
-        answer_mode="offline_evidence_heuristic" if args.backend == "offline" else "llm_with_retrieved_memory",
+        embedder=embedder,
+        llm=llm,
     )
+    _recompute_utilization(records)
     _apply_evaluators(records, args)
     summary = summarize_locomo(records)
     payload = {"config": _safe_config(args), "records": records, "memories": memories}
@@ -207,17 +233,24 @@ def run_real(args: argparse.Namespace) -> tuple[dict, dict]:
     records = []
     memories = {}
     dataset_items = _load_real_items(args)
+    embedder, llm = _make_embedder_and_llm(args)
     for dataset_name, items in dataset_items.items():
         dataset_records, dataset_memories = run_memory_benchmark(
             items=items,
             strategy_names=args.strategies,
             top_k=args.top_k,
-            answer_mode="offline_evidence_heuristic" if args.backend == "offline" else "llm_with_retrieved_memory",
+            embedder=embedder,
+            llm=llm,
         )
         records.extend(dataset_records)
         memories[dataset_name] = dataset_memories
     _apply_evaluators(records, args)
     summary = summarize_real_datasets(records)
+    from probes.utilization_probe import build_utilization_fixture, run_utilization_lab
+    fixture = build_utilization_fixture(args.locomo_path, args.longmemeval_dir, args.longmemeval_files, per_dataset=20, seed=args.seed)
+    utilization_lab = run_utilization_lab(fixture, args.strategies, embedder, llm, top_k=args.top_k)
+    summary["utilization_lab"] = utilization_lab
+    _recompute_utilization(records)
     payload = {"config": _safe_config(args), "records": records, "memories": memories, "dataset_registry": dataset_registry(args.locomo_path)}
     table = format_real_table(summary)
     paths = _write_outputs(args.out_dir, "real", payload, {"real": summary}, table)
@@ -586,14 +619,17 @@ def run_tutorial(args: argparse.Namespace) -> None:
         api_key=args.api_key,
     ))
     conversations = load_locomo(args.locomo_path)
+    embedder, llm = _make_embedder_and_llm(args)
     locomo_records, memories = run_locomo_memory_debug(
         conversations=conversations,
         strategy_names=args.strategies,
         top_k=args.top_k,
         max_conversations=args.max_conversations,
         max_questions=args.max_questions,
-        answer_mode="offline_evidence_heuristic" if args.backend == "offline" else "llm_with_retrieved_memory",
+        embedder=embedder,
+        llm=llm,
     )
+    _recompute_utilization(locomo_records)
     ideas = generate_ideas(args.use_cases, args.ideas_per_case, registry, inspection, client)
     autoresearch_episodes = autoresearch_records_to_episodes(inspection.get("records", []))
     _apply_evaluators(locomo_records, args)
@@ -838,8 +874,8 @@ def _tutorial_report(summary: dict, paths: dict[str, Path], idea_path: Path) -> 
 
 ## Real datasets from the accepted proposal
 
-- LoCoMo is used directly from the local PDF-listed dataset path.
-- LCBench, MemoryArena, HPOBench, and LongMemEval are included in the dataset registry and treated as future/local-path use cases unless data is provided.
+- LoCoMo is used from the bundled topic data.
+- Autoresearch (real L4 trace), MemoryArena, and LongMemEval are bundled topics and treated as future/local-path use cases unless data is provided.
 
 ## LoCoMo memory diagnostics
 

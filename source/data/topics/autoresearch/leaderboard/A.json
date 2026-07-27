@@ -1,0 +1,13 @@
+{
+ "group": "A",
+ "topic": "autoresearch",
+ "source": "autoresearch/train.py on Modal L4 (SDPA patch; real LLM-pretraining val_bpb)",
+ "metric": "val_bpb (lower is better)",
+ "n_trials": 2,
+ "best_trial_id": "ar_trial_000",
+ "best_val_bpb": 1.254045,
+ "trials": [
+ {"trial_id": "ar_trial_000", "config": {"depth": 4, "device_batch_size": 32}, "val_bpb": 1.254045, "training_seconds": 300.7, "status": "ok"},
+ {"trial_id": "ar_trial_001", "config": {"depth": 6, "device_batch_size": 32}, "val_bpb": 1.302408, "training_seconds": 301.6, "status": "ok"}
+ ]
+}

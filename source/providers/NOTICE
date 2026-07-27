@@ -1,0 +1,26 @@
+providers/ — memory-architecture implementations
+=================================================
+
+The four memory providers in this directory (`verbatim.py`, `extracted_facts.py`, `episodic.py`,
+`hybrid.py`) adapt the genuinely-distinct memory architectures from:
+
+ Nir Diamant, "Agent Memory Techniques" — https://github.com/NirDiamant/Agent_Memory_Techniques
+ Licensed under the Apache License, Version 2.0.
+
+Mapping:
+ verbatim.py <- technique 06 (Vector Store Memory)
+ extracted_facts.py <- technique 10 (Semantic Memory)
+ episodic.py <- technique 09 (Episodic Memory)
+ hybrid.py <- technique 13 (Hierarchical Memory Layers)
+
+What was kept: the storage representation and retrieval mechanism that make each architecture
+distinct (vector store + cosine; fact extraction + dedup/contradiction; episode summarization +
+recency blend; L1/L2/L3 tiers + promotion + reciprocal-rank fusion).
+
+What was changed for a low-resource, offline-first tutorial: every LLM call (extraction,
+summarization, tagging) and every embedding now routes through `Embedder` / `LLMClient`
+(`../embedder.py`, `../llm_client.py`), so all four run with no API key (offline deterministic
+fallbacks) or with an OpenAI-compatible endpoint. Storage is in-process numpy (no ChromaDB/faiss).
+
+See ../../licenses/APACHE-2.0.txt for the full license. Attribution is retained per the license
+terms; see the upstream CITATION.cff for citation.

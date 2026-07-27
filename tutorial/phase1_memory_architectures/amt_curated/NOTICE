@@ -1,0 +1,32 @@
+# Agent Memory Techniques — vendored curated subset
+
+The notebooks in this directory are from **Nir Diamant, "Agent Memory Techniques"**
+(https://github.com/NirDiamant/Agent_Memory_Techniques), licensed under the Apache License 2.0.
+
+Curated for the KDD'26 tutorial Phase 1 (hands-on):
+- `conversation_buffer_memory.ipynb` — technique 01 (Short-term)
+- `vector_store_memory.ipynb` — technique 06 (Long-term)
+- `episodic_memory.ipynb` — technique 09 (Long-term)
+- `semantic_memory.ipynb` — technique 10 (Long-term)
+- `hierarchical_memory_layers.ipynb` — technique 13 (Cognitive)
+- `memory_retrieval_patterns.ipynb` — technique 20 (Retrieval)
+
+`utils/helpers.py` is the upstream shared helper module these notebooks import. The remaining 24
+techniques are surveyed (with links) in `phase1_agent_memory_techniques.ipynb`; open the upstream
+repository for the full set.
+
+## Running these notebooks (Phase 1)
+They need an LLM. Point them at the free OpenAI-compatible **OpenAI-compatible endpoint** by exporting, before
+launching Jupyter:
+
+```bash
+export OPENAI_API_KEY=-<your-key>
+export OPENAI_BASE_URL=https://api.openai.com/v1
+```
+
+(`get_openai_client()` in `utils/helpers.py` calls `OpenAI(api_key=key)`, which honours
+`OPENAI_BASE_URL`, so the notebooks transparently use the gateway.) Install dependencies with the
+upstream `requirements.txt`; technique 06 additionally needs `chromadb`.
+
+Apache-2.0 attribution is retained; see `../../../licenses/APACHE-2.0.txt` and the upstream
+`CITATION.cff`.

@@ -1,0 +1,3 @@
+[console_scripts]
+benchmark-cli = benchmark_cli.__main__:main
+diagnostic-framework = diagnostic_framework.__main__:main

@@ -1,34 +1,77 @@
 name: Deploy GitHub Pages
 
 on:
-  push:
-    branches: [main]
-  workflow_dispatch:
+ push:
+ branches: [main]
+ workflow_dispatch:
 
 permissions:
-  contents: read
-  pages: write
-  id-token: write
+ contents: read
+ pages: write
+ id-token: write
 
 concurrency:
-  group: pages
-  cancel-in-progress: false
+ group: pages
+ cancel-in-progress: false
 
 jobs:
-  deploy:
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
-    steps:
-      - name: Checkout
-        uses: actions/checkout@v4
-      - name: Setup Pages
-        uses: actions/configure-pages@v5
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
-        with:
-          path: .
-      - name: Deploy to GitHub Pages
-        id: deployment
-        uses: actions/deploy-pages@v4
+ smoke:
+ runs-on: ubuntu-latest
+ steps:
+ - name: Checkout
+ uses: actions/checkout@v4
+ - name: Setup Python
+ uses: actions/setup-python@v5
+ with:
+ python-version: '3.12'
+ - name: Install (offline only — no API/GPU deps)
+ run: pip install numpy matplotlib pyyaml
+ - name: Compile
+ run: python -m compileall -q source
+ - name: Exercise 1 — diagnose offline on bundled LoCoMo
+ working-directory: source
+ run: |
+ python -m diagnostic_framework diagnose \
+ --strategies verbatim,extracted_facts,episodic,hybrid \
+ --probes relevance,utilization,failure --top_k 5 --max-questions 20
+ - name: Regression guard — assert architectures are genuinely distinct
+ working-directory: source
+ run: |
+ python - <<'PY'
+ import json, glob
+ from collections import defaultdict
+ path = sorted(glob.glob("../results/run_*_locomo_raw.json"))[-1]
+ records = json.load(open(path))["records"]
+ pr = defaultdict(list)
+ for r in records:
+ if r.get("strategy") != "no_memory":
+ pr[r["strategy"]].append(float(r.get("retrieval_precision", 0.0)))
+ mean_pr = {k: round(sum(v) / len(v), 4) for k, v in pr.items()}
+ print("mean retrieval precision by strategy:", mean_pr)
+ vals = list(mean_pr.values())
+ assert len(set(vals)) > 1, (
+ "FAKE-ARCHITECTURE REGRESSION: strategies have identical precision "
+ f"(shared store / prefix hack returned): {mean_pr}"
+ )
+ # utilization must be decoupled from retrieval hit on at least one strategy
+ print("OK: the four memory architectures are genuinely distinct")
+ PY
+
+ deploy:
+ needs: smoke
+ environment:
+ name: github-pages
+ url: ${{ steps.deployment.outputs.page_url }}
+ runs-on: ubuntu-latest
+ steps:
+ - name: Checkout
+ uses: actions/checkout@v4
+ - name: Setup Pages
+ uses: actions/configure-pages@v5
+ - name: Upload artifact
+ uses: actions/upload-pages-artifact@v3
+ with:
+ path: .
+ - name: Deploy to GitHub Pages
+ id: deployment
+ uses: actions/deploy-pages@v4

@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KDD'26 Tutorial — Documentation</title>
+<style>
+ :root{--bg:#fafafa;--card:#fff;--ink:#1a1a2e;--muted:#666;--accent:#2962ff;--border:#e0e0e0;
+ --sidebar:#f5f5f5;--code-bg:#f0f0f0;--green:#2e7d32;--amber:#ef6c00;}
+ *{box-sizing:border-box;margin:0;padding:0}
+ body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ background:var(--bg);color:var(--ink);line-height:1.7;font-size:15px}
+ .layout{display:flex;min-height:100vh}
+ /* Sidebar */
+ .sidebar{width:260px;background:var(--sidebar);border-right:1px solid var(--border);
+ padding:20px 0;position:fixed;height:100vh;overflow-y:auto}
+ .sidebar h3{font-size:.8rem;text-transform:uppercase;color:var(--muted);padding:12px 20px 4px;letter-spacing:.5px}
+ .sidebar a{display:block;padding:5px 20px;color:var(--ink);text-decoration:none;font-size:.9rem;border-left:3px solid transparent}
+ .sidebar a:hover{background:#e8eaf6;color:var(--accent);border-left-color:var(--accent)}
+ .sidebar a.active{color:var(--accent);border-left-color:var(--accent);font-weight:600}
+ .sidebar .logo{padding:16px 20px;font-weight:700;font-size:1.1rem;color:var(--accent)}
+ /* Main */
+ .main{margin-left:260px;padding:40px 50px;max-width:800px;width:100%}
+ h1{font-size:1.8rem;margin:0 0 8px;color:var(--ink)}
+ h2{font-size:1.4rem;margin:36px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent)}
+ h3{font-size:1.1rem;margin:24px 0 6px}
+ p{margin:8px 0}
+ code{background:var(--code-bg);padding:1px 5px;border-radius:3px;font-family:"SF Mono",Consolas,monospace;font-size:.88em;color:var(--accent)}
+ pre{background:var(--code-bg);border:1px solid var(--border);border-radius:6px;padding:14px;overflow:auto;margin:10px 0}
+ pre code{background:none;padding:0;color:var(--ink)}
+ table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.92em}
+ th,td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
+ th{background:var(--sidebar);font-weight:600}
+ .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;margin:12px 0}
+ .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.78em;font-weight:600;margin-right:4px}
+ .p1{background:#e8f5e9;color:var(--green)}.p2{background:#fff3e0;color:var(--amber)}.p3{background:#e3f2fd;color:var(--accent)}
+ .note{background:#fff8e1;border-left:3px solid var(--amber);padding:10px 14px;margin:10px 0;border-radius:0 6px 6px 0;font-size:.9em}
+ .ok{color:var(--green)}.warn{color:var(--amber)}
+ a{color:var(--accent)}
+ ul,ol{margin:8px 0 8px 24px}
+ li{margin:3px 0}
+ .footer{margin-top:50px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.85em}
+ @media(max-width:768px){.sidebar{display:none}.main{margin-left:0;padding:20px}}
+</style>
+</head>
+<body>
+<div class="layout">
+
+<!-- SIDEBAR -->
+<nav class="sidebar">
+ <div class="logo">🧠 KDD'26 Tutorial</div>
+ <h3>Getting Started</h3>
+ <a href="#overview">Overview</a>
+ <a href="#setup">Setup</a>
+ <a href="#run">Quick Start</a>
+ <h3>Phases</h3>
+ <a href="#phase1"><span class="pill p1">1</span> Memory Techniques</a>
+ <a href="#phase2"><span class="pill p2">2</span> Public Datasets</a>
+ <a href="#phase3"><span class="pill p3">3</span> Autoresearch</a>
+ <h3>Reference</h3>
+ <a href="#results">Results</a>
+ <a href="#cli">CLI Package</a>
+ <a href="#timing">Timing</a>
+ <a href="#diagnostic">Memory Diagnostic</a>
+ <a href="#credits">Credits</a>
+</nav>
+
+<!-- MAIN -->
+<div class="main">
+
+<h1 id="overview">Memory Systems in Autonomous AI Research Agents</h1>
+<p><strong>A hands-on KDD'26 tutorial</strong> · <em>Systematic Diagnosis and Benchmarking of Memory Systems
+in Autonomous AI Research Agents: A Low-Resource Framework</em></p>
+<p>3 phases · 60 min each · 17 independent Colab notebooks · runs offline with no API key.</p>
+
+<div class="card">
+<strong>Three phases at a glance:</strong>
+<table>
+<tr><th>Phase</th><th>Notebooks</th><th>What</th><th>Key</th></tr>
+<tr><td><span class="pill p1">1</span> Memory Techniques</td><td>8</td><td>All 30 techniques across 6 families</td><td> LLM demos</td></tr>
+<tr><td><span class="pill p2">2</span> Public Datasets</td><td>5</td><td>Diagnose + benchmark on real data</td><td>3-probe + LLM judge</td></tr>
+<tr><td><span class="pill p3">3</span> Autoresearch</td><td>4</td><td>Real LLM-pretraining sweep on Modal L4</td><td>Group-split + diagnostic</td></tr>
+</table>
+</div>
+
+<h2 id="setup">Setup</h2>
+<h3>Prerequisites</h3>
+<ul>
+ <li>Python 3.10+, 8 GB RAM, no GPU required (Phases 1–2)</li>
+ <li><strong>Phase 1 LLM demos:</strong> an OpenAI-compatible endpoint key (<code>OPENAI_API_KEY</code> + <code>OPENAI_BASE_URL=https://api.openai.com/v1</code>)</li>
+ <li><strong>Phase 3:</strong> Modal account (<code>pip install modal && modal setup</code>) for L4 GPU (~$0.5–1/group)</li>
+</ul>
+<h3>Install</h3>
+<pre><code>git clone &lt;repo-url&gt; kdd-tutorial
+cd kdd-tutorial/experiment/github_submission
+pip install numpy matplotlib pyyaml # offline deps
+pip install -e source # CLI package (memory-diagnostic-toolkit)
+pip install -e "source[api]" # + openai/tiktoken for LLM demos
+python -m compileall -q source # sanity check</code></pre>
+
+<h2 id="run">Quick Start</h2>
+<p>Open any notebook in Colab or locally — each auto-clones + installs:</p>
+<pre><code>jupyter notebook tutorial/phase1_memory_architectures/01_short_term_memory.ipynb</code></pre>
+<p>Or use the CLI directly:</p>
+<pre><code>diagnostic-framework diagnose --strategies verbatim,extracted_facts,episodic,hybrid --top_k 5 # Exercise 1
+benchmark-cli compare --providers verbatim,extracted_facts,episodic,hybrid --sample_size 20 # Exercise 2</code></pre>
+<p>📋 Step-by-step guide: <a href="RUN.html">RUN.html</a> · 📅 Schedule: <a href="SCHEDULE.md">SCHEDULE.md</a></p>
+
+<h2 id="phase1">Phase 1 — 30 Agent Memory Techniques (8 notebooks)</h2>
+<p>Adapted from <em>Agent Memory Techniques</em> by Nir Diamant (Apache-2.0). LLM demos use an OpenAI-compatible endpoint.</p>
+<table>
+<tr><th>Notebook</th><th>Techniques</th><th>LLM demos</th></tr>
+<tr><td><code>01_short_term_memory</code></td><td>01–05 buffer / sliding / summary / token</td><td>03 summary ✅</td></tr>
+<tr><td><code>02_long_term_memory</code></td><td>06–11 vector / entity / KG / episodic / semantic / procedural</td><td>07 entity ✅</td></tr>
+<tr><td><code>03_cognitive_architectures</code></td><td>12–19 working / hierarchical / consolidation / forgetting</td><td>via providers</td></tr>
+<tr><td><code>04_retrieval_multi_agent</code></td><td>20–23 retrieval / cross-session / multi-agent / tools</td><td>—</td></tr>
+<tr><td><code>05_frameworks</code></td><td>24–27 Graphiti / Mem0 / Letta / Zep</td><td>descriptions</td></tr>
+<tr><td><code>06_evaluation_production</code></td><td>28–30 evaluation / benchmarks / production</td><td>—</td></tr>
+<tr><td><code>07_capstone</code></td><td>4 production architectures compared</td><td>via providers</td></tr>
+<tr><td><code>08_exercise</code></td><td><strong>Hands-on:</strong> build a support-agent memory system</td><td>✅</td></tr>
+</table>
+
+<h2 id="phase2">Phase 2 — Public Datasets (5 notebooks, offline)</h2>
+<table>
+<tr><th>Notebook</th><th>What</th><th>Time</th></tr>
+<tr><td><code>01_diagnostic_framework</code></td><td>3-probe recap + Exercise 1 (diagnose)</td><td>1.4s</td></tr>
+<tr><td><code>02_utilization_lab</code></td><td>3-arm utilization lab + inspect a failure</td><td>&lt;1s</td></tr>
+<tr><td><code>03_benchmarking</code></td><td>Exercise 2 (benchmark providers)</td><td>4.2s</td></tr>
+<tr><td><code>04_llm_as_judge_lab</code></td><td><strong>Live LLM-as-judge</strong> vs offline proxy</td><td>24.9s</td></tr>
+<tr><td><code>05_question_type_analysis</code></td><td>Per-type breakdown: which architecture wins where</td><td>&lt;1s</td></tr>
+</table>
+
+<h2 id="phase3">Phase 3 — Autoresearch (4 notebooks, Modal L4)</h2>
+<table>
+<tr><th>Notebook</th><th>What</th><th>Time</th></tr>
+<tr><td><code>01_autoresearch_loop</code></td><td>The loop + why we split into groups</td><td>&lt;1s</td></tr>
+<tr><td><code>02_run_your_group</code></td><td>Run YOUR slice on Modal L4</td><td>~14.5 min</td></tr>
+<tr><td><code>03_aggregate_and_debug</code></td><td>Aggregate sweep + keep/revise/discard</td><td>7.9s</td></tr>
+<tr><td><code>04_memory_diagnostic</code></td><td>Interventional memory diagnostic (5 conditions)</td><td>see below</td></tr>
+</table>
+
+<h2 id="results">Results (honest, tutorial-scale)</h2>
+<div class="note">These are <strong>teaching samples</strong> (LoCoMo 40 / LongMemEval 50 / MemoryArena 86 questions),
+not paper-scale benchmarks. See <a href="results/RESULTS_MANIFEST.md">RESULTS_MANIFEST.md</a>.</div>
+<h3>LoCoMo — where the 4 architectures are distinct</h3>
+<table>
+<tr><th>Strategy</th><th>P</th><th>R</th><th>Hit</th><th>Memory size</th></tr>
+<tr><td>no_memory</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0</td></tr>
+<tr><td>verbatim</td><td>0.040</td><td>0.188</td><td>0.200</td><td>419</td></tr>
+<tr><td>extracted_facts</td><td>0.040</td><td>0.188</td><td>0.200</td><td>1282</td></tr>
+<tr><td>episodic</td><td>0.000</td><td>0.000</td><td>0.000</td><td>19</td></tr>
+<tr><td>hybrid</td><td>0.003</td><td>0.125</td><td>0.125</td><td>438</td></tr>
+</table>
+<p>Utilization measured independently (<code>util ≠ hit</code>) via the 3-arm lab.</p>
+
+<h3>Autoresearch trace (real L4)</h3>
+<table>
+<tr><th>Depth</th><th>Batch</th><th>val_bpb</th></tr>
+<tr><td>4</td><td>32</td><td><strong>1.254</strong></td></tr>
+<tr><td>6</td><td>32</td><td>1.296</td></tr>
+<tr><td>8</td><td>32</td><td>1.433</td></tr>
+<tr><td>10</td><td>32</td><td>1.661</td></tr>
+</table>
+
+<h2 id="cli">CLI Package</h2>
+<p><code>memory-diagnostic-toolkit</code> v0.1.0 (MIT). Console scripts: <code>diagnostic-framework</code>, <code>benchmark-cli</code>.</p>
+<pre><code>pip install -e source # or source[api] for the LLM path
+diagnostic-framework diagnose --strategies verbatim,extracted_facts,episodic,hybrid --top_k 5
+benchmark-cli compare --providers verbatim,extracted_facts,episodic,hybrid --sample_size 20
+benchmark-cli serve --port 8080 # serve the results dashboard</code></pre>
+
+<h2 id="timing">Rehearsal Timing</h2>
+<p>Full rehearsal: 65 cells across 17 notebooks, <strong>0 errors</strong>, using an OpenAI-compatible endpoint.</p>
+<table>
+<tr><th>Phase</th><th>Execution</th><th>Speech delay (3s/cell)</th><th>Total</th></tr>
+<tr><td>Phase 1 (8 notebooks)</td><td>182.4s</td><td>126s</td><td>308.4s</td></tr>
+<tr><td>Phase 2 (5 notebooks)</td><td>30.5s</td><td>48s</td><td>78.5s</td></tr>
+<tr><td>Phase 3 (4 notebooks)</td><td>885.0s</td><td>18s</td><td>903.0s</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>1098s (18.3 min)</strong></td><td><strong>192s (3.2 min)</strong></td><td><strong>1290s (21.5 min)</strong></td></tr>
+</table>
+<p>For a 180-min session: <strong>159 min spare</strong> for lecture, discussion, Q&A. Adjust delay via <code>CELL_DELAY=N</code>.</p>
+
+<h2 id="diagnostic">Memory Diagnostic (Phase 3D)</h2>
+<p>Interventional probes with a real LLM agent (frozen pre-decision snapshots). 5 memory conditions:</p>
+<table>
+<tr><th>Condition</th><th>OOM proposal rate</th><th>What it tests</th></tr>
+<tr><td>M0 no-memory</td><td><strong>50%</strong></td><td>Placebo baseline</td></tr>
+<tr><td>M1 raw-history</td><td><strong>12%</strong></td><td>Full trial log</td></tr>
+<tr><td>M2 retrieved (same-batch)</td><td>12%</td><td>Batch-keyed retrieval</td></tr>
+<tr><td>M3 structured-rule</td><td><strong>5%</strong></td><td>Raw + inferred constraint</td></tr>
+<tr><td>M4 oracle</td><td><strong>0%</strong></td><td>Raw + actual outcome</td></tr>
+</table>
+<p><strong>Key finding:</strong> any history cuts OOM proposals by 76%. Naive retrieval filtering is
+counterproductive (any-OOM increases 12%→30%). Structured rules approach oracle performance.</p>
+<p>Full review history: <a href="review-stage/AUTO_REVIEW.md">7-round adversarial review</a>.</p>
+
+<h2 id="credits">Credits</h2>
+<ul>
+ <li><strong>Phase 1</strong> adapted from <em>Agent Memory Techniques</em> by Nir Diamant
+ (<a href="https://github.com/NirDiamant/Agent_Memory_Techniques">GitHub</a>, Apache-2.0). See
+ <code>tutorial/phase1_memory_architectures/amt_curated/NOTICE</code>.</li>
+ <li>All other code is original (MIT). See <code>source/pyproject.toml</code>.</li>
+ <li>Dataset topics retain upstream licenses (<code>data/README.md</code>).</li>
+</ul>
+<div class="note"><strong>This is a tutorial, not a research paper.</strong> Results are tutorial-scale samples.
+Full-scale runs require the complete datasets + the Modal GPU runner.</div>
+
+<div class="footer">
+ <p>KDD'26 · Jeju Island · August 2026 ·
+ <a href="index.html">Home</a> · <a href="RUN.html">Run guide</a> · <a href="SCHEDULE.md">Schedule</a> ·
+ <a href="README.md">README</a></p>
+</div>
+
+</div><!-- main -->
+</div><!-- layout -->
+</body>
+</html>

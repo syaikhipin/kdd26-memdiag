@@ -58,16 +58,11 @@ class OfflineSemanticEvaluator(BaseEvaluator):
         contexts = [str(item) for item in record.get("retrieved_texts", [])]
         context_text = "\n".join(contexts)
 
-        answer_correctness = _overlap(gold, answer)
-        if answer in {"retrieved_evidence_answerable", "insufficient_retrieved_evidence"}:
-            answer_correctness = float(bool(record.get("evidence_hit") or record.get("memory_utilized")))
-        context_relevance = max(_overlap(question, context_text), float(record.get("retrieval_recall", 0.0)))
-        if answer in {"retrieved_evidence_answerable", "insufficient_retrieved_evidence"}:
-            faithfulness = float(bool(record.get("evidence_hit") and record.get("memory_utilized")))
-        else:
-            faithfulness = _overlap(answer, context_text) if answer else float(bool(record.get("memory_utilized")))
+        answer_correctness = _overlap(gold, context_text)
+        context_relevance = _overlap(question, context_text)
+        faithfulness = _set_overlap(set(tokenize(gold)), set(tokenize(context_text)))
         semantic = round((answer_correctness + context_relevance + faithfulness) / 3.0, 4)
-        passed = semantic >= 0.5 or bool(record.get("evidence_hit"))
+        passed = bool(contexts) and semantic >= 0.5
         return EvaluationResult(
             evaluator=self.name,
             semantic_score=semantic,

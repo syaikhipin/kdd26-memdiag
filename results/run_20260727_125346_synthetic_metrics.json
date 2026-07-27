@@ -1,0 +1,98 @@
+{
+  "no_memory": {
+    "episodes": 3,
+    "best_score": 0.5569,
+    "convergence_episode": null,
+    "redundancy_rate": 0.0,
+    "exploration_efficiency": 1.0,
+    "improvement_rate": 0.3333,
+    "retrieval_precision": 0.0,
+    "retrieval_recall": 0.0,
+    "utilization_rate": 0.0,
+    "avg_latency_ms": 0.008,
+    "cost_units": 0.3,
+    "memory_entries": 0,
+    "score_auc": 1.3769,
+    "failure_modes": {
+      "none": 1,
+      "oom": 1,
+      "retrieval_noise": 1
+    }
+  },
+  "verbatim": {
+    "episodes": 3,
+    "best_score": 0.5769,
+    "convergence_episode": null,
+    "redundancy_rate": 0.0,
+    "exploration_efficiency": 1.0,
+    "improvement_rate": 0.6667,
+    "retrieval_precision": 0.0,
+    "retrieval_recall": 0.0,
+    "utilization_rate": 0.6667,
+    "avg_latency_ms": 0.0483,
+    "cost_units": 0.39,
+    "memory_entries": 3,
+    "score_auc": 1.542,
+    "failure_modes": {
+      "none": 2,
+      "oom": 1
+    }
+  },
+  "extracted_facts": {
+    "episodes": 3,
+    "best_score": 0.5769,
+    "convergence_episode": null,
+    "redundancy_rate": 0.0,
+    "exploration_efficiency": 1.0,
+    "improvement_rate": 0.6667,
+    "retrieval_precision": 0.0,
+    "retrieval_recall": 0.0,
+    "utilization_rate": 0.6667,
+    "avg_latency_ms": 0.0321,
+    "cost_units": 0.39,
+    "memory_entries": 3,
+    "score_auc": 1.542,
+    "failure_modes": {
+      "none": 2,
+      "oom": 1
+    }
+  },
+  "episodic": {
+    "episodes": 3,
+    "best_score": 0.5769,
+    "convergence_episode": null,
+    "redundancy_rate": 0.0,
+    "exploration_efficiency": 1.0,
+    "improvement_rate": 0.6667,
+    "retrieval_precision": 0.0,
+    "retrieval_recall": 0.0,
+    "utilization_rate": 0.6667,
+    "avg_latency_ms": 0.0341,
+    "cost_units": 0.39,
+    "memory_entries": 3,
+    "score_auc": 1.542,
+    "failure_modes": {
+      "none": 2,
+      "oom": 1
+    }
+  },
+  "hybrid": {
+    "episodes": 3,
+    "best_score": 0.5769,
+    "convergence_episode": null,
+    "redundancy_rate": 0.0,
+    "exploration_efficiency": 1.0,
+    "improvement_rate": 0.6667,
+    "retrieval_precision": 0.0,
+    "retrieval_recall": 0.0,
+    "utilization_rate": 0.6667,
+    "avg_latency_ms": 0.0404,
+    "cost_units": 0.45,
+    "memory_entries": 9,
+    "score_auc": 1.542,
+    "failure_modes": {
+      "none": 2,
+      "oom": 1
+    }
+  }
+}

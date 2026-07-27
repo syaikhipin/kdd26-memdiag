@@ -2,6 +2,17 @@
 
 This walkthrough explains how to run the Jupyter/Colab tutorial notebooks and how to reproduce the experiment results.
 
+> **Rebuild status (2026-07).** The memory architectures are now **genuine, distinct providers**
+> adapted from `Agent_Memory_Techniques` (`source/providers/`: verbatim vector store, semantic fact
+> memory, episodic memory, hierarchical multi-tier) — they no longer share one lexical store with a
+> text prefix. Evaluation is honest: utilization is a **3-arm contrastive probe** (not a restatement
+> of retrieval hit) and the LLM-judge score is decoupled from `evidence_hit`. The proposal's named
+> commands work: `python -m diagnostic_framework diagnose …` (Exercise 1) and
+> `python -m benchmark_cli compare …` (Exercise 2). Five real dataset topics ship in-bundle
+> (`source/data/topics/`), including LCBench/HPOBench HPO traces. Any numeric table **below §7 that
+> predates this rebuild is a pre-refactor sample** — treat it as superseded and see
+> `results/RESULTS_MANIFEST.md` for provenance. Regenerate fresh numbers with the commands in §5/§6.
+
 ## 1. What this tutorial covers
 
 The notebooks follow the accepted KDD tutorial proposal: **Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research Agents: A Low-Resource Framework**.
@@ -33,7 +44,7 @@ Run the notebooks in this order:
 7_autoresearch_agent_loop.ipynb
 8_kdd_timeline_fit_analysis.ipynb
 9_colab_guidance_and_next_steps.ipynb
-10_external_testing_integrations.ipynb  # optional maintainer notebook
+10_external_testing_integrations.ipynb # optional maintainer notebook
 ```
 
 Open the notebooks in Colab from GitHub:
@@ -60,7 +71,7 @@ Executed local copies are saved as:
 Execution logs are saved under:
 
 ```text
-experiment/notebooks/logs/
+source/notebooks/logs/
 ```
 
 ## 3. Local setup
@@ -68,13 +79,13 @@ experiment/notebooks/logs/
 From the repository root:
 
 ```bash
-python -m compileall -q experiment
+python -m compileall -q source
 ```
 
 The latest validation log is:
 
 ```text
-experiment/results/logs/compileall.log
+source/results/logs/compileall.log
 ```
 
 ## 4. Dataset availability
@@ -101,18 +112,18 @@ These are intentionally marked optional because their real benchmark artifacts a
 For live tutorial participants, prefer the smaller command:
 
 ```bash
-python experiment/run.py \
-  --mode real \
-  --backend offline \
-  --datasets locomo longmemeval memoryarena \
-  --longmemeval-files longmemeval_oracle.json \
-  --max-conversations 2 \
-  --max-questions 20 \
-  --max-items 100 \
-  --top-k 5 \
-  --eval-backend offline \
-  --eval-limit 50 \
-  --visualize
+python source/run.py \
+ --mode real \
+ --backend offline \
+ --datasets locomo longmemeval memoryarena \
+ --longmemeval-files longmemeval_oracle.json \
+ --max-conversations 2 \
+ --max-questions 20 \
+ --max-items 100 \
+ --top-k 5 \
+ --eval-backend offline \
+ --eval-limit 50 \
+ --visualize
 ```
 
 This better matches the proposal's low-resource expectation.
@@ -122,58 +133,58 @@ This better matches the proposal's low-resource expectation.
 For full local reproduction:
 
 ```bash
-python experiment/run.py \
-  --mode real \
-  --backend offline \
-  --datasets locomo longmemeval memoryarena \
-  --max-conversations 999 \
-  --max-questions 999 \
-  --top-k 5 \
-  --eval-backend offline \
-  --eval-limit 50 \
-  --visualize
+python source/run.py \
+ --mode real \
+ --backend offline \
+ --datasets locomo longmemeval memoryarena \
+ --max-conversations 999 \
+ --max-questions 999 \
+ --top-k 5 \
+ --eval-backend offline \
+ --eval-limit 50 \
+ --visualize
 ```
 
 For paper-quality full semantic evaluation, use the Modal GPU runner instead of the capped local evaluator. The Modal GPU smoke test has been verified end-to-end and synced local artifacts successfully.
 
 ```bash
-python experiment/run.py \
-  --runner modal \
-  --modal-gpu A10G \
-  --modal-detach \
-  --mode real \
-  --backend offline \
-  --datasets locomo longmemeval memoryarena \
-  --max-conversations 999 \
-  --max-questions 999 \
-  --top-k 5 \
-  --eval-backend offline \
-  --visualize
+python source/run.py \
+ --runner modal \
+ --modal-gpu A10G \
+ --modal-detach \
+ --mode real \
+ --backend offline \
+ --datasets locomo longmemeval memoryarena \
+ --max-conversations 999 \
+ --max-questions 999 \
+ --top-k 5 \
+ --eval-backend offline \
+ --visualize
 ```
 
 The latest paper-quality Modal GPU log is:
 
 ```text
-experiment/results/logs/fetch_modal_gpu_full_corrected.log
+source/results/logs/fetch_modal_gpu_full_corrected.log
 ```
 
 Latest paper-quality Modal GPU outputs:
 
 ```text
-experiment/results/run_20260509_151530_real_raw.json
-experiment/results/run_20260509_151530_real_metrics.json
-experiment/results/run_20260509_151530_real_summary.tsv
+source/results/run_20260509_151530_real_raw.json
+source/results/run_20260509_151530_real_metrics.json
+source/results/run_20260509_151530_real_summary.tsv
 ```
 
 Figures:
 
 ```text
-experiment/results/figure_real_retrieval.png
-experiment/results/figure_semantic_scores.png
-experiment/results/figure_semantic_vs_retrieval.png
-experiment/results/figure_evaluator_coverage.png
-experiment/results/figure_memory_growth.png
-experiment/results/figure_failures.png
+source/results/figure_real_retrieval.png
+source/results/figure_semantic_scores.png
+source/results/figure_semantic_vs_retrieval.png
+source/results/figure_evaluator_coverage.png
+source/results/figure_memory_growth.png
+source/results/figure_failures.png
 ```
 
 ## 7. Full benchmark results
@@ -217,29 +228,29 @@ The exact expected metric ranges in the proposal should be treated as teaching e
 Run:
 
 ```bash
-latest_real=$(ls -t experiment/results/run_*_real_metrics.json | head -1)
-python experiment/run.py \
-  --mode autoresearch-agent \
-  --backend offline \
-  --benchmark-metrics "$latest_real" \
-  --use-cases locomo autoresearch hpo memoryarena longmemeval lcbench \
-  --ideas-per-case 2 \
-  --top-k 5
+latest_real=$(ls -t source/results/run_*_real_metrics.json | head -1)
+python source/run.py \
+ --mode autoresearch-agent \
+ --backend offline \
+ --benchmark-metrics "$latest_real" \
+ --use-cases locomo autoresearch hpo memoryarena longmemeval lcbench \
+ --ideas-per-case 2 \
+ --top-k 5
 ```
 
 The latest log is:
 
 ```text
-experiment/results/logs/run_autoresearch_agent_modal_corrected.log
+source/results/logs/run_autoresearch_agent_modal_corrected.log
 ```
 
 Latest outputs:
 
 ```text
-experiment/results/run_20260509_151732_autoresearch_agent_raw.json
-experiment/results/run_20260509_151732_autoresearch_agent_metrics.json
-experiment/results/run_20260509_151732_autoresearch_agent_summary.tsv
-experiment/results/run_20260509_151732_autoresearch_agent_report.md
+source/results/run_20260509_151732_autoresearch_agent_raw.json
+source/results/run_20260509_151732_autoresearch_agent_metrics.json
+source/results/run_20260509_151732_autoresearch_agent_summary.tsv
+source/results/run_20260509_151732_autoresearch_agent_report.md
 ```
 
 Latest summary:
@@ -277,11 +288,11 @@ For OpenAI-compatible runs:
 
 ```bash
 export OPENAI_API_KEY
-python experiment/run.py \
-  --mode tutorial \
-  --backend openai-compatible \
-  --base-url http://127.0.0.1:8317/api/provider/codex/v1 \
-  --model gpt-5.5
+python source/run.py \
+ --mode tutorial \
+ --backend openai-compatible \
+ --base-url http://127.0.0.1:8317/api/provider/codex/v1 \
+ --model gpt-5.5
 ```
 
 Never hardcode the real API key in notebooks, source files, JSON outputs, or reports.
@@ -293,19 +304,19 @@ The notebooks include API guidance but do not call the API unless the user expli
 For reproducible tutorial runs, use:
 
 ```bash
-python experiment/run.py --mode real --eval-backend offline --eval-limit 50
+python source/run.py --mode real --eval-backend offline --eval-limit 50
 ```
 
 For Rhesis maintainer smoke tests, install `rhesis-sdk`, set `RHESIS_API_KEY` outside source files, then run:
 
 ```bash
-python experiment/run.py --mode real --eval-backend rhesis --eval-smoke-test --eval-limit 1
+python source/run.py --mode real --eval-backend rhesis --eval-smoke-test --eval-limit 1
 ```
 
 For Semantica smoke tests, install `semantica`, then run:
 
 ```bash
-python experiment/run.py --mode real --eval-backend semantica --eval-smoke-test --eval-limit 1
+python source/run.py --mode real --eval-backend semantica --eval-smoke-test --eval-limit 1
 ```
 
 Notebook 10 contains these optional maintainer checks. It is not required for live participants.

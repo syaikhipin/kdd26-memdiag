@@ -1,0 +1,33 @@
+{
+  "surface": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/autoresearch/frozen_surface.json",
+  "n_configs": 10,
+  "n_ok": 7,
+  "n_oom": 3,
+  "diagnoses": {
+    "C0_latest": {
+      "opt_improvement": 25770,
+      "no_relevant_memory": 24998,
+      "opt_regression_no_trend": 15287,
+      "opt_predicted_regression": 10637,
+      "retrieval_failure": 3974,
+      "opt_exploration": 18306,
+      "utilization_failure": 1028
+    },
+    "C1_raw": {
+      "opt_improvement": 25770,
+      "no_relevant_memory": 24998,
+      "opt_regression_no_trend": 15287,
+      "opt_predicted_regression": 10637,
+      "utilization_failure": 5002,
+      "opt_exploration": 18306
+    },
+    "C1g_gen": {
+      "opt_improvement": 25770,
+      "no_relevant_memory": 24998,
+      "opt_regression_no_trend": 15287,
+      "opt_predicted_regression": 10637,
+      "success": 5002,
+      "opt_exploration": 18306
+    }
+  }
+}

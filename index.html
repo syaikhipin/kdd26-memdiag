@@ -1,270 +1,311 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>KDD 2026 Tutorial | Systematic Diagnosis and Benchmarking of Memory Systems</title>
-  <style>
-    :root {
-      color-scheme: light;
-      --ink:#172033;
-      --muted:#586174;
-      --brand:#315efb;
-      --brand2:#00a88f;
-      --bg:#f6f8fc;
-      --card:#fff;
-      --line:#dfe5f2;
-      --soft:#eef3ff;
-      --warn:#fff6d8;
-    }
-    * { box-sizing:border-box; }
-    body { margin:0; font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif; color:var(--ink); background:var(--bg); line-height:1.6; }
-    header { padding:64px 22px 44px; background:radial-gradient(circle at top left,rgba(255,255,255,.22),transparent 32%),linear-gradient(135deg,#10182b,#315efb 58%,#00a88f); color:white; }
-    main { max-width:1180px; margin:0 auto; padding:28px 22px 72px; }
-    h1 { max-width:1040px; margin:0 auto 14px; font-size:clamp(2.1rem,5vw,4.4rem); line-height:1.04; letter-spacing:-.04em; }
-    h2 { margin:46px 0 14px; font-size:1.85rem; letter-spacing:-.02em; }
-    h3 { margin:0 0 8px; }
-    header p { max-width:1040px; margin:0 auto; color:#e8ecff; font-size:1.18rem; }
-    a { color:var(--brand); text-decoration:none; font-weight:600; }
-    a:hover { text-decoration:underline; }
-    .eyebrow { max-width:1040px; margin:0 auto 14px; color:#d8fff8; text-transform:uppercase; letter-spacing:.12em; font-size:.78rem; font-weight:800; }
-    .hero-actions { max-width:1040px; margin:24px auto 0; display:flex; flex-wrap:wrap; gap:12px; }
-    .button { display:inline-block; padding:11px 15px; border-radius:999px; background:white; color:#172033; box-shadow:0 10px 28px rgba(0,0,0,.16); }
-    .button.secondary { background:rgba(255,255,255,.12); color:white; border:1px solid rgba(255,255,255,.38); box-shadow:none; }
-    .grid { display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; margin:22px 0; }
-    .two-col { display:grid; grid-template-columns:1.05fr .95fr; gap:18px; align-items:start; }
-    .card, .panel { background:var(--card); border:1px solid var(--line); border-radius:18px; padding:20px; box-shadow:0 8px 28px rgba(23,32,51,.06); }
-    .muted { color:var(--muted); }
-    .pill { display:inline-block; padding:5px 10px; border-radius:999px; background:var(--soft); color:#2648c8; font-size:.82rem; font-weight:700; margin:3px 4px 3px 0; }
-    .ok { background:#e7fff9; color:#007965; }
-    .warn { background:var(--warn); color:#85610a; }
-    .figures { display:grid; grid-template-columns:repeat(auto-fit,minmax(320px,1fr)); gap:18px; }
-    figure { margin:0; background:var(--card); border:1px solid var(--line); border-radius:18px; padding:14px; box-shadow:0 8px 28px rgba(23,32,51,.05); }
-    figure img { width:100%; height:auto; display:block; border-radius:12px; border:1px solid #eef1f7; }
-    figcaption { margin-top:10px; color:var(--muted); font-size:.95rem; }
-    table { width:100%; border-collapse:collapse; background:white; border-radius:14px; overflow:hidden; box-shadow:0 8px 28px rgba(23,32,51,.05); }
-    th, td { padding:10px 12px; border-bottom:1px solid var(--line); text-align:right; font-size:.94rem; }
-    th:first-child, td:first-child, th:nth-child(2), td:nth-child(2) { text-align:left; }
-    th { background:#eef3ff; color:#253054; }
-    code, pre { background:#edf1f8; border-radius:8px; }
-    pre { padding:15px; overflow:auto; border:1px solid var(--line); }
-    .step-list { counter-reset:step; display:grid; gap:12px; }
-    .step { position:relative; padding:16px 16px 16px 58px; background:white; border:1px solid var(--line); border-radius:16px; }
-    .step:before { counter-increment:step; content:counter(step); position:absolute; left:16px; top:16px; width:28px; height:28px; border-radius:50%; display:grid; place-items:center; background:var(--brand); color:white; font-weight:800; }
-    .diagram { background:white; border:1px solid var(--line); border-radius:18px; padding:16px; overflow:auto; box-shadow:0 8px 28px rgba(23,32,51,.05); }
-    svg { max-width:100%; height:auto; }
-    .callout { border-left:5px solid var(--brand2); background:#ecfffb; padding:16px 18px; border-radius:14px; }
-    footer { border-top:1px solid var(--line); color:var(--muted); padding:26px 22px; text-align:center; background:white; }
-    @media (max-width:860px) { .two-col { grid-template-columns:1fr; } th, td { font-size:.82rem; padding:8px; } }
-  </style>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KDD'26 Tutorial — Memory Systems Documentation</title>
+<style>
+:root{--bg:#fff;--ink:#1a1a2e;--muted:#555;--accent:#2962ff;--border:#e0e0e0;--card:#f8f9fa;
+ --code-bg:#f5f5f5;--green:#2e7d32;--amber:#e65100;--sidebar:#f0f0f0;--hover:#e3f2fd}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ background:var(--bg);color:var(--ink);line-height:1.75;font-size:15.5px}
+a{color:var(--accent);text-decoration:none}
+a:hover{text-decoration:underline}
+code{background:var(--code-bg);padding:1.5px 5px;border-radius:4px;font-family:"SF Mono",Consolas,Menlo,monospace;font-size:.88em;color:var(--accent)}
+pre{background:var(--code-bg);border:1px solid var(--border);border-radius:8px;padding:14px 16px;overflow:auto;margin:10px 0;font-size:.88em;line-height:1.5}
+pre code{background:none;padding:0;color:var(--ink)}
+table{width:100%;border-collapse:collapse;margin:12px 0;font-size:.93em}
+th,td{padding:8px 10px;border-bottom:1px solid var(--border);text-align:left}
+th{background:var(--card);font-weight:600;font-size:.9em}
+h1{font-size:2rem;margin:0 0 6px}
+h2{font-size:1.45rem;margin:40px 0 10px;padding-bottom:6px;border-bottom:2px solid var(--accent);color:var(--ink)}
+h3{font-size:1.15rem;margin:24px 0 6px}
+h4{font-size:1rem;margin:18px 0 4px;color:var(--muted)}
+p{margin:8px 0}
+ul,ol{margin:8px 0 8px 24px}
+li{margin:4px 0}
+.note{background:#fff8e1;border-left:4px solid var(--amber);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:.92em}
+.tip{background:#e8f5e9;border-left:4px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:.92em}
+.card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin:14px 0}
+.pill{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.78em;font-weight:600;margin-right:4px}
+.p1{background:#e8f5e9;color:var(--green)}.p2{background:#fff3e0;color:var(--amber)}.p3{background:#e3f2fd;color:var(--accent)}
+.btn{display:inline-block;padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff!important;text-decoration:none!important;font-weight:600;margin:4px 4px 4px 0;font-size:.92em}
+.btn:hover{opacity:.9}
+.btn.sec{background:var(--card);color:var(--ink)!important;border:1px solid var(--border)}
+.layout{display:flex;min-height:100vh}
+.sidebar{width:250px;background:var(--sidebar);border-right:1px solid var(--border);padding:20px 0;position:fixed;height:100vh;overflow-y:auto;z-index:10}
+.sidebar .logo{padding:14px 20px;font-weight:700;font-size:1.05rem;color:var(--accent);border-bottom:1px solid var(--border);margin-bottom:8px}
+.sidebar h4{padding:10px 20px 4px;font-size:.72rem;text-transform:uppercase;letter-spacing:.8px;color:var(--muted)}
+.sidebar a{display:block;padding:5px 20px 5px 24px;color:var(--ink);font-size:.9rem;border-left:3px solid transparent}
+.sidebar a:hover{background:var(--hover);border-left-color:var(--accent);text-decoration:none}
+.sidebar a.active{color:var(--accent);border-left-color:var(--accent);font-weight:600}
+.main{margin-left:250px;padding:30px 45px;max-width:820px;width:100%}
+.footer{margin-top:60px;padding-top:16px;border-top:1px solid var(--border);color:var(--muted);font-size:.85em}
+.tabs{display:flex;gap:0;margin:16px 0;border-bottom:2px solid var(--border)}
+.tab{padding:10px 20px;cursor:pointer;font-weight:600;font-size:.92em;color:var(--muted);border-bottom:3px solid transparent;margin-bottom:-2px}
+.tab.active{color:var(--accent);border-bottom-color:var(--accent)}
+.tab:hover{color:var(--accent)}
+.tab-content{display:none}.tab-content.active{display:block}
+.collapsible{cursor:pointer;padding:10px 14px;background:var(--card);border:1px solid var(--border);border-radius:6px;margin:8px 0;font-weight:600;font-size:.92em}
+.collapsible:hover{background:var(--hover)}
+.collapsible:after{content:'\25BC';float:right;font-size:.8em;color:var(--muted)}
+.collapsible.open:after{content:'\25B2'}
+.collapsible-content{display:none;padding:12px 0}.collapsible-content.show{display:block}
+.figures{display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:14px;margin:12px 0}
+figure{margin:0;background:var(--card);border:1px solid var(--border);border-radius:8px;overflow:hidden}
+figcaption{padding:8px 12px;font-size:.85em;color:var(--muted)}
+img{width:100%;display:block}
+@media(max-width:768px){.sidebar{display:none}.main{margin-left:0;padding:16px}}
+</style>
 </head>
 <body>
-<header>
-  <div class="eyebrow">KDD 2026 Tutorial · GitHub Pages Submission Site</div>
-  <h1>Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research Agents: A Low-Resource Framework</h1>
-  <p>This page packages the KDD 2026 tutorial materials: source code, numbered notebooks, walkthrough, Modal GPU results, semantic evaluation, figures, selected logs, and reproducibility instructions.</p>
-  <div class="hero-actions">
-    <a class="button" href="notebooks/WALKTHROUGH.md">Start the walkthrough</a>
-    <a class="button secondary" href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/1_setup_and_timeline.ipynb">Open notebook 1 in Colab</a>
-    <a class="button secondary" href="results/summaries/run_20260509_151530_real_summary.tsv">Download final summary</a>
-  </div>
-</header>
-<main>
-  <section class="grid" aria-label="Quick links">
-    <div class="card"><h3>Source Code</h3><p class="muted">Curated Python implementation for memory providers, diagnostic probes, semantic evaluators, Modal GPU execution, and figures.</p><a href="source/README.md">Open source README</a></div>
-    <div class="card"><h3>Notebook Tutorial</h3><p class="muted">Ten numbered Jupyter/Colab notebooks following the KDD tutorial timeline from setup to external testing integrations.</p><a href="notebooks/README.md">Open notebook guide</a></div>
-    <div class="card"><h3>Walkthrough</h3><p class="muted">Step-by-step teaching guide with local, Colab, and Modal GPU commands plus interpretation of final results.</p><a href="notebooks/WALKTHROUGH.md">Read walkthrough</a></div>
-    <div class="card"><h3>Provenance Logs</h3><p class="muted">Selected clean logs for Modal GPU, autoresearch-agent reevaluation, notebook execution, and local smoke checks.</p><a href="logs/modal_gpu_full_corrected.log">Open Modal log</a></div>
-  </section>
+<div class="layout">
+<nav class="sidebar" id="sidebar">
+ <div class="logo">\u{1F9E0} KDD'26 Tutorial</div>
+ <h4>Getting Started</h4>
+ <a href="#overview" class="active">Overview</a>
+ <a href="#what">What You'll Learn</a>
+ <a href="#setup">Setup (5 min)</a>
+ <a href="#quick">Quick Start</a>
+ <h4>The Three Phases</h4>
+ <a href="#phase1">Phase 1: Techniques</a>
+ <a href="#phase2">Phase 2: Datasets</a>
+ <a href="#phase3">Phase 3: Autoresearch</a>
+ <h4>Reference</h4>
+ <a href="#results">Results</a>
+ <a href="#cli">CLI Package</a>
+ <a href="#judge">LLM-as-Judge</a>
+ <a href="#diagnostic">Memory Diagnostic</a>
+ <a href="#timing">Timing & Pacing</a>
+ <a href="#faq">FAQ</a>
+ <a href="#credits">Credits</a>
+</nav>
+<div class="main">
+<h1 id="overview">Memory Systems in Autonomous AI Research Agents</h1>
+<p><strong>A hands-on KDD'26 tutorial</strong> &mdash; diagnose, benchmark, and improve memory systems for
+autonomous research agents. Everything runs on a laptop; no GPU required for Phases 1&ndash;2.</p>
+<div class="card">
+<p><strong>You are here:</strong> this is the complete documentation. Follow the sections in the sidebar
+left-to-right, or jump to any phase.</p>
+<p>
+ <a class="btn" href="#quick">Quick Start</a>
+ <a class="btn sec" href="RUN.html">Step-by-step Guide</a>
+ <a class="btn sec" href="SCHEDULE.md">3-Phase Schedule</a>
+ <a class="btn sec" href="docs.html">Full Docs</a>
+</p>
+</div>
+<h2 id="what">What You'll Learn</h2>
+<div class="card">
+<ol>
+ <li><strong>The 30 memory techniques</strong> across 6 families (short-term, long-term, cognitive,
+ retrieval, frameworks, production) &mdash; with hands-on demos using a real LLM.</li>
+ <li><strong>The 3-probe diagnostic framework</strong> &mdash; how to measure retrieval relevance,
+ context utilization, and failure root-cause independently (not circularly).</li>
+ <li><strong>How to benchmark</strong> four genuine memory providers (verbatim, extracted facts,
+ episodic, hierarchical) on real public datasets (LoCoMo, LongMemEval, MemoryArena).</li>
+ <li><strong>The autonomous-research case study</strong> &mdash; run a real LLM-pretraining sweep on a
+ cloud GPU, aggregate results across groups, and diagnose memory failures.</li>
+</ol>
+</div>
+<h2 id="setup">Setup (5 minutes)</h2>
+<h3>Prerequisites</h3>
+<table>
+<tr><th>Requirement</th><th>Details</th></tr>
+<tr><td><strong>Python</strong></td><td>3.10 or later</td></tr>
+<tr><td><strong>RAM</strong></td><td>8 GB+ (16 GB recommended for Phase 3)</td></tr>
+<tr><td><strong>GPU</strong></td><td>Not required for Phases 1&ndash;2. Phase 3 uses a cloud L4 (Modal).</td></tr>
+<tr><td><strong>API key (Phase 1)</strong></td><td>Free OpenAI-compatible endpoint: <code>OPENAI_API_KEY</code> + <code>OPENAI_BASE_URL=https://api.openai.com/v1</code></td></tr>
+<tr><td><strong>Modal (Phase 3)</strong></td><td><code>pip install modal &amp;&amp; modal setup</code> (~$0.5&ndash;1/group)</td></tr>
+</table>
+<h3>Install</h3>
+<pre><code># 1. Clone the repository
+git clone &lt;repo-url&gt; kdd-tutorial
+cd kdd-tutorial/experiment/github_submission
 
-  <section>
-    <h2>Tutorial title and tutors</h2>
-    <div class="card">
-      <h3>Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research Agents: A Low-Resource Framework</h3>
-      <p class="muted">This tutorial introduces a practical framework for diagnosing retrieval, context use, and evaluation failures in memory systems for autonomous research agents.</p>
-    </div>
-    <div class="grid">
-      <div class="card"><h3>Nur Arifin Akbar</h3><p class="muted">Università degli Studi di Palermo, Dipartimento Matematica e Informatica, Italy.</p><p>Researcher working on AI systems, autonomous agents, retrieval-augmented generation, and memory architectures for long-horizon research workflows.</p><p><a href="mailto:nurarifin.akbar@unipa.it">nurarifin.akbar@unipa.it</a></p></div>
-      <div class="card"><h3>Rahool Dembani</h3><p class="muted">Singularlogic, Athens, Greece.</p><p>Researcher and AI engineer focused on production LLM systems, hybrid memory architectures, enterprise AI, scalability, reliability, and cost-effective autonomous systems.</p><p><a href="mailto:rdembani@singularlogic.eu">rdembani@singularlogic.eu</a></p></div>
-      <div class="card"><h3>Gregorius Airlangga</h3><p class="muted">Atma Jaya Catholic University of Indonesia, Jakarta, Indonesia.</p><p>Researcher and faculty member working on retrieval-augmented generation, natural language processing, AI evaluation, reproducibility, and resource-efficient AI.</p><p><a href="mailto:gregorius.airlangga@atmajaya.ac.id">gregorius.airlangga@atmajaya.ac.id</a></p></div>
-      <div class="card"><h3>Ripto Mukti Wibowo</h3><p class="muted">Atma Jaya Catholic University of Indonesia, Jakarta, Indonesia.</p><p>Researcher working on autonomous AI systems, machine learning, computational intelligence, memory optimisation, resource-constrained deployment, and systematic AI evaluation.</p><p><a href="mailto:ripto.wibowo@atmajaya.ac.id">ripto.wibowo@atmajaya.ac.id</a></p></div>
-      <div class="card"><h3>Biagio Lenzitti</h3><p class="muted">Università degli Studi di Palermo, Dipartimento Matematica e Informatica, Italy.</p><p>Researcher whose work spans health informatics, machine learning, cyber risk assessment, distributed data sharing, data security, and medical informatics.</p><p><a href="mailto:biagio.lenzitti@unipa.it">biagio.lenzitti@unipa.it</a></p></div>
-      <div class="card"><h3>Domenico Tegolo</h3><p class="muted">Università degli Studi di Palermo, Dipartimento Matematica e Informatica, Italy.</p><p>Associate Professor working on computational vision, mathematical modelling, biomedical image analysis, neural networks, artificial intelligence, and image-analysis architectures.</p><p><a href="mailto:domenico.tegolo@unipa.it">domenico.tegolo@unipa.it</a></p></div>
-    </div>
-  </section>
+# 2. Install dependencies (offline-only, lightweight)
+pip install numpy matplotlib pyyaml
 
-  <section>
-    <h2>Open tutorial notebooks in Google Colab</h2>
-    <p>Use these GitHub-backed Colab links when viewing the website. They open the rendered, runnable notebook instead of downloading a plain `.ipynb` file.</p>
-    <div class="grid">
-      <div class="card"><h3>1. Setup</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/1_setup_and_timeline.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>2. Datasets</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/2_dataset_registry_and_downloads.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>3. Memory architectures</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/3_memory_architectures.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>4. Diagnostic probes</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/4_three_probe_diagnostics.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>5. Full benchmark</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/5_full_real_benchmark.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>6. Dashboard</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/6_visualization_dashboard.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>7. Autoresearch loop</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/7_autoresearch_agent_loop.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>8. Timeline fit</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/8_kdd_timeline_fit_analysis.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>9. Colab guidance</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/9_colab_guidance_and_next_steps.ipynb">Open in Colab</a></div>
-      <div class="card"><h3>10. Integrations</h3><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/10_external_testing_integrations.ipynb">Open in Colab</a></div>
-    </div>
-  </section>
+# 3. Install the CLI package (optional but recommended)
+pip install -e source # core package
+pip install -e "source[api]" # + openai/tiktoken for LLM demos
 
-  <section class="two-col">
-    <div>
-      <h2>What participants learn</h2>
-      <p>The tutorial teaches how to diagnose memory systems in autonomous research agents using reproducible, low-resource benchmarking. Participants compare memory strategies, inspect retrieval failures, test context utilization, and use results as memory for an autonomous research-agent loop.</p>
-      <p><span class="pill ok">INGEST</span><span class="pill ok">INDEX</span><span class="pill ok">SEARCH</span><span class="pill ok">ANSWER</span><span class="pill ok">EVALUATE</span><span class="pill ok">REPORT</span></p>
-      <div class="callout"><strong>Tutorial framing:</strong> The live path is low-resource and notebook-first. The paper-quality path uses Modal GPU to rerun the complete benchmark with full offline semantic coverage.</div>
-    </div>
-    <div class="diagram" aria-label="Tutorial pipeline diagram">
-      <svg width="640" height="300" viewBox="0 0 640 300" role="img" aria-label="Memory diagnosis pipeline">
-        <defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#315efb"/></marker></defs>
-        <rect x="18" y="28" width="105" height="54" rx="14" fill="#eef3ff" stroke="#315efb"/><text x="70" y="60" text-anchor="middle" font-size="15" font-weight="700">Datasets</text>
-        <rect x="158" y="28" width="105" height="54" rx="14" fill="#eef3ff" stroke="#315efb"/><text x="210" y="60" text-anchor="middle" font-size="15" font-weight="700">Memories</text>
-        <rect x="298" y="28" width="105" height="54" rx="14" fill="#eef3ff" stroke="#315efb"/><text x="350" y="60" text-anchor="middle" font-size="15" font-weight="700">Retrieve</text>
-        <rect x="438" y="28" width="105" height="54" rx="14" fill="#eef3ff" stroke="#315efb"/><text x="490" y="60" text-anchor="middle" font-size="15" font-weight="700">Evaluate</text>
-        <path d="M123 55 H158" stroke="#315efb" stroke-width="3" marker-end="url(#arrow)"/><path d="M263 55 H298" stroke="#315efb" stroke-width="3" marker-end="url(#arrow)"/><path d="M403 55 H438" stroke="#315efb" stroke-width="3" marker-end="url(#arrow)"/>
-        <rect x="78" y="142" width="135" height="68" rx="16" fill="#e7fff9" stroke="#00a88f"/><text x="145" y="170" text-anchor="middle" font-size="15" font-weight="700">Failure probes</text><text x="145" y="192" text-anchor="middle" font-size="12" fill="#586174">retrieval · use · cause</text>
-        <rect x="253" y="142" width="135" height="68" rx="16" fill="#e7fff9" stroke="#00a88f"/><text x="320" y="170" text-anchor="middle" font-size="15" font-weight="700">Semantic layer</text><text x="320" y="192" text-anchor="middle" font-size="12" fill="#586174">offline · Rhesis · Semantica</text>
-        <rect x="428" y="142" width="135" height="68" rx="16" fill="#e7fff9" stroke="#00a88f"/><text x="495" y="170" text-anchor="middle" font-size="15" font-weight="700">Reports</text><text x="495" y="192" text-anchor="middle" font-size="12" fill="#586174">figures · logs · notebooks</text>
-        <path d="M490 82 C490 116 145 112 145 142" stroke="#00a88f" stroke-width="3" fill="none" marker-end="url(#arrow)"/>
-        <path d="M213 176 H253" stroke="#00a88f" stroke-width="3" marker-end="url(#arrow)"/><path d="M388 176 H428" stroke="#00a88f" stroke-width="3" marker-end="url(#arrow)"/>
-        <text x="320" y="260" text-anchor="middle" font-size="14" fill="#586174">A low-resource teaching loop plus a Modal GPU path for paper-quality full evaluation.</text>
-      </svg>
-    </div>
-  </section>
+# 4. Verify
+python -m compileall -q source # should print nothing (success)</code></pre>
+<div class="tip"><strong>For Phase 1 LLM demos:</strong> export an OpenAI-compatible endpoint before
+launching Jupyter:
+<pre style="margin:8px 0"><code>export OPENAI_API_KEY=-&lt;your-key&gt;
+export OPENAI_BASE_URL=https://api.openai.com/v1</code></pre>
+Without a key, the demos fall back to offline heuristics (still runnable, just less rich).</div>
+<h2 id="quick">Quick Start</h2>
+<p>Open any notebook in Jupyter or Colab &mdash; each is independent and self-contained:</p>
+<pre><code># Phase 1 (offline or ):
+jupyter notebook tutorial/phase1_memory_architectures/01_short_term_memory.ipynb
 
-  <section>
-    <h2>Walkthrough for KDD 2026 tutorial delivery</h2>
-    <div class="step-list">
-      <div class="step"><strong>Setup and timeline.</strong> Start with <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/1_setup_and_timeline.ipynb">notebook 1</a> to introduce the tutorial schedule, goals, and low-resource assumptions.</div>
-      <div class="step"><strong>Dataset registry.</strong> Use <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/2_dataset_registry_and_downloads.ipynb">notebook 2</a> to explain which datasets are included, optional, or externally downloaded.</div>
-      <div class="step"><strong>Memory architectures.</strong> Use <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/3_memory_architectures.ipynb">notebook 3</a> to compare no-memory, verbatim, extracted facts, episodic, and hybrid strategies.</div>
-      <div class="step"><strong>Three diagnostic probes.</strong> Use <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/4_three_probe_diagnostics.ipynb">notebook 4</a> for retrieval relevance, context utilization, and failure root-cause analysis.</div>
-      <div class="step"><strong>Full benchmark and dashboard.</strong> Use <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/5_full_real_benchmark.ipynb">notebook 5</a> and <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/6_visualization_dashboard.ipynb">notebook 6</a> to reproduce tables and figures.</div>
-      <div class="step"><strong>Autonomous research-agent loop.</strong> Use <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/7_autoresearch_agent_loop.ipynb">notebook 7</a> to generate ideas, retrieve prior experiment memories, and debug decisions.</div>
-      <div class="step"><strong>Fit analysis and next steps.</strong> Use <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/8_kdd_timeline_fit_analysis.ipynb">notebook 8</a>, <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/9_colab_guidance_and_next_steps.ipynb">notebook 9</a>, and <a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/10_external_testing_integrations.ipynb">notebook 10</a> for organizer guidance and optional Rhesis/Semantica checks.</div>
-    </div>
-  </section>
+# Phase 2 (offline, no key):
+jupyter notebook tutorial/phase2_public_datasets/01_diagnostic_framework.ipynb
 
-  <section>
-    <h2>Notebook timeline</h2>
-    <div class="diagram" aria-label="Three hour tutorial timeline diagram">
-      <svg width="980" height="250" viewBox="0 0 980 250" role="img" aria-label="KDD tutorial timeline">
-        <line x1="80" y1="110" x2="900" y2="110" stroke="#dfe5f2" stroke-width="16" stroke-linecap="round"/>
-        <rect x="80" y="78" width="205" height="64" rx="18" fill="#eef3ff" stroke="#315efb"/><text x="182" y="105" text-anchor="middle" font-size="15" font-weight="700">Part 1</text><text x="182" y="126" text-anchor="middle" font-size="12" fill="#586174">architectures</text>
-        <rect x="300" y="78" width="230" height="64" rx="18" fill="#e7fff9" stroke="#00a88f"/><text x="415" y="105" text-anchor="middle" font-size="15" font-weight="700">Part 2</text><text x="415" y="126" text-anchor="middle" font-size="12" fill="#586174">diagnostic probes</text>
-        <rect x="545" y="78" width="205" height="64" rx="18" fill="#eef3ff" stroke="#315efb"/><text x="647" y="105" text-anchor="middle" font-size="15" font-weight="700">Part 3</text><text x="647" y="126" text-anchor="middle" font-size="12" fill="#586174">benchmarking</text>
-        <rect x="765" y="78" width="135" height="64" rx="18" fill="#fff6d8" stroke="#c99a13"/><text x="832" y="105" text-anchor="middle" font-size="15" font-weight="700">Part 4</text><text x="832" y="126" text-anchor="middle" font-size="12" fill="#586174">applications</text>
-        <text x="80" y="178" font-size="13" fill="#586174">1–3</text><text x="300" y="178" font-size="13" fill="#586174">4</text><text x="545" y="178" font-size="13" fill="#586174">5–6</text><text x="765" y="178" font-size="13" fill="#586174">7–10</text>
-        <text x="490" y="222" text-anchor="middle" font-size="14" fill="#586174">Numbered notebooks map to the accepted KDD tutorial flow while preserving a low-resource Colab path.</text>
-      </svg>
-    </div>
-  </section>
-
-  <section>
-    <h2>Final paper-quality benchmark</h2>
-    <p>The final Modal GPU run evaluates LoCoMo, LongMemEval, and MemoryArena with full offline semantic coverage. No-memory is a clean failure baseline; LongMemEval provides consistent retrieval-backed results; MemoryArena strongly favors extracted facts.</p>
-    <table>
-      <thead><tr><th>Dataset</th><th>Strategy</th><th>Questions</th><th>Precision</th><th>Recall</th><th>Hit</th><th>Sem. Cov.</th><th>Sem.</th><th>Pass</th></tr></thead>
-      <tbody>
-        <tr><td>LoCoMo</td><td>no_memory</td><td>1540</td><td>0.000</td><td>0.000</td><td>0.000</td><td>1.000</td><td>0.000</td><td>0.000</td></tr>
-        <tr><td>LoCoMo</td><td>verbatim</td><td>1540</td><td>0.057</td><td>0.249</td><td>0.277</td><td>1.000</td><td>0.432</td><td>0.277</td></tr>
-        <tr><td>LoCoMo</td><td>extracted_facts</td><td>1540</td><td>0.055</td><td>0.242</td><td>0.271</td><td>1.000</td><td>0.422</td><td>0.271</td></tr>
-        <tr><td>LoCoMo</td><td>episodic</td><td>1540</td><td>0.064</td><td>0.278</td><td>0.311</td><td>1.000</td><td>0.465</td><td>0.311</td></tr>
-        <tr><td>LoCoMo</td><td>hybrid</td><td>1540</td><td>0.058</td><td>0.256</td><td>0.284</td><td>1.000</td><td>0.435</td><td>0.284</td></tr>
-        <tr><td>LongMemEval</td><td>verbatim</td><td>1500</td><td>0.393</td><td>0.516</td><td>0.575</td><td>1.000</td><td>0.636</td><td>0.575</td></tr>
-        <tr><td>LongMemEval</td><td>extracted_facts</td><td>1500</td><td>0.393</td><td>0.515</td><td>0.573</td><td>1.000</td><td>0.635</td><td>0.573</td></tr>
-        <tr><td>LongMemEval</td><td>episodic</td><td>1500</td><td>0.393</td><td>0.516</td><td>0.575</td><td>1.000</td><td>0.636</td><td>0.575</td></tr>
-        <tr><td>MemoryArena</td><td>verbatim</td><td>4850</td><td>0.180</td><td>0.348</td><td>0.356</td><td>1.000</td><td>0.367</td><td>0.356</td></tr>
-        <tr><td>MemoryArena</td><td>extracted_facts</td><td>4850</td><td>0.613</td><td>0.785</td><td>0.794</td><td>1.000</td><td>0.804</td><td>0.794</td></tr>
-        <tr><td>MemoryArena</td><td>episodic</td><td>4850</td><td>0.190</td><td>0.350</td><td>0.359</td><td>1.000</td><td>0.370</td><td>0.359</td></tr>
-      </tbody>
-    </table>
-    <p><a href="results/metrics/run_20260509_151530_real_metrics.json">Metrics JSON</a> · <a href="results/summaries/run_20260509_151530_real_summary.tsv">Summary TSV</a></p>
-  </section>
-
-  <section>
-    <h2>Figures and interpretation</h2>
-    <div class="figures">
-      <figure><img src="results/figures/figure_real_retrieval.png" alt="Real retrieval diagnostics"><figcaption><strong>Retrieval diagnostics.</strong> Compares evidence hit rates across datasets and memory strategies. It shows why a single memory architecture does not dominate.</figcaption></figure>
-      <figure><img src="results/figures/figure_semantic_scores.png" alt="Semantic scores"><figcaption><strong>Semantic scores.</strong> Adds a paper-quality evaluation layer beyond raw retrieval IDs, highlighting MemoryArena extracted facts and LongMemEval consistency.</figcaption></figure>
-      <figure><img src="results/figures/figure_semantic_vs_retrieval.png" alt="Semantic vs retrieval"><figcaption><strong>Semantic-vs-retrieval alignment.</strong> Shows whether stronger retrieval recall translates into more faithful/evaluable answers.</figcaption></figure>
-      <figure><img src="results/figures/figure_evaluator_coverage.png" alt="Evaluator coverage"><figcaption><strong>Evaluator coverage.</strong> Confirms complete offline semantic coverage for the final Modal GPU run.</figcaption></figure>
-      <figure><img src="results/figures/figure_failures.png" alt="Failure modes"><figcaption><strong>Failure analysis.</strong> Summarizes diagnosed memory failures such as retrieval misses, low-signal priors, and redundant ideas.</figcaption></figure>
-      <figure><img src="results/figures/figure_memory_growth.png" alt="Memory growth"><figcaption><strong>Memory growth.</strong> Helps participants reason about cost, storage, and retrieval quality as memories accumulate.</figcaption></figure>
-      <figure><img src="results/figures/figure_idea_novelty.png" alt="Idea novelty"><figcaption><strong>Idea novelty.</strong> Supports the autonomous research-agent case study by visualizing generated idea novelty.</figcaption></figure>
-      <figure><img src="results/figures/figure_locomo_retrieval.png" alt="LoCoMo retrieval"><figcaption><strong>LoCoMo detail.</strong> Focuses on the long-conversation setting where episodic memory performs best but remains challenging.</figcaption></figure>
-    </div>
-  </section>
-
-  <section class="two-col">
-    <div>
-      <h2>Autonomous research-agent case study</h2>
-      <p>The agent turns benchmark results into experiment memory, proposes new research ideas, retrieves prior outcomes, and decides whether to keep, revise, or discard each idea.</p>
-      <ul>
-        <li>Ideas: 12</li>
-        <li>Kept: 3, revised: 3, discarded: 6</li>
-        <li>Memory utilization rate: 0.5833</li>
-        <li>Redundant idea rate: 0.5</li>
-        <li>Mean semantic score: 0.3047</li>
-      </ul>
-      <p><a href="results/reports/run_20260509_151732_autoresearch_agent_report.md">Open case-study report</a></p>
-    </div>
-    <div class="diagram" aria-label="Autonomous research agent loop diagram">
-      <svg width="620" height="310" viewBox="0 0 620 310" role="img" aria-label="Autoresearch memory loop">
-        <defs><marker id="loopArrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse"><path d="M 0 0 L 10 5 L 0 10 z" fill="#315efb"/></marker></defs>
-        <circle cx="310" cy="155" r="88" fill="#eef3ff" stroke="#315efb" stroke-width="3"/>
-        <text x="310" y="149" text-anchor="middle" font-size="17" font-weight="800">Research-agent</text><text x="310" y="174" text-anchor="middle" font-size="13" fill="#586174">memory-debug loop</text>
-        <rect x="38" y="45" width="150" height="58" rx="16" fill="#fff" stroke="#dfe5f2"/><text x="113" y="78" text-anchor="middle" font-size="14" font-weight="700">Generate ideas</text>
-        <rect x="432" y="45" width="150" height="58" rx="16" fill="#fff" stroke="#dfe5f2"/><text x="507" y="78" text-anchor="middle" font-size="14" font-weight="700">Retrieve memory</text>
-        <rect x="432" y="210" width="150" height="58" rx="16" fill="#fff" stroke="#dfe5f2"/><text x="507" y="243" text-anchor="middle" font-size="14" font-weight="700">Keep / revise</text>
-        <rect x="38" y="210" width="150" height="58" rx="16" fill="#fff" stroke="#dfe5f2"/><text x="113" y="243" text-anchor="middle" font-size="14" font-weight="700">Diagnose failure</text>
-        <path d="M188 74 C238 74 244 114 260 126" stroke="#315efb" stroke-width="3" fill="none" marker-end="url(#loopArrow)"/>
-        <path d="M360 126 C382 100 400 74 432 74" stroke="#315efb" stroke-width="3" fill="none" marker-end="url(#loopArrow)"/>
-        <path d="M507 103 V210" stroke="#315efb" stroke-width="3" fill="none" marker-end="url(#loopArrow)"/>
-        <path d="M432 239 C386 239 374 202 360 184" stroke="#315efb" stroke-width="3" fill="none" marker-end="url(#loopArrow)"/>
-        <path d="M260 184 C238 214 218 239 188 239" stroke="#315efb" stroke-width="3" fill="none" marker-end="url(#loopArrow)"/>
-        <path d="M113 210 V103" stroke="#315efb" stroke-width="3" fill="none" marker-end="url(#loopArrow)"/>
-      </svg>
-    </div>
-  </section>
-
-  <section>
-    <h2>Reproduce</h2>
-    <pre><code>python -m compileall -q source
-python source/run.py --mode synthetic --backend offline --episodes 5</code></pre>
-    <p>For full paper-quality runs, provide the real datasets separately and use Modal GPU:</p>
-    <pre><code>python source/run.py \
-  --runner modal \
-  --modal-gpu A10G \
-  --modal-detach \
-  --mode real \
-  --backend offline \
-  --datasets locomo longmemeval memoryarena \
-  --max-conversations 999 \
-  --max-questions 999 \
-  --top-k 5 \
-  --eval-backend offline \
-  --visualize</code></pre>
-  </section>
-
-  <section>
-    <h2>Submission package</h2>
-    <div class="grid">
-      <div class="card"><h3>Final metrics</h3><p><a href="results/metrics/run_20260509_151530_real_metrics.json">Real benchmark JSON</a><br><a href="results/metrics/run_20260509_151732_autoresearch_agent_metrics.json">Autoresearch JSON</a></p></div>
-      <div class="card"><h3>Summaries</h3><p><a href="results/summaries/run_20260509_151530_real_summary.tsv">Real benchmark TSV</a><br><a href="results/summaries/run_20260509_151732_autoresearch_agent_summary.tsv">Autoresearch TSV</a></p></div>
-      <div class="card"><h3>Logs</h3><p><a href="logs/modal_gpu_full_corrected.log">Modal GPU log</a><br><a href="logs/autoresearch_agent_modal_corrected.log">Autoresearch log</a><br><a href="logs/notebooks/5_full_real_benchmark.log">Notebook 5 log</a></p></div>
-      <div class="card"><h3>Colab notebooks</h3><p><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/5_full_real_benchmark.ipynb">Benchmark notebook in Colab</a><br><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/main/notebooks/10_external_testing_integrations.ipynb">Integrations notebook in Colab</a></p></div>
-    </div>
-  </section>
-
-  <section>
-    <h2>Data availability</h2>
-    <p>The full real datasets are not vendored in this clean submission. See <a href="data/README.md">data/README.md</a> for details. API keys must be provided through environment variables only.</p>
-  </section>
-</main>
-<footer>KDD 2026 tutorial clean submission bundle · Static HTML for GitHub Pages.</footer>
+# Or use the CLI directly:
+diagnostic-framework diagnose --strategies verbatim,extracted_facts,episodic,hybrid --top_k 5
+benchmark-cli compare --providers verbatim,extracted_facts,episodic,hybrid --sample_size 20</code></pre>
+<h2 id="phase1"><span class="pill p1">Phase 1</span> Agent Memory Techniques (60 min)</h2>
+<p><strong>Goal:</strong> tour all 30 memory techniques across 6 families, with hands-on demos.
+LLM-based techniques use an OpenAI-compatible endpoint; offline fallbacks are always available.</p>
+<p><em>Adapted from <strong>Agent Memory Techniques</strong> by Nir Diamant (Apache-2.0).</em></p>
+<h3>The 6 families</h3>
+<table>
+<tr><th>Family</th><th>Techniques</th><th>What it solves</th></tr>
+<tr><td><strong>Short-term</strong></td><td>01&ndash;05</td><td>Keep recent turns without filling the context window</td></tr>
+<tr><td><strong>Long-term</strong></td><td>06&ndash;11</td><td>Persist knowledge across sessions, users, and time</td></tr>
+<tr><td><strong>Cognitive</strong></td><td>12&ndash;19</td><td>Working, hierarchical, consolidation, reflection, routing, forgetting</td></tr>
+<tr><td><strong>Retrieval</strong></td><td>20&ndash;23</td><td>Choose what to recall and when; share across agents</td></tr>
+<tr><td><strong>Frameworks</strong></td><td>24&ndash;27</td><td>Production libraries: Graphiti, Mem0, Letta, Zep</td></tr>
+<tr><td><strong>Evaluation</strong></td><td>28&ndash;30</td><td>Measure quality, benchmark, deploy at scale</td></tr>
+</table>
+<h3>Phase 1 notebooks (8)</h3>
+<table>
+<tr><th>#</th><th>Notebook</th><th>Covers</th><th>LLM demos</th></tr>
+<tr><td>01</td><td><code>01_short_term_memory</code></td><td>Buffer, sliding, summary, token budget</td><td>03 summary</td></tr>
+<tr><td>02</td><td><code>02_long_term_memory</code></td><td>Vector, entity, KG, episodic, semantic, procedural</td><td>07 entity</td></tr>
+<tr><td>03</td><td><code>03_cognitive_architectures</code></td><td>Working, hierarchical, consolidation, forgetting</td><td>via providers</td></tr>
+<tr><td>04</td><td><code>04_retrieval_multi_agent</code></td><td>Retrieval patterns, cross-session, multi-agent, tools</td><td>&mdash;</td></tr>
+<tr><td>05</td><td><code>05_frameworks</code></td><td>Graphiti, Mem0, Letta, Zep (descriptions)</td><td>&mdash;</td></tr>
+<tr><td>06</td><td><code>06_evaluation_production</code></td><td>Evaluation, benchmarks, production</td><td>&mdash;</td></tr>
+<tr><td>07</td><td><code>07_capstone</code></td><td>4 architectures compared on one conversation</td><td>via providers</td></tr>
+<tr><td>08</td><td><code>08_exercise</code></td><td><strong>Hands-on:</strong> build a support-agent memory system</td><td>yes</td></tr>
+</table>
+<h2 id="phase2"><span class="pill p2">Phase 2</span> Public Datasets (60 min, offline)</h2>
+<p><strong>Goal:</strong> diagnose retrieval vs utilization failures on real benchmarks, then benchmark
+the 4 providers. No API key needed.</p>
+<h3>The 3-probe diagnostic framework</h3>
+<div class="card">
+<table>
+<tr><th>Probe</th><th>Measures</th><th>How</th></tr>
+<tr><td><strong>1. Retrieval relevance</strong></td><td>Did the system retrieve the right evidence?</td><td>P/R/F1 vs gold evidence IDs</td></tr>
+<tr><td><strong>2. Context utilization</strong></td><td>Did the agent <em>use</em> the memory?</td><td>3-arm reader (no-context / oracle / provider)</td></tr>
+<tr><td><strong>3. Failure root-cause</strong></td><td>Where did it break?</td><td>retrieval_miss / partial / retrieved-but-unused</td></tr>
+</table>
+</div>
+<div class="note"><strong>The circularity trap:</strong> many benchmarks set "memory used" = "evidence
+retrieved" &mdash; making utilization just retrieval in disguise. Our 3-arm reader avoids this.</div>
+<h3>Phase 2 notebooks (5)</h3>
+<table>
+<tr><th>#</th><th>Notebook</th><th>What</th><th>Time</th></tr>
+<tr><td>01</td><td><code>diagnostic_framework</code></td><td>Exercise 1: diagnose failures</td><td>1.4s</td></tr>
+<tr><td>02</td><td><code>utilization_lab</code></td><td>3-arm utilization lab + inspect a failure</td><td>&lt;1s</td></tr>
+<tr><td>03</td><td><code>benchmarking</code></td><td>Exercise 2: benchmark providers</td><td>4.2s</td></tr>
+<tr><td>04</td><td><code>llm_as_judge_lab</code></td><td><strong>Live LLM judge</strong> vs offline proxy</td><td>25s</td></tr>
+<tr><td>05</td><td><code>question_type_analysis</code></td><td>Per-type: which architecture wins where</td><td>&lt;1s</td></tr>
+</table>
+<h2 id="phase3"><span class="pill p3">Phase 3</span> Autoresearch (60 min, Modal L4)</h2>
+<p><strong>Goal:</strong> run a real LLM-pretraining sweep on a cloud GPU, aggregate across groups,
+and diagnose memory failures.</p>
+<h3>Group slices (each fits one L4)</h3>
+<table>
+<tr><th>Group</th><th>Configs (depth, batch)</th><th>Why</th></tr>
+<tr><td>A</td><td>(4,32), (6,32)</td><td>Shallow, safe</td></tr>
+<tr><td>B</td><td>(8,32), (10,32)</td><td>Medium depth</td></tr>
+<tr><td>C</td><td>(12,16), (14,16)</td><td>Deep &mdash; batch 16 recovers the OOM</td></tr>
+<tr><td>D</td><td>(16,16), (18,16)</td><td>Deepest</td></tr>
+</table>
+<h3>Phase 3 notebooks (4)</h3>
+<table>
+<tr><th>#</th><th>Notebook</th><th>What</th><th>Time</th></tr>
+<tr><td>01</td><td><code>autoresearch_loop</code></td><td>The loop + why we split into groups</td><td>&lt;1s</td></tr>
+<tr><td>02</td><td><code>run_your_group</code></td><td>Run YOUR slice on Modal L4</td><td>~14.5 min</td></tr>
+<tr><td>03</td><td><code>aggregate_and_debug</code></td><td>Aggregate sweep + keep/revise/discard</td><td>8s</td></tr>
+<tr><td>04</td><td><code>memory_diagnostic</code></td><td>5-condition interventional diagnostic</td><td>pilot</td></tr>
+</table>
+<h2 id="results">Results (honest, tutorial-scale)</h2>
+<div class="note"><strong>Teaching sample</strong> (LoCoMo 40 / LongMemEval 50 / MemoryArena 86 questions).
+Full provenance in <a href="results/RESULTS_MANIFEST.md">RESULTS_MANIFEST.md</a>.</div>
+<h3>LoCoMo &mdash; where the 4 architectures are distinct</h3>
+<table>
+<tr><th>Strategy</th><th>Precision</th><th>Recall</th><th>Hit</th><th>Memory size</th></tr>
+<tr><td>no_memory</td><td>0.000</td><td>0.000</td><td>0.000</td><td>0</td></tr>
+<tr><td>verbatim</td><td>0.040</td><td>0.188</td><td>0.200</td><td>419</td></tr>
+<tr><td>extracted_facts</td><td>0.040</td><td>0.188</td><td>0.200</td><td>1282</td></tr>
+<tr><td>episodic</td><td>0.000</td><td>0.000</td><td>0.000</td><td>19</td></tr>
+<tr><td>hybrid</td><td>0.003</td><td>0.125</td><td>0.125</td><td>438</td></tr>
+</table>
+<p>Memory footprints differ 10x (419 / 1282 / 19 / 438) &mdash; genuinely different architectures.
+No single strategy dominates.</p>
+<h3>Autoresearch trace (real L4)</h3>
+<table>
+<tr><th>Depth</th><th>Batch</th><th>val_bpb (lower = better)</th></tr>
+<tr><td>4</td><td>32</td><td><strong>1.254</strong></td></tr>
+<tr><td>6</td><td>32</td><td>1.296</td></tr>
+<tr><td>8</td><td>32</td><td>1.433</td></tr>
+<tr><td>10</td><td>32</td><td>1.661</td></tr>
+</table>
+<div class="figures">
+<figure><img src="results/figures/figure_real_retrieval.png" alt="Retrieval"><figcaption>Retrieval diagnostics</figcaption></figure>
+<figure><img src="results/figures/figure_locomo_retrieval.png" alt="LoCoMo"><figcaption>LoCoMo detail</figcaption></figure>
+<figure><img src="results/figures/figure_failures.png" alt="Failures"><figcaption>Failure modes</figcaption></figure>
+<figure><img src="results/figures/figure_memory_growth.png" alt="Growth"><figcaption>Memory growth</figcaption></figure>
+</div>
+<h2 id="cli">CLI Package</h2>
+<pre><code>pip install -e source # offline deps
+pip install -e "source[api]" # + openai/tiktoken
+diagnostic-framework diagnose --strategies verbatim,extracted_facts,episodic,hybrid --top_k 5
+benchmark-cli compare --providers verbatim,extracted_facts,episodic,hybrid --sample_size 20
+benchmark-cli serve --port 8080</code></pre>
+<h2 id="judge">LLM-as-Judge Lab</h2>
+<p>Notebook <code>04_llm_as_judge_lab.ipynb</code> runs a <strong>live LLM judge</strong> 
+and compares it to the offline token-overlap proxy. Where they disagree: semantic relevance the
+proxy misses. This is the proposal's headline evaluation protocol, demonstrated live.</p>
+<h2 id="diagnostic">Memory Diagnostic (Phase 3D)</h2>
+<p>5 memory conditions x K=5 repeated probes, frozen pre-decision snapshots, real LLM agent:</p>
+<table>
+<tr><th>Condition</th><th>OOM rate</th><th>Any-OOM</th><th>Tests</th></tr>
+<tr><td>M0 no-memory</td><td><strong>50%</strong></td><td>62%</td><td>Placebo baseline</td></tr>
+<tr><td>M1 raw-history</td><td><strong>12%</strong></td><td>12%</td><td>Full trial log</td></tr>
+<tr><td>M2 retrieved</td><td>12%</td><td><strong>30%</strong></td><td>Batch-keyed retrieval</td></tr>
+<tr><td>M3 structured-rule</td><td><strong>5%</strong></td><td>5%</td><td>Raw + constraint</td></tr>
+<tr><td>M4 oracle</td><td><strong>0%</strong></td><td>12%</td><td>Raw + outcome</td></tr>
+</table>
+<div class="tip"><strong>Key finding:</strong> any history cuts OOM proposals by 76%.
+<strong>Retrieval filtering is counterproductive</strong> (loses cross-task context, increases OOMs 2.5x).
+Structured rules approach oracle performance.</div>
+<h2 id="timing">Timing &amp; Pacing</h2>
+<table>
+<tr><th>Phase</th><th>Execution</th><th>Speech (3s/cell)</th><th>Total</th></tr>
+<tr><td>Phase 1 (8 notebooks)</td><td>182s</td><td>126s</td><td>308s (5.1 min)</td></tr>
+<tr><td>Phase 2 (5 notebooks)</td><td>31s</td><td>48s</td><td>79s (1.3 min)</td></tr>
+<tr><td>Phase 3 (4 notebooks)</td><td>885s</td><td>18s</td><td>903s (15.1 min)</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>1098s (18.3 min)</strong></td><td><strong>192s</strong></td><td><strong>1290s (21.5 min)</strong></td></tr>
+</table>
+<p>For a 180-min session: <strong>159 min spare</strong> for lecture, discussion, Q&amp;A.</p>
+<h2 id="faq">FAQ</h2>
+<div class="collapsible" onclick="toggleCollapsible(this)">Do I need an API key?</div>
+<div class="collapsible-content"><p>Phase 1 LLM demos use an OpenAI-compatible endpoint. Without a key, offline
+heuristics. Phase 2 is fully offline. Phase 3 uses Modal (cloud GPU).</p></div>
+<div class="collapsible" onclick="toggleCollapsible(this)">Do I need a GPU?</div>
+<div class="collapsible-content"><p>No for Phases 1-2. Phase 3 uses a cloud L4 via Modal (~$0.5-1/group, ~15 min).</p></div>
+<div class="collapsible" onclick="toggleCollapsible(this)">Are these results publishable?</div>
+<div class="collapsible-content"><p>No &mdash; tutorial-scale (40-86 questions). Full-scale needs complete datasets + Modal. See RESULTS_MANIFEST.md.</p></div>
+<div class="collapsible" onclick="toggleCollapsible(this)">Can I use the providers in my project?</div>
+<div class="collapsible-content"><p>Yes &mdash; <code>pip install -e source</code> then <code>from providers import build_provider</code>. MIT-licensed.</p></div>
+<h2 id="credits">Credits</h2>
+<ul>
+<li><strong>Phase 1</strong> adapted from <em>Agent Memory Techniques</em> by Nir Diamant
+(<a href="https://github.com/NirDiamant/Agent_Memory_Techniques">GitHub</a>, Apache-2.0).</li>
+<li>All other code is original (MIT). See <code>source/pyproject.toml</code>.</li>
+<li>Datasets retain upstream licenses (<code>data/README.md</code>).</li>
+</ul>
+<div class="note"><strong>This is a tutorial, not a research paper.</strong> Results are tutorial-scale.</div>
+<div class="footer">
+<p>KDD'26 &middot; Jeju Island &middot; August 2026 &middot;
+<a href="RUN.html">Run Guide</a> &middot; <a href="SCHEDULE.md">Schedule</a> &middot;
+<a href="docs.html">Full Docs</a> &middot; <a href="README.md">README</a> &middot;
+<a href="slides/main.pdf">Slides (PDF)</a></p>
+</div>
+</div>
+</div>
+<script>
+function toggleCollapsible(el){el.classList.toggle('open');el.nextElementSibling.classList.toggle('show')}
+var sections=document.querySelectorAll('h2[id],h1[id]'),navLinks=document.querySelectorAll('.sidebar a');
+window.addEventListener('scroll',function(){var c='';sections.forEach(function(s){if(window.scrollY>=s.offsetTop-100)c=s.id});navLinks.forEach(function(a){a.classList.remove('active');if(a.getAttribute('href')==='#'+c)a.classList.add('active')})});
+</script>
 </body>
 </html>

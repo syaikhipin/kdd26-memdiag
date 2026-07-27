@@ -1,0 +1,50 @@
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "memory-diagnostic-toolkit"
+version = "0.1.0"
+description = "KDD'26 tutorial: systematic diagnosis and benchmarking of memory systems in autonomous AI research agents (offline-first, low-resource)."
+readme = "README.md"
+requires-python = ">=3.10"
+license = { text = "MIT" }
+authors = [{ name = "KDD'26 Tutorial Authors" }]
+keywords = ["memory", "autonomous-agents", "rag", "benchmarking", "llm-evaluation", "low-resource"]
+classifiers = [
+ "Programming Language :: Python :: 3",
+ "Topic :: Scientific/Engineering :: Artificial Intelligence",
+]
+dependencies = [
+ "numpy",
+ "matplotlib",
+ "pyyaml",
+]
+
+[project.optional-dependencies]
+api = ["openai", "tiktoken"]
+dev = ["pytest", "nbformat"]
+
+[project.scripts]
+diagnostic-framework = "diagnostic_framework.__main__:main"
+benchmark-cli = "benchmark_cli.__main__:main"
+
+[tool.setuptools]
+package-dir = { "" = "." }
+# Flat top-level modules (the canonical implementation uses flat imports).
+py-modules = [
+ "run", "config", "memory_core", "memory_store", "embedder", "llm_client",
+ "corpus_adapters", "research_loop", "data_loaders", "diagnostics", "evaluators",
+ "metrics", "models", "visualize", "agent_simulator", "autoresearch_trace",
+ "idea_generator", "synthetic_data", "modal_runner",
+]
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = [
+ "diagnostic_framework",
+ "benchmark_cli",
+ "providers",
+ "strategies",
+ "probes",
+]

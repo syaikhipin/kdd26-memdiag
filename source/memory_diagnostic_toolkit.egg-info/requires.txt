@@ -1,0 +1,11 @@
+numpy
+matplotlib
+pyyaml
+
+[api]
+openai
+tiktoken
+
+[dev]
+pytest
+nbformat

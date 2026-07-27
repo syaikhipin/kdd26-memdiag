@@ -1,0 +1,188 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>KDD'26 Tutorial — Run it step by step</title>
+<style>
+ :root { --bg:#0d1117; --card:#161b22; --ink:#e6edf3; --muted:#9aa4b2; --accent:#2f81f7;
+ --green:#3fb950; --amber:#d29922; --code:#0d1117; --border:#30363d; }
+ * { box-sizing: border-box; }
+ body { margin:0; background:var(--bg); color:var(--ink);
+ font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+ line-height:1.6; }
+ .wrap { max-width:900px; margin:0 auto; padding:40px 22px 80px; }
+ h1 { font-size:2.0em; margin:0 0 4px; }
+ h2 { font-size:1.35em; margin:38px 0 10px; padding-bottom:6px; border-bottom:1px solid var(--border); }
+ h3 { font-size:1.08em; margin:24px 0 6px; color:#fff; }
+ p,li { color:var(--ink); }
+ .sub { color:var(--muted); margin-top:0; }
+ code,pre { font-family:"SFMono-Regular",Consolas,"Liberation Mono",Menlo,monospace; }
+ code { background:#1f2630; padding:1px 6px; border-radius:5px; font-size:.9em; color:#79c0ff; }
+ pre { background:var(--code); border:1px solid var(--border); border-radius:10px; padding:14px 16px;
+ overflow:auto; font-size:.86em; line-height:1.5; }
+ pre code { background:none; padding:0; color:var(--ink); }
+ .card { background:var(--card); border:1px solid var(--border); border-radius:12px; padding:16px 18px; margin:14px 0; }
+ .pill { display:inline-block; padding:2px 10px; border-radius:999px; font-size:.78em; font-weight:600; margin-right:6px; }
+ .p1 { background:#1f3a2e; color:var(--green); } .p2 { background:#3a2f1a; color:var(--amber); }
+ .p3 { background:#243049; color:var(--accent); }
+ table { width:100%; border-collapse:collapse; margin:12px 0; font-size:.92em; }
+ th,td { text-align:left; padding:9px 10px; border-bottom:1px solid var(--border); vertical-align:top; }
+ th { color:var(--muted); font-weight:600; }
+ .ok { color:var(--green); } .note { color:var(--amber); }
+ a { color:var(--accent); }
+ .toc { columns:2; font-size:.92em; }
+ .toc a { text-decoration:none; }
+ .kbd { background:#21262d; border:1px solid var(--border); border-bottom-width:2px; border-radius:5px; padding:1px 7px; font-size:.85em; }
+ footer { color:var(--muted); font-size:.86em; margin-top:46px; border-top:1px solid var(--border); padding-top:16px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<h1>KDD'26 Tutorial — Run it step by step</h1>
+<p class="sub"><em>Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research
+Agents: A Low-Resource Framework.</em> Three phases · 60 min each · offline-first.</p>
+
+<div class="card">
+ <strong>Timeline at a glance</strong>
+ <table>
+ <tr><th>Phase</th><th>What you do</th><th>Compute time</th><th>Lecture-paced</th></tr>
+ <tr><td><span class="pill p1">1</span> Agent Memory Techniques</td>
+ <td>Survey all 30 techniques + curated hands-on (LLM)</td>
+ <td>~5 s core (+ AMT deps install ~10 min once)</td><td>60 min</td></tr>
+ <tr><td><span class="pill p2">2</span> Public datasets</td>
+ <td>Exercise 1 diagnose + Exercise 2 benchmark (offline)</td>
+ <td>~6 s (1.3 s + 4.4 s)</td><td>60 min</td></tr>
+ <tr><td><span class="pill p3">3</span> Autoresearch (groups)</td>
+ <td>Each group runs a config slice on Modal L4; aggregate</td>
+ <td>~14.5 min per group (measured); parallel = one wall-clock block</td><td>60 min</td></tr>
+ </table>
+ <p class="sub" style="margin:0"><strong>Total:</strong> 3 × 60 = 180 min as delivered.
+ Pure compute (no lecture pacing): ~15 min if Phase 3 groups run in parallel; ~60 min sequential.</p>
+</div>
+
+<p class="toc toc">
+ <a href="#setup">0 · Setup</a><br>
+ <a href="#phase1">1 · Agent Memory Techniques</a><br>
+ <a href="#phase2">2 · Public datasets</a><br>
+ <a href="#phase3">3 · Autoresearch groups</a><br>
+ <a href="#trouble">Troubleshooting</a>
+</p>
+
+<h2 id="setup">Step 0 — Setup (one time, ~10 min)</h2>
+<ol>
+ <li>Clone the bundle and enter it:
+<pre><code>git clone &lt;your-repo-url&gt; kdd-tutorial
+cd kdd-tutorial/experiment/github_submission</code></pre></li>
+ <li>Install the package (offline-only deps; no GPU/heavy ML libs needed for Phases 1–2):
+<pre><code>pip install numpy matplotlib pyyaml
+python -m compileall -q source # sanity check</code></pre></li>
+ <li>For Phase 1's LLM techniques, export the free OpenAI-compatible gateway:
+<pre><code>export OPENAI_API_KEY=-&lt;your-key&gt;
+export OPENAI_BASE_URL=https://api.openai.com/v1</code></pre></li>
+ <li>For Phase 3, set up Modal (L4 access, no H100/payment needed):
+<pre><code>pip install modal &amp;&amp; modal setup</code></pre></li>
+</ol>
+
+<h2 id="phase1"><span class="pill p1">Phase 1</span> Agent Memory Techniques (60 min)</h2>
+<p><strong>Goal:</strong> see how every memory pattern stores and retrieves. All 30 techniques are
+surveyed by family; you run a curated subset hands-on.</p>
+<div class="card">
+ <strong>Open:</strong> <code>tutorial/phase1_memory_architectures/notebook.ipynb</code>
+ <pre><code>jupyter notebook tutorial/phase1_memory_architectures/notebook.ipynb</code></pre>
+ Run top-to-bottom. The consolidated demo contrasts the four architectures on one conversation:
+ <pre><code>verbatim size=4 top="Alice: I work as a data scientist in Berlin"
+extracted_facts size=4 top="Alice: the user work as a data scientist ..."
+episodic size=2 top="Bob: OOM at batch 256; fixed with batch 64 ..."
+hybrid size=6 top="Alice: I work as a data scientist in Berlin"</code></pre>
+ <p class="sub">Then open any vendored curated notebook in <code>tutorial/phase1_memory_architectures/amt_curated/</code>
+ (01, 06, 09, 10, 13, 20) — they pick up the gateway from the env vars above.</p>
+</div>
+<p><strong>Time:</strong> ~5 s for the core demo; ~10 min one-time AMT deps + a few min per curated notebook.</p>
+
+<h2 id="phase2"><span class="pill p2">Phase 2</span> Public datasets (60 min, offline, no key)</h2>
+<p><strong>Goal:</strong> diagnose retrieval vs utilization failures, then benchmark the providers on
+real data (LoCoMo · LongMemEval · MemoryArena).</p>
+
+<h3>Exercise 1 — memory failure diagnosis</h3>
+<pre><code>cd source
+python -m diagnostic_framework diagnose \
+ --strategies verbatim,extracted_facts,episodic,hybrid \
+ --probes relevance,utilization,failure --top_k 5 --max-questions 20</code></pre>
+<p>Read the table: is <code>util</code> ever different from <code>hit</code>? (It should be — that's
+the retrieval-vs-utilization gap.) Time: <strong>~1.3 s</strong>.</p>
+
+<h3>Exercise 2 — benchmarking memory systems</h3>
+<pre><code>python -m benchmark_cli compare \
+ --providers verbatim,extracted_facts,episodic,hybrid \
+ --sample_size 20 --benchmark memoryarena</code></pre>
+<p>Compare accuracy/latency/cost across providers. Time: <strong>~4.4 s</strong>.</p>
+<p class="note">Or run it as a notebook: <code>tutorial/phase2_public_datasets/notebook.ipynb</code>.</p>
+
+<h2 id="phase3"><span class="pill p3">Phase 3</span> Autoresearch, group-split (60 min, Modal L4)</h2>
+<p><strong>Goal:</strong> the autonomous-research case study. Split into groups so each slice fits one
+L4 (deeper models use smaller batch — this avoids the depth≥12 OOM that breaks a single full run).</p>
+<table>
+ <tr><th>Group</th><th>configs (depth, batch)</th></tr>
+ <tr><td>A</td><td>(4,32), (6,32)</td></tr>
+ <tr><td>B</td><td>(8,32), (10,32)</td></tr>
+ <tr><td>C</td><td>(12,16), (14,16)</td></tr>
+ <tr><td>D</td><td>(16,16), (18,16)</td></tr>
+</table>
+<div class="card">
+ <strong>Each group runs its slice</strong> (~14.5 min on an L4, measured):
+ <pre><code>cd .. # back to github_submission/
+modal run scripts/build_autoresearch_trace.py --group A # A | B | C | D</code></pre>
+ Results stream to <code>source/data/topics/autoresearch/leaderboard/&lt;group&gt;.json</code>.
+</div>
+<p><strong>Aggregate</strong> the combined depth-4→18 sweep + the keep/revise/discard memory-debug
+loop in <code>tutorial/phase3_autoresearch/notebook.ipynb</code> (reads all
+<code>leaderboard/*.json</code>).</p>
+
+<h2 id="celltimeline">Per-cell timeline (measured)</h2>
+<p class="sub">From a full cell-by-cell rehearsal (Phase 1 + 2 executed live; Phase 3 Modal cell logged
+with its real ~14m37s — not re-burned — and the aggregate run against the real group-A data).
+Full log: <a href="logs/cellbycell_run.log">logs/cellbycell_run.log</a> ·
+raw timings: <a href="logs/cellbycell_timings.json">logs/cellbycell_timings.json</a></p>
+<table>
+ <tr><th>Phase</th><th>Cell</th><th>What</th><th>Time</th></tr>
+ <tr><td>1</td><td>1</td><td>setup: path resolver + API environment</td><td>0.0 s</td></tr>
+ <tr><td>1</td><td>2</td><td>consolidated 4-provider demo</td><td>0.05 s</td></tr>
+ <tr><td>2</td><td>1</td><td>setup: path resolver</td><td>0.0 s</td></tr>
+ <tr><td>2</td><td>2</td><td>Exercise 1 — <code>diagnostic_framework diagnose</code> (LoCoMo 20q)</td><td>1.22 s</td></tr>
+ <tr><td>2</td><td>3</td><td>read the 3-arm utilization lab</td><td>0.0 s</td></tr>
+ <tr><td>2</td><td>4</td><td>Exercise 2 — <code>benchmark-cli compare</code> (MemoryArena 20)</td><td>4.20 s</td></tr>
+ <tr><td>3</td><td>1</td><td>setup: path resolver</td><td>0.0 s</td></tr>
+ <tr><td>3</td><td>2</td><td>run group slice on Modal L4 (depth 4, 6) <span class="note">(real, not re-run)</span></td><td>877 s (~14m37s)</td></tr>
+ <tr><td>3</td><td>3</td><td>aggregate leaderboard → depth vs <code>val_bpb</code></td><td>0.0 s</td></tr>
+ <tr><td>3</td><td>4</td><td>memory-debug keep / revise / discard loop</td><td>0.0 s</td></tr>
+ <tr><td>3</td><td>5</td><td>plot the combined sweep</td><td>13.1 s</td></tr>
+</table>
+<p class="sub"><strong>Adjust the timeline:</strong> Phase 1 + 2 are essentially instant offline
+(~5.4 s total). The entire real cost is the Phase 3 Modal cell — <strong>~14.5 min per group</strong>,
+run in parallel across groups (one wall-clock block). The plot cell's ~13 s is a one-time matplotlib
+import; subsequent plots are instant.</p>
+
+<h2 id="trouble">Troubleshooting</h2>
+<div class="card">
+ <p><code>No module named diagnostic_framework</code> — run Phase 2 commands from the
+ <code>source/</code> directory (or <code>pip install -e source</code>).</p>
+ <p><code>Could not locate source/run.py</code> — notebook path cell: run from the repo root, or
+ <code>pip install -e source</code>.</p>
+ <p>Modal <em>“add a payment method for H100”</em> — you're on H100; Phase 3 uses <strong>L4</strong>
+ via <code>build_autoresearch_trace.py</code> (no payment needed).</p>
+ <p>Phase 1 LLM techniques fail — confirm <code>echo $OPENAI_BASE_URL</code> points at an OpenAI-compatible endpoint.</p>
+</div>
+
+<footer>
+ <p><strong>Credits:</strong> Phase 1 hands-on is adapted from <em>Agent Memory Techniques</em> by
+ Nir Diamant (https://github.com/NirDiamant/Agent_Memory_Techniques), Apache-2.0 — see
+ <code>tutorial/phase1_memory_architectures/amt_curated/NOTICE</code> and <code>licenses/APACHE-2.0.txt</code>. Other code is
+ original (MIT). See <code>SCHEDULE.md</code> for the full minute-by-minute plan and
+ <code>results/RESULTS_MANIFEST.md</code> for result provenance.</p>
+</footer>
+
+</div>
+</body>
+</html>

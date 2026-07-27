@@ -45,11 +45,11 @@ class MemoryBenchmarkItem:
     relevant_ids: list[str]
 
 
-REAL_DATA_DIR = Path(__file__).resolve().parent / "data" / "real"
+REAL_DATA_DIR = Path(__file__).resolve().parent / "data" / "topics"
 DEFAULT_LONGMEMEVAL_DIR = REAL_DATA_DIR / "longmemeval"
 DEFAULT_MEMORYARENA_DIR = REAL_DATA_DIR / "memoryarena"
-DEFAULT_LCBENCH_DIR = REAL_DATA_DIR / "lcbench"
-DEFAULT_HPOBENCH_DIR = REAL_DATA_DIR / "hpobench"
+# LCBench/HPOBench removed (see autoresearch topic)
+
 
 
 CATEGORY_MAP = {
@@ -261,7 +261,7 @@ def iter_memoryarena_items(path: Path, max_items: int | None = None) -> Iterator
                 if max_items is not None and emitted >= max_items:
                     return
                 answer = answers[question_idx] if question_idx < len(answers) else ""
-                relevant = _memoryarena_relevant_ids(base_records, question_idx)
+                relevant = _memoryarena_relevant_ids(base_records, answer)
                 yield MemoryBenchmarkItem(
                     dataset="MemoryArena",
                     item_id=f"{task_name}:{row.get('id', line_idx)}:{question_idx}",
@@ -358,11 +358,22 @@ def _record(dataset: str, record_id: str, content: Any, task_name: str, entry_ty
     }
 
 
-def _memoryarena_relevant_ids(records: list[dict[str, Any]], question_idx: int) -> list[str]:
-    indexed = [record for record in records if record["metadata"].get("background_idx") == question_idx]
-    if indexed:
-        return [record["id"] for record in indexed]
-    return [record["id"] for record in records]
+_MA_STOP = {"the","a","an","and","or","of","to","in","on","for","is","are","was","were","be","been","being","that","this","these","those","it","its","as","at","by","with","from","into","has","have","had","not","no","yes","do","does","did","what","which","who","whom","whose","when","where","why","how","can","could"}
+
+def _ma_tok(text):
+    return re.findall(r"[a-zA-Z0-9_]+", _stringify(text).lower())
+
+def _memoryarena_relevant_ids(records: list[dict[str, Any]], answer: Any) -> list[str]:
+    atoks = {t for t in _ma_tok(answer) if t not in _MA_STOP and len(t) > 2}
+    if not atoks:
+        return []
+    relevant = []
+    for record in records:
+        rtoks = set(_ma_tok(str(record.get("content", ""))))
+        overlap = len(atoks & rtoks)
+        if overlap and overlap / len(atoks) >= 0.15:
+            relevant.append(record["id"])
+    return relevant
 
 
 def _stringify(value: Any) -> str:

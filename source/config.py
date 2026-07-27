@@ -1,16 +1,16 @@
 from dataclasses import dataclass
 from pathlib import Path
 
-
 ROOT = Path(__file__).resolve().parent
 PROJECT_ROOT = ROOT.parent
 DATA_DIR = ROOT / "data"
-RESULTS_DIR = ROOT / "results"
-DEFAULT_BASE_URL = "http://127.0.0.1:8317/api/provider/codex/v1"
-DEFAULT_MODEL = "gpt-5.5"
-DEFAULT_LOCOMO_PATH = PROJECT_ROOT / "memory-probe" / "data" / "locomo10.json"
-DEFAULT_AUTORESEARCH_DIR = PROJECT_ROOT / "autoresearch"
-DEFAULT_USE_CASES = ["locomo", "autoresearch", "hpo", "memoryarena", "longmemeval"]
+TOPICS_DIR = DATA_DIR / "topics"
+RESULTS_DIR = PROJECT_ROOT / "results"
+DEFAULT_BASE_URL = "https://api.openai.com/v1"
+DEFAULT_MODEL = "gpt-4o"
+DEFAULT_LOCOMO_PATH = TOPICS_DIR / "locomo" / "locomo10.json"
+DEFAULT_AUTORESEARCH_DIR = TOPICS_DIR / "autoresearch"
+DEFAULT_USE_CASES = ["locomo", "autoresearch", "memoryarena", "longmemeval"]
 
 DEFAULT_STRATEGIES = [
     "no_memory",

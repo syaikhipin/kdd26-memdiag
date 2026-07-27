@@ -61,19 +61,22 @@ CATEGORY_MAP = {
 }
 
 
+DEFAULT_AUTORESEARCH_DIR = REAL_DATA_DIR / "autoresearch"
+
+
 def dataset_registry(locomo_path: Path) -> list[dict[str, Any]]:
     longmemeval_files = sorted(DEFAULT_LONGMEMEVAL_DIR.glob("*.json")) if DEFAULT_LONGMEMEVAL_DIR.exists() else []
     memoryarena_files = sorted(DEFAULT_MEMORYARENA_DIR.glob("*.jsonl")) if DEFAULT_MEMORYARENA_DIR.exists() else []
-    lcbench_available = any(DEFAULT_LCBENCH_DIR.iterdir()) if DEFAULT_LCBENCH_DIR.exists() else False
-    hpobench_available = any(DEFAULT_HPOBENCH_DIR.iterdir()) if DEFAULT_HPOBENCH_DIR.exists() else False
+    autoresearch_files = sorted(DEFAULT_AUTORESEARCH_DIR.glob("*.json")) if DEFAULT_AUTORESEARCH_DIR.exists() else []
     return [
         {
-            "name": "LCBench",
-            "source": "automl/LCBench",
-            "tutorial_use": "Autonomous research traces and HPO experiment memories",
-            "available_local": lcbench_available,
-            "default_path": str(DEFAULT_LCBENCH_DIR) if lcbench_available else None,
-            "status": "directory present but no downloaded data" if not lcbench_available else "available locally",
+            "name": "Autoresearch",
+            "source": "autoresearch/train.py on Modal L4 (real LLM-pretraining val_bpb trace)",
+            "tutorial_use": "Real autonomous-research trace (single-GPU overnight experiments)",
+            "available_local": bool(autoresearch_files),
+            "default_path": str(DEFAULT_AUTORESEARCH_DIR) if autoresearch_files else None,
+            "files": [path.name for path in autoresearch_files],
+            "status": "available locally" if autoresearch_files else "run scripts/build_autoresearch_trace.py on Modal to populate",
         },
         {
             "name": "LoCoMo",
@@ -91,14 +94,6 @@ def dataset_registry(locomo_path: Path) -> list[dict[str, Any]]:
             "default_path": str(DEFAULT_MEMORYARENA_DIR) if memoryarena_files else None,
             "files": [path.name for path in memoryarena_files],
             "status": "available locally" if memoryarena_files else "listed in PDF; local data not found",
-        },
-        {
-            "name": "HPOBench",
-            "source": "automl/HPOBench",
-            "tutorial_use": "HPO experiment traces",
-            "available_local": hpobench_available,
-            "default_path": str(DEFAULT_HPOBENCH_DIR) if hpobench_available else None,
-            "status": "directory present but no downloaded data" if not hpobench_available else "available locally",
         },
         {
             "name": "LongMemEval",

@@ -1,0 +1,495 @@
+{
+  "real": {
+    "datasets": {
+      "LoCoMo": {
+        "dataset": "LoCoMo",
+        "records": 15,
+        "by_strategy": {
+          "no_memory": {
+            "questions": 3,
+            "retrieval_precision": 0.0,
+            "retrieval_recall": 0.0,
+            "evidence_hit_rate": 0.0,
+            "utilization_rate": 0.0,
+            "avg_latency_ms": 0.0,
+            "cost_units": 0.3,
+            "memory_entries": 0,
+            "failure_modes": {
+              "no_memory_available": 3
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "temporal_reasoning": {
+                "questions": 1,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 1.0,
+            "semantic_coverage_rate": 1.0,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.0,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.0,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.0,
+              "mean_semantic_score": 0.0
+            }
+          },
+          "verbatim": {
+            "questions": 3,
+            "retrieval_precision": 0.1111,
+            "retrieval_recall": 0.3333,
+            "evidence_hit_rate": 0.3333,
+            "utilization_rate": 0.3333,
+            "avg_latency_ms": 0.308,
+            "cost_units": 1.737,
+            "memory_entries": 419,
+            "failure_modes": {
+              "none": 1,
+              "retrieval_miss": 2
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 2,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "temporal_reasoning": {
+                "questions": 1,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 1.0,
+            "semantic_coverage_rate": 1.0,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.2666,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.1111,
+            "mean_context_relevance_score": 0.5774,
+            "mean_answer_correctness_score": 0.1111,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 0.6667,
+              "mean_retrieval_recall": 0.3333,
+              "mean_semantic_score": 0.2666
+            }
+          },
+          "extracted_facts": {
+            "questions": 3,
+            "retrieval_precision": 0.1111,
+            "retrieval_recall": 0.3333,
+            "evidence_hit_rate": 0.3333,
+            "utilization_rate": 0.3333,
+            "avg_latency_ms": 4.9933,
+            "cost_units": 4.326,
+            "memory_entries": 1282,
+            "failure_modes": {
+              "none": 1,
+              "retrieval_miss": 2
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 2,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "temporal_reasoning": {
+                "questions": 1,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 1.0,
+            "semantic_coverage_rate": 1.0,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.2379,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.1111,
+            "mean_context_relevance_score": 0.4916,
+            "mean_answer_correctness_score": 0.1111,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 0.6667,
+              "mean_retrieval_recall": 0.3333,
+              "mean_semantic_score": 0.2379
+            }
+          },
+          "episodic": {
+            "questions": 3,
+            "retrieval_precision": 0.0,
+            "retrieval_recall": 0.0,
+            "evidence_hit_rate": 0.0,
+            "utilization_rate": 0.0,
+            "avg_latency_ms": 0.0948,
+            "cost_units": 0.537,
+            "memory_entries": 19,
+            "failure_modes": {
+              "retrieval_miss": 3
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 2,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              },
+              "temporal_reasoning": {
+                "questions": 1,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 1.0,
+            "semantic_coverage_rate": 1.0,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.0758,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.2273,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 1.0,
+              "mean_retrieval_recall": 0.0,
+              "mean_semantic_score": 0.0758
+            }
+          },
+          "hybrid": {
+            "questions": 3,
+            "retrieval_precision": 0.0111,
+            "retrieval_recall": 0.3333,
+            "evidence_hit_rate": 0.3333,
+            "utilization_rate": 0.3333,
+            "avg_latency_ms": 0.4445,
+            "cost_units": 1.794,
+            "memory_entries": 438,
+            "failure_modes": {
+              "none": 1,
+              "retrieval_miss": 2
+            },
+            "categories": {
+              "multi_hop": {
+                "questions": 2,
+                "retrieval_recall": 0.5,
+                "evidence_hit_rate": 0.5
+              },
+              "temporal_reasoning": {
+                "questions": 1,
+                "retrieval_recall": 0.0,
+                "evidence_hit_rate": 0.0
+              }
+            },
+            "semantic_attempt_rate": 1.0,
+            "semantic_coverage_rate": 1.0,
+            "semantic_error_count": 0,
+            "semantic_by_evaluator": {
+              "offline_semantic": 3
+            },
+            "mean_semantic_score": 0.17,
+            "semantic_pass_rate": 0.0,
+            "mean_faithfulness_score": 0.0,
+            "mean_context_relevance_score": 0.5101,
+            "mean_answer_correctness_score": 0.0,
+            "retrieval_semantic_alignment": {
+              "agreement_rate": 0.6667,
+              "mean_retrieval_recall": 0.3333,
+              "mean_semantic_score": 0.17
+            }
+          }
+        }
+      }
+    },
+    "combined": {
+      "dataset": "LoCoMo",
+      "records": 15,
+      "by_strategy": {
+        "no_memory": {
+          "questions": 3,
+          "retrieval_precision": 0.0,
+          "retrieval_recall": 0.0,
+          "evidence_hit_rate": 0.0,
+          "utilization_rate": 0.0,
+          "avg_latency_ms": 0.0,
+          "cost_units": 0.3,
+          "memory_entries": 0,
+          "failure_modes": {
+            "no_memory_available": 3
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "temporal_reasoning": {
+              "questions": 1,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 1.0,
+          "semantic_coverage_rate": 1.0,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 3
+          },
+          "mean_semantic_score": 0.0,
+          "semantic_pass_rate": 0.0,
+          "mean_faithfulness_score": 0.0,
+          "mean_context_relevance_score": 0.0,
+          "mean_answer_correctness_score": 0.0,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 1.0,
+            "mean_retrieval_recall": 0.0,
+            "mean_semantic_score": 0.0
+          }
+        },
+        "verbatim": {
+          "questions": 3,
+          "retrieval_precision": 0.1111,
+          "retrieval_recall": 0.3333,
+          "evidence_hit_rate": 0.3333,
+          "utilization_rate": 0.3333,
+          "avg_latency_ms": 0.308,
+          "cost_units": 1.737,
+          "memory_entries": 419,
+          "failure_modes": {
+            "none": 1,
+            "retrieval_miss": 2
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 2,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "temporal_reasoning": {
+              "questions": 1,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 1.0,
+          "semantic_coverage_rate": 1.0,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 3
+          },
+          "mean_semantic_score": 0.2666,
+          "semantic_pass_rate": 0.0,
+          "mean_faithfulness_score": 0.1111,
+          "mean_context_relevance_score": 0.5774,
+          "mean_answer_correctness_score": 0.1111,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 0.6667,
+            "mean_retrieval_recall": 0.3333,
+            "mean_semantic_score": 0.2666
+          }
+        },
+        "extracted_facts": {
+          "questions": 3,
+          "retrieval_precision": 0.1111,
+          "retrieval_recall": 0.3333,
+          "evidence_hit_rate": 0.3333,
+          "utilization_rate": 0.3333,
+          "avg_latency_ms": 4.9933,
+          "cost_units": 4.326,
+          "memory_entries": 1282,
+          "failure_modes": {
+            "none": 1,
+            "retrieval_miss": 2
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 2,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "temporal_reasoning": {
+              "questions": 1,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 1.0,
+          "semantic_coverage_rate": 1.0,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 3
+          },
+          "mean_semantic_score": 0.2379,
+          "semantic_pass_rate": 0.0,
+          "mean_faithfulness_score": 0.1111,
+          "mean_context_relevance_score": 0.4916,
+          "mean_answer_correctness_score": 0.1111,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 0.6667,
+            "mean_retrieval_recall": 0.3333,
+            "mean_semantic_score": 0.2379
+          }
+        },
+        "episodic": {
+          "questions": 3,
+          "retrieval_precision": 0.0,
+          "retrieval_recall": 0.0,
+          "evidence_hit_rate": 0.0,
+          "utilization_rate": 0.0,
+          "avg_latency_ms": 0.0948,
+          "cost_units": 0.537,
+          "memory_entries": 19,
+          "failure_modes": {
+            "retrieval_miss": 3
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 2,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            },
+            "temporal_reasoning": {
+              "questions": 1,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 1.0,
+          "semantic_coverage_rate": 1.0,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 3
+          },
+          "mean_semantic_score": 0.0758,
+          "semantic_pass_rate": 0.0,
+          "mean_faithfulness_score": 0.0,
+          "mean_context_relevance_score": 0.2273,
+          "mean_answer_correctness_score": 0.0,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 1.0,
+            "mean_retrieval_recall": 0.0,
+            "mean_semantic_score": 0.0758
+          }
+        },
+        "hybrid": {
+          "questions": 3,
+          "retrieval_precision": 0.0111,
+          "retrieval_recall": 0.3333,
+          "evidence_hit_rate": 0.3333,
+          "utilization_rate": 0.3333,
+          "avg_latency_ms": 0.4445,
+          "cost_units": 1.794,
+          "memory_entries": 438,
+          "failure_modes": {
+            "none": 1,
+            "retrieval_miss": 2
+          },
+          "categories": {
+            "multi_hop": {
+              "questions": 2,
+              "retrieval_recall": 0.5,
+              "evidence_hit_rate": 0.5
+            },
+            "temporal_reasoning": {
+              "questions": 1,
+              "retrieval_recall": 0.0,
+              "evidence_hit_rate": 0.0
+            }
+          },
+          "semantic_attempt_rate": 1.0,
+          "semantic_coverage_rate": 1.0,
+          "semantic_error_count": 0,
+          "semantic_by_evaluator": {
+            "offline_semantic": 3
+          },
+          "mean_semantic_score": 0.17,
+          "semantic_pass_rate": 0.0,
+          "mean_faithfulness_score": 0.0,
+          "mean_context_relevance_score": 0.5101,
+          "mean_answer_correctness_score": 0.0,
+          "retrieval_semantic_alignment": {
+            "agreement_rate": 0.6667,
+            "mean_retrieval_recall": 0.3333,
+            "mean_semantic_score": 0.17
+          }
+        }
+      }
+    },
+    "records": 15,
+    "utilization_lab": {
+      "n_items": 40,
+      "by_strategy": {
+        "no_memory": {
+          "n": 40,
+          "p0_rate": 0.25,
+          "oracle_rate": 0.6,
+          "provider_rate": 0.25,
+          "net_gain": 0.0,
+          "beneficial": 0,
+          "harmful": 0,
+          "ceiling": 10,
+          "unresolved": 30
+        },
+        "verbatim": {
+          "n": 40,
+          "p0_rate": 0.25,
+          "oracle_rate": 0.6,
+          "provider_rate": 0.375,
+          "net_gain": 0.125,
+          "beneficial": 8,
+          "harmful": 3,
+          "ceiling": 7,
+          "unresolved": 22
+        },
+        "extracted_facts": {
+          "n": 40,
+          "p0_rate": 0.25,
+          "oracle_rate": 0.6,
+          "provider_rate": 0.35,
+          "net_gain": 0.1,
+          "beneficial": 6,
+          "harmful": 2,
+          "ceiling": 8,
+          "unresolved": 24
+        },
+        "episodic": {
+          "n": 40,
+          "p0_rate": 0.25,
+          "oracle_rate": 0.6,
+          "provider_rate": 0.325,
+          "net_gain": 0.075,
+          "beneficial": 4,
+          "harmful": 1,
+          "ceiling": 9,
+          "unresolved": 26
+        },
+        "hybrid": {
+          "n": 40,
+          "p0_rate": 0.25,
+          "oracle_rate": 0.6,
+          "provider_rate": 0.35,
+          "net_gain": 0.1,
+          "beneficial": 7,
+          "harmful": 3,
+          "ceiling": 7,
+          "unresolved": 23
+        }
+      }
+    }
+  }
+}

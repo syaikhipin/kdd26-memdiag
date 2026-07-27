@@ -1,0 +1,6 @@
+dataset	strategy	questions	retr_p	retr_r	hit	util	lat_ms	cost	mem	sem_cov	sem	sem_pass	faith	ctx	ans
+LoCoMo	no_memory	3	0.000	0.000	0.000	0.000	0.00	0.3	0	1.000	0.000	0.000	0.000	0.000	0.000
+LoCoMo	verbatim	3	0.111	0.333	0.333	0.333	0.31	1.7	419	1.000	0.267	0.000	0.111	0.577	0.111
+LoCoMo	extracted_facts	3	0.111	0.333	0.333	0.333	4.99	4.3	1282	1.000	0.238	0.000	0.111	0.492	0.111
+LoCoMo	episodic	3	0.000	0.000	0.000	0.000	0.09	0.5	19	1.000	0.076	0.000	0.000	0.227	0.000
+LoCoMo	hybrid	3	0.011	0.333	0.333	0.333	0.44	1.8	438	1.000	0.170	0.000	0.000	0.510	0.000

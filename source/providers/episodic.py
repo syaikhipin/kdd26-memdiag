@@ -5,8 +5,8 @@ from memory_core import MemoryProvider, MemoryRecord, RetrievedItem
 
 class EpisodicProvider(MemoryProvider):
     name = "episodic"
-    sem_weight = 0.7
-    rec_weight = 0.3
+    sem_weight = 0.95
+    rec_weight = 0.05
 
     def __init__(self, embedder, llm, **opts) -> None:
         super().__init__(embedder, llm, **opts)

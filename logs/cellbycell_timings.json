@@ -3,19 +3,19 @@
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.682,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.682,
+      "exec_seconds": 0.382,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.382,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | dahono key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
       "first_line": "# Technique 01 - Conversation Buffer: Save the full conversation verba",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "01 buffer keeps all 8 turns verbatim"
@@ -24,8 +24,8 @@
       "cell": 3,
       "first_line": "# Technique 02 - Sliding Window: Keep only the last few messages",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "02 sliding window keeps last 4: ['Alice', 'Bob', 'Alice', 'Bob']"
@@ -33,19 +33,19 @@
     {
       "cell": 4,
       "first_line": "# Technique 03 - Summary Memory: Replace old turns with a short summar",
-      "exec_seconds": 6.861,
-      "delay_seconds": 3.0,
-      "total_seconds": 9.861,
+      "exec_seconds": 9.73,
+      "delay_seconds": 20.0,
+      "total_seconds": 29.73,
       "modal": false,
       "status": "ok",
-      "output": "03 summary (LLM): Alice (data scientist, Berlin health-tech startup) and Bob (ML engineer, Athens,"
+      "output": "03 summary (LLM):"
     },
     {
       "cell": 5,
       "first_line": "# Technique 04 - Summary Buffer: Summarize old turns, keep recent verb",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "04 summary+buffer: summary of old + keep recent: ['Alice', 'Bob']"
@@ -53,9 +53,9 @@
     {
       "cell": 6,
       "first_line": "# Technique 05 - Token Buffer: Trim history to a token budget",
-      "exec_seconds": 0.001,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.001,
+      "exec_seconds": 0.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "05 token budget(40) keeps: ['Bob', 'Alice', 'Bob']"
@@ -65,19 +65,19 @@
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.01,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.01,
+      "exec_seconds": 0.018,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.018,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | dahono key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
       "first_line": "# Technique 06 - Vector Store: Embed turns; retrieve by similarity",
-      "exec_seconds": 0.004,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.004,
+      "exec_seconds": 0.002,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.002,
       "modal": false,
       "status": "ok",
       "output": "06 vector top: Alice: I live in Prenzlauer Berg. My fav"
@@ -85,19 +85,19 @@
     {
       "cell": 3,
       "first_line": "# Technique 07 - Entity Memory: Track facts about people/things",
-      "exec_seconds": 5.178,
-      "delay_seconds": 3.0,
-      "total_seconds": 8.178,
+      "exec_seconds": 9.123,
+      "delay_seconds": 20.0,
+      "total_seconds": 29.123,
       "modal": false,
       "status": "ok",
-      "output": "07 entities/facts (LLM): ['Alice works as a data scientist at a health-tech startup in Berlin.', 'Bob is an ML engineer in Athens.', 'Bob prefers PyTorch.']"
+      "output": "07 entities/facts (LLM): []"
     },
     {
       "cell": 4,
       "first_line": "# Technique 08 - Knowledge Graph: Triples of how entities connect",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "08 KG triples: [('Alice', 'works_in', 'Berlin'), ('Bob', 'role', 'ML engineer'), ('run', 'failed_with', 'OOM')]"
@@ -105,9 +105,9 @@
     {
       "cell": 5,
       "first_line": "# Technique 09 - Episodic Memory: Store whole interactions + when/wher",
-      "exec_seconds": 40.13,
-      "delay_seconds": 3.0,
-      "total_seconds": 43.13,
+      "exec_seconds": 36.492,
+      "delay_seconds": 20.0,
+      "total_seconds": 56.492,
       "modal": false,
       "status": "ok",
       "output": "09 episodic episodes: 2"
@@ -115,19 +115,19 @@
     {
       "cell": 6,
       "first_line": "# Technique 10 - Semantic Memory: Extract general facts, dedup/resolve",
-      "exec_seconds": 28.208,
-      "delay_seconds": 3.0,
-      "total_seconds": 31.208,
+      "exec_seconds": 72.058,
+      "delay_seconds": 20.0,
+      "total_seconds": 92.058,
       "modal": false,
       "status": "ok",
-      "output": "10 semantic facts: 15"
+      "output": "10 semantic facts: 0"
     },
     {
       "cell": 7,
       "first_line": "# Technique 11 - Procedural Memory: Capture how-to knowledge",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "11 procedural how-to: if OOM: batch 64 + gradient checkpointing"
@@ -137,19 +137,19 @@
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.011,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.011,
+      "exec_seconds": 0.016,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.016,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | dahono key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
       "first_line": "# Technique 12 - Working Memory: Pin/evict context slots by priority",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "12 working memory pins: ['Our training run failed last n']"
@@ -157,9 +157,9 @@
     {
       "cell": 3,
       "first_line": "# Technique 13 - Hierarchical Layers: Hot/warm/cold tiers; promote/dem",
-      "exec_seconds": 12.958,
-      "delay_seconds": 3.0,
-      "total_seconds": 15.958,
+      "exec_seconds": 39.516,
+      "delay_seconds": 20.0,
+      "total_seconds": 59.516,
       "modal": false,
       "status": "ok",
       "output": "13 hierarchical tiers size: 10"
@@ -168,8 +168,8 @@
       "cell": 4,
       "first_line": "# Technique 14 - Consolidation: Merge/dedup/strengthen memories",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "14 consolidation: merged to 8 unique prefixes"
@@ -177,9 +177,9 @@
     {
       "cell": 5,
       "first_line": "# Technique 15 - Compaction: Compress via summary/entity/distill",
-      "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
       "output": "15 compaction: Hi, I We Our We Our I Let"
@@ -188,8 +188,8 @@
       "cell": 6,
       "first_line": "# Technique 16 - Self-Reflection: Agent writes notes on its own action",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "16 self-reflection notes: ['batch 256 -> OOM (avoid)', 'lr 3e-4 worked']"
@@ -198,8 +198,8 @@
       "cell": 7,
       "first_line": "# Technique 17 - Routing: Pick the memory store by content/intent",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "17 routing ->  temporal"
@@ -207,19 +207,19 @@
     {
       "cell": 8,
       "first_line": "# Technique 18 - Temporal: Timestamp + recency-weighted retrieval",
-      "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "18 temporal newest: Bob ts 1785118924.0"
+      "output": "18 temporal newest: Bob ts 1785132249.0"
     },
     {
       "cell": 9,
       "first_line": "# Technique 19 - Forgetting & Decay: Prune by decay/access/relevance",
       "exec_seconds": 0.001,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
       "output": "19 forgetting: 8 -> 2 after 6000s half-life"
@@ -229,19 +229,19 @@
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.015,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.015,
+      "exec_seconds": 0.007,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.007,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | dahono key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
       "first_line": "# Technique 20 - Retrieval Patterns: Compare semantic/recency/hybrid s",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "20 semantic top: Alice | recency top: Bob"
@@ -250,8 +250,8 @@
       "cell": 3,
       "first_line": "# Technique 21 - Cross-Session: Save/reload agent state across session",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "21 cross-session snapshot: {\"last_topic\": \"OOM fix\"}"
@@ -260,8 +260,8 @@
       "cell": 4,
       "first_line": "# Technique 22 - Multi-Agent Shared: Shared stores + message passing",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "22 shared store: {'alice': ['data scientist'], 'bob': ['OOM fix']}"
@@ -270,8 +270,8 @@
       "cell": 5,
       "first_line": "# Technique 23 - Memory with Tools: save/search/forget as callable too",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "23 tools: saved OOM fix"
@@ -281,71 +281,71 @@
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.012,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.012,
+      "exec_seconds": 0.013,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.013,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | dahono key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
       "first_line": "# Technique 24 - Graphiti (Zep): Time-aware knowledge graphs",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
-      "output": "24 Graphiti: extracts episodes + facts from chat into a TEMPORAL graph.\n   Use when you need time-aware multi-hop reasoning over conversation history.\n   Open amt_curated/ for the full notebook (needs a Zep account)."
+      "output": "24 Graphiti: extracts episodes + facts from chat into a TEMPORAL graph.\n Use when you need time-aware multi-hop reasoning over conversation history.\n Open amt_curated/ for the full notebook (needs a Zep account)."
     },
     {
       "cell": 3,
       "first_line": "# Technique 25 - Mem0: Managed memory layer",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
-      "output": "25 Mem0: managed memory that extracts, stores, and fetches user-specific facts.\n   Use for personalized AI (remembers user preferences across sessions).\n   Open upstream AMT notebook 25 (needs a Mem0 account)."
+      "output": "25 Mem0: managed memory that extracts, stores, and fetches user-specific facts.\n Use for personalized AI (remembers user preferences across sessions).\n Open upstream AMT notebook 25 (needs a Mem0 account)."
     },
     {
       "cell": 4,
       "first_line": "# Technique 26 - Letta / MemGPT: Self-editing inner/outer memory",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
-      "output": "26 Letta/MemGPT: self-editing memory with inner monologue + memory pressure.\n   Use when the agent must autonomously manage its own memory budget.\n   Open upstream AMT notebook 26 (needs a Letta account)."
+      "output": "26 Letta/MemGPT: self-editing memory with inner monologue + memory pressure.\n Use when the agent must autonomously manage its own memory budget.\n Open upstream AMT notebook 26 (needs a Letta account)."
     },
     {
       "cell": 5,
       "first_line": "# Technique 27 - Zep: Classification + temporal graphs",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
-      "output": "27 Zep: dialog classification + entity extraction + temporal knowledge graphs.\n   Use for production agents needing structured conversation memory at scale.\n   Open upstream AMT notebook 27 (needs a Zep account)."
+      "output": "27 Zep: dialog classification + entity extraction + temporal knowledge graphs.\n Use for production agents needing structured conversation memory at scale.\n Open upstream AMT notebook 27 (needs a Zep account)."
     }
   ],
   "tutorial/phase1_memory_architectures/06_evaluation_production.ipynb": [
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.007,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.007,
+      "exec_seconds": 0.015,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.015,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | dahono key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
       "first_line": "# Technique 28 - Memory Evaluation: Precision/recall/staleness/contrad",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "28 eval precision@2: 1.0"
@@ -354,8 +354,8 @@
       "cell": 3,
       "first_line": "# Technique 29 - Benchmarks (LoCoMo): Run vs LoCoMo/LongMemEval",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "29 benchmarks (LoCoMo / LongMemEval / MemoryArena): see Phase 2"
@@ -364,8 +364,8 @@
       "cell": 4,
       "first_line": "# Technique 30 - Production Patterns: Caching, TTL, sharding, observab",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
       "output": "30 production: caching / TTL / sharding / observability - patterns in the README"
@@ -375,41 +375,41 @@
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.012,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.012,
+      "exec_seconds": 0.015,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.015,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | dahono key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
       "first_line": "for name in ['no_memory','verbatim','extracted_facts','episodic','hybr",
-      "exec_seconds": 67.512,
-      "delay_seconds": 3.0,
-      "total_seconds": 70.512,
+      "exec_seconds": 147.397,
+      "delay_seconds": 20.0,
+      "total_seconds": 167.397,
       "modal": false,
       "status": "ok",
-      "output": "no_memory        size=  0  top=\"\"\nverbatim         size=  8  top=\"Alice: I live in Prenzlauer Berg. My f\"\nextracted_facts  size= 17  top=\"Bob is an ML engineer\"\nepisodic         size=  2  top=\"Alice and Bob resolved a memory issue \"\nhybrid           size= 10  top=\"Alice: Hi, I am Alice. I work as a dat\""
+      "output": "no_memory        size=  0 top=\"\"\nverbatim         size=  8 top=\"Alice: I live in Prenzlauer Berg. My f\"\nextracted_facts  size=  0 top=\"\"\nepisodic         size=  2 top=\"Alice: We hit that before. Reducing ba\"\nhybrid           size= 10 top=\"Alice: Hi, I am Alice. I work as a dat\""
     }
   ],
   "tutorial/phase1_memory_architectures/08_exercise.ipynb": [
     {
       "cell": 1,
-      "first_line": "# Setup \u2014 self-contained",
-      "exec_seconds": 0.012,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.012,
+      "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
+      "exec_seconds": 0.014,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.014,
       "modal": false,
       "status": "ok",
-      "output": "LLM backend: abstract"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
       "first_line": "# Sample customer-support conversation (3 sessions)",
-      "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
       "output": "11 turns across 3 sessions"
@@ -418,62 +418,62 @@
       "cell": 3,
       "first_line": "# Technique 1 \u2014 your choice (change the name)",
       "exec_seconds": 0.001,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "verbatim: memory_size=11\n  [0] score=0.366 | customer: Thanks. Our account ID is ACME-42.\n  [1] score=0.354 | customer: Hi again, this is Sarah from Acme Corp. The 500 error is bac\n  [2] score=0.302 | customer: This is Sarah from Acme. Is the connection pool issue resolv"
+      "output": "verbatim: memory_size=11\n [0] score=0.366 | customer: Thanks. Our account ID is ACME-42.\n [1] score=0.354 | customer: Hi again, this is Sarah from Acme Corp. The 500 error is bac\n [2] score=0.302 | customer: This is Sarah from Acme. Is the connection pool issue resolv"
     },
     {
       "cell": 4,
       "first_line": "# Technique 2 \u2014 your choice (different family)",
-      "exec_seconds": 20.857,
-      "delay_seconds": 3.0,
-      "total_seconds": 23.857,
+      "exec_seconds": 53.256,
+      "delay_seconds": 20.0,
+      "total_seconds": 73.256,
       "modal": false,
       "status": "ok",
-      "output": "episodic: memory_size=3\n  [0] score=0.509 | Sarah from Acme contacted support about a connection pool issue that t\n  [1] score=0.209 | Sarah from Acme Corp reported 500 errors on POST /api/v1/orders with d\n  [2] score=0.150 | Sarah from Acme Corp (account ID: ACME-42) reported recurring 500 erro"
+      "output": "episodic: memory_size=3\n [0] score=0.432 | agent: The connection pool issue may have spread. Let me escalate this\n [1] score=0.282 | customer: Hi, I am Sarah from Acme Corp. Our API keeps returning 500 e\n [2] score=0.092 | customer: Thanks. Our account ID is ACME-42.\ncustomer: Hi again, this"
     }
   ],
   "tutorial/phase2_public_datasets/01_diagnostic_framework.ipynb": [
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.002,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.002,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
     },
     {
       "cell": 2,
       "first_line": "import subprocess",
-      "exec_seconds": 1.403,
-      "delay_seconds": 3.0,
-      "total_seconds": 4.403,
+      "exec_seconds": 0.996,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.996,
       "modal": false,
       "status": "ok",
-      "output": "strategy\tquestions\tretr_p\tretr_r\thit\tutil\tlat_ms\tcost\tmem\tsem_cov\tsem\tsem_pass\tfaith\tctx\tans\nverbatim\t20\t0.060\t0.275\t0.300\t0.200\t0.32\t12.4\t419\t1.000\t0.265\t0.000\t0.050\t0.695\t0.050\nextracted_facts\t20\t0.060\t0.275\t0.300\t0.300\t6.18\t29.6\t1282\t1.000\t0.274\t0.050\t0.096\t0.628\t0.096\nepisodic\t20\t0.000\t0.000\t0.000\t0.200\t0.11\t4.4\t19\t1.000\t0.137\t0.000\t0.050\t0.310\t0.050\nhybrid\t20\t0.004\t0.200\t0.200\t0.100\t0.48\t12.8\t438\t1.000\t0.224\t0.000\t0.025\t0.622\t0.025\n\nRaw trace: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_112122_locomo_raw.json\nMetrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_112122_locomo_metrics.json\nSummary TSV: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_112122_locomo_summary.tsv"
+      "output": "strategy\tquestions\tretr_p\tretr_r\thit\tutil\tlat_ms\tcost\tmem\tsem_cov\tsem\tsem_pass\tfaith\tctx\tans\nverbatim\t20\t0.060\t0.275\t0.300\t0.200\t0.22\t12.4\t419\t1.000\t0.265\t0.000\t0.050\t0.695\t0.050\nextracted_facts\t20\t0.060\t0.275\t0.300\t0.300\t4.39\t29.6\t1282\t1.000\t0.274\t0.050\t0.096\t0.628\t0.096\nepisodic\t20\t0.002\t0.142\t0.200\t0.100\t0.08\t4.4\t19\t1.000\t0.118\t0.000\t0.017\t0.321\t0.017\nhybrid\t20\t0.005\t0.250\t0.250\t0.150\t0.33\t12.8\t438\t1.000\t0.241\t0.000\t0.042\t0.641\t0.042\n\nRaw trace: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_raw.json\nMetrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_metrics.json\nSummary TSV: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_summary.tsv"
     }
   ],
   "tutorial/phase2_public_datasets/02_utilization_lab.ipynb": [
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.002,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.002,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
     },
     {
       "cell": 2,
       "first_line": "import pathlib",
-      "exec_seconds": 0.002,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.002,
+      "exec_seconds": 0.003,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.003,
       "modal": false,
       "status": "ok",
       "output": "sample_real_utilization_lab.tsv :\n\nstrategy\tp0\toracle\tprovider\tnet_gain\tbenef\tharm\tceil\tunres\nno_memory\t0.25\t0.6\t0.25\t0.0\t0\t0\t10\t30\nverbatim\t0.25\t0.6\t0.35\t0.1\t7\t3\t7\t23\nextracted_facts\t0.25\t0.6\t0.325\t0.075\t6\t3\t7\t24\nepisodic\t0.25\t0.6\t0.35\t0.1\t5\t1\t9\t25\nhybrid\t0.25\t0.6\t0.35\t0.1\t7\t3\t7\t23"
@@ -481,9 +481,9 @@
     {
       "cell": 3,
       "first_line": "import json",
-      "exec_seconds": 0.008,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.008,
+      "exec_seconds": 0.002,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.002,
       "modal": false,
       "status": "ok",
       "output": "Q: When did Melanie paint a sunrise?\ngold: ['D1:12']\nretrieved: ['D18:17', 'D6:10', 'D18:13', 'D8:18', 'D13:6']"
@@ -493,150 +493,150 @@
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.002,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.002,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
     },
     {
       "cell": 2,
       "first_line": "import subprocess",
-      "exec_seconds": 4.223,
-      "delay_seconds": 3.0,
-      "total_seconds": 7.223,
+      "exec_seconds": 3.179,
+      "delay_seconds": 20.0,
+      "total_seconds": 23.179,
       "modal": false,
       "status": "ok",
-      "output": "Figures:\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_real_retrieval.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_semantic_scores.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_memory_growth.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_failures.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_semantic_vs_retrieval.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_evaluator_coverage.png\ndataset\tstrategy\tquestions\tretr_p\tretr_r\thit\tutil\tlat_ms\tcost\tmem\tsem_cov\tsem\tsem_pass\tfaith\tctx\tans\nMemoryArena\tverbatim\t20\t0.950\t0.950\t0.950\t0.950\t0.03\t2.4\t1\t1.000\t0.445\t0.300\t0.474\t0.385\t0.474\nMemoryArena\textracted_facts\t20\t0.950\t0.950\t0.950\t0.950\t0.05\t4.1\t6\t1.000\t0.287\t0.050\t0.281\t0.298\t0.281\nMemoryArena\tepisodic\t20\t0.950\t0.950\t0.950\t0.900\t0.03\t2.4\t1\t1.000\t0.135\t0.050\t0.158\t0.089\t0.158\nMemoryArena\thybrid\t20\t0.950\t0.950\t0.950\t0.950\t0.06\t2.4\t2\t1.000\t0.445\t0.300\t0.474\t0.385\t0.474\n\nRaw trace"
+      "output": "Figures:\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_real_retrieval.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_semantic_scores.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_memory_growth.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_failures.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_semantic_vs_retrieval.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_evaluator_coverage.png\ndataset\tstrategy\tquestions\tretr_p\tretr_r\thit\tutil\tlat_ms\tcost\tmem\tsem_cov\tsem\tsem_pass\tfaith\tctx\tans\nMemoryArena\tverbatim\t20\t0.950\t0.950\t0.950\t0.950\t0.02\t2.4\t1\t1.000\t0.445\t0.300\t0.474\t0.385\t0.474\nMemoryArena\textracted_facts\t20\t0.950\t0.950\t0.950\t0.950\t0.04\t4.1\t6\t1.000\t0.287\t0.050\t0.281\t0.298\t0.281\nMemoryArena\tepisodic\t20\t0.950\t0.950\t0.950\t0.950\t0.02\t2.4\t1\t1.000\t0.135\t0.050\t0.158\t0.089\t0.158\nMemoryArena\thybrid\t20\t0.950\t0.950\t0.950\t0.950\t0.04\t2.4\t2\t1.000\t0.445\t0.300\t0.474\t0.385\t0.474\n\nRaw trace"
     }
   ],
   "tutorial/phase2_public_datasets/04_llm_as_judge_lab.ipynb": [
     {
       "cell": 1,
-      "first_line": "# Setup \u2014 self-contained (Colab or local)",
+      "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
       "exec_seconds": 0.002,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.002,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.002,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | key set: True"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
     },
     {
       "cell": 2,
       "first_line": "# Load 5 real benchmark records (LoCoMo, with retrieved context)",
-      "exec_seconds": 0.017,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.017,
+      "exec_seconds": 0.018,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.018,
       "modal": false,
       "status": "ok",
-      "output": "Loaded 5 records (LoCoMo / verbatim)\n  [0] Q: When did Caroline go to the LGBTQ support group?... | hit=True\n  [1] Q: When did Melanie paint a sunrise?... | hit=False\n  [2] Q: What fields would Caroline be likely to pursue in her educat... | hit=False\n  [3] Q: What did Caroline research?... | hit=False\n  [4] Q: What is Caroline's identity?... | hit=False"
+      "output": "Loaded 5 records (LoCoMo / verbatim)\n [0] Q: When did Caroline go to the LGBTQ support group?... | hit=True\n [1] Q: When did Melanie paint a sunrise?... | hit=False\n [2] Q: What fields would Caroline be likely to pursue in her educat... | hit=False\n [3] Q: What did Caroline research?... | hit=False\n [4] Q: What is Caroline's identity?... | hit=False"
     },
     {
       "cell": 3,
       "first_line": "# Offline token-overlap judge (the default proxy)",
       "exec_seconds": 0.001,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "  offline answer_correctness = 0.0\n  offline answer_correctness = 0.0\n  offline answer_correctness = 0.333\n  offline answer_correctness = 0.0\n  offline answer_correctness = 0.0"
+      "output": " offline answer_correctness = 0.0\n offline answer_correctness = 0.0\n offline answer_correctness = 0.333\n offline answer_correctness = 0.0\n offline answer_correctness = 0.0"
     },
     {
       "cell": 4,
-      "first_line": "# Live LLM judge (via dahono gateway)",
-      "exec_seconds": 24.895,
-      "delay_seconds": 3.0,
-      "total_seconds": 27.895,
+      "first_line": "# Live LLM judge (via OpenAI-compatible endpoint)",
+      "exec_seconds": 8.743,
+      "delay_seconds": 20.0,
+      "total_seconds": 28.743,
       "modal": false,
       "status": "ok",
-      "output": "  [0] LLM score=0.00 reason=The retrieved context mentions Caroline went to a \n  [1] LLM score=0.00 reason=The retrieved context contains casual conversation\n  [2] LLM score=0.50 reason=Context mentions counseling pursuit but lacks spec\n  [3] LLM score=0.00 reason=Retrieved context contains only conversational que\n  [4] LLM score=0.00 reason=The retrieved context contains casual conversation"
+      "output": "  [0] LLM error: Error code: 429 - {'error': {'message': 'Daily token limit exceeded. You have used 5,000,914 tokens today. Limit: 5,000,000 TPD. Please upgrade your account.', 'type': 'rate_limit_exceeded', 'param': None, 'code': 'tpd_limit_exceeded'}}\n  [1] LLM error: Error code: 429 - {'error': {'message': 'Daily token limit exceeded. You have used 5,000,914 tokens today. Limit: 5,000,000 TPD. Please upgrade your account.', 'type': 'rate_limit_exceeded', 'param': None, 'code': 'tpd_limit_exceeded'}}\n  [2] LLM error: Error code: 429 - {'error': {'message': 'Daily token limit exceeded. You have used 5,000,914 tokens today. Limit: 5,000,000 TPD. Please upgrade your account.', 'type': 'rate_limit_exceeded', 'param': None, 'code': 'tpd_limit_exceeded'}}\n  [3] LLM error: Error code: 429 - {'error': {'message': 'Daily token limit exceeded. You have used 5,000,914 tokens today. Limit: 5,000,000 TPD. Please upgrade your account.', 'type': 'rate_limit_exceeded', 'param': None, 'code': 'tpd_limit_exceeded'}}\n  [4] LLM error: Error code: 429 - {'error': {'message': 'Daily token limit exceeded. You have used 5,000,914 tokens today. Limit: 5,000,000 TPD. Please upgrade your account.', 'type':"
     },
     {
       "cell": 5,
       "first_line": "# Compare: offline proxy vs live LLM judge",
       "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
       "status": "ok",
-      "output": "record  offline  LLM judge   agree?\n  0     0.00       0.00      yes\n  1     0.00       0.00      yes\n  2     0.33       0.50      yes\n  3     0.00       0.00      yes\n  4     0.00       0.00      yes\n\nAgreement rate: 5/5 = 100%\n(Within 0.2 threshold. The LLM judge often disagrees with token-overlap when\n the context is semantically relevant but lexically different \u2014 a key insight.)"
+      "output": "record  offline  LLM judge   agree?\n  0     0.00       0.00      yes\n  1     0.00       0.00      yes\n  2     0.33       0.00       NO\n  3     0.00       0.00      yes\n  4     0.00       0.00      yes\n\nAgreement rate: 4/5 = 80%\n(Within 0.2 threshold. The LLM judge often disagrees with token-overlap when\n the context is semantically relevant but lexically different \u2014 a key insight.)"
     }
   ],
   "tutorial/phase2_public_datasets/05_question_type_analysis.ipynb": [
     {
       "cell": 1,
-      "first_line": "# Setup \u2014 self-contained (Colab or local)",
+      "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
       "exec_seconds": 0.001,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
     },
     {
       "cell": 2,
       "first_line": "# Load the raw benchmark trace",
-      "exec_seconds": 0.015,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.015,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
-      "status": "ok",
-      "output": "Loaded 880 records\nQuestion types: ['0000.0000', '0000.0001', '0000.0002', '0000.0003', '0000.0004', '0011047', '1105.6063', '1304.1806', '1801.04273', '2004.01171', '2010.06947', '2111.01267', '2307.08563', '2309.15922', '2310.20045', '2401.09908', '2404.07704', '2503.13599', '2505.18074', '2507.7811', 'knowledge-update', 'multi-session', 'multi_hop', 'single-session-assistant', 'single-session-preference', 'single-session-user', 'single_hop', 'temporal-reasoning', 'temporal_reasoning']\nStrategies: ['episodic', 'extracted_facts', 'hybrid', 'no_memory', 'verbatim']"
+      "status": "ERROR: NameError: name 'json' is not defined",
+      "output": "[cell 2 raised] ERROR: NameError: name 'json' is not defined"
     },
     {
       "cell": 3,
       "first_line": "# Group by category \u00d7 strategy; compute hit rate, precision, recall",
-      "exec_seconds": 0.002,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.002,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
-      "status": "ok",
-      "output": "                  type         strategy    n   hit%      P      R\n-----------------------------------------------------------------\n             0000.0000        no_memory    3    0%  0.000  0.000\n             0000.0000         verbatim    3   33%  0.333  0.333\n             0000.0000  extracted_facts    3   33%  0.333  0.333\n             0000.0000         episodic    3   33%  0.333  0.333\n             0000.0000           hybrid    3   33%  0.333  0.333\n\n             0000.0001        no_memory    3    0%  0.000  0.000\n             0000.0001         verbatim    3  100%  1.000  1.000\n             0000.0001  extracted_facts    3  100%  1.000  1.000\n             0000.0001         episodic    3  100%  1.000  1.000\n             0000.0001           hybrid    3  100%  1.000  1.000\n\n             0000.0002        no_memory    2    0%  0.000  0.000\n             0000.0002         verbatim    2  100%  1.000  1.000\n             0000.0002  extracted_facts    2  100%  1.000  1.000\n             0000.0002         episodic    2  100%  1.000  1.000\n             0000.0002           hybrid    2  100%  1.000  1.000\n\n             0000.0003        no_memory    3    0%  0.000  0.000\n             0000.0003   "
+      "status": "ERROR: NameError: name 'defaultdict' is not defined",
+      "output": "                  type         strategy    n   hit%      P      R\n-----------------------------------------------------------------\n[cell 3 raised] ERROR: NameError: name 'defaultdict' is not defined"
     },
     {
       "cell": 4,
       "first_line": "# Find the WINNER per question type (excluding no_memory)",
-      "exec_seconds": 0.002,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.002,
+      "exec_seconds": 0.0,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.0,
       "modal": false,
-      "status": "ok",
-      "output": "Winner per question type (by evidence hit rate):\n                  type           winner   hit%\n------------------------------------------------\n             0000.0000         verbatim   33%\n             0000.0001         verbatim  100%\n             0000.0002         verbatim  100%\n             0000.0003         verbatim  100%\n             0000.0004         verbatim   67%\n               0011047         verbatim  100%\n             1105.6063         verbatim  100%\n             1304.1806         verbatim  100%\n            1801.04273         verbatim  100%\n            2004.01171         verbatim   75%\n            2010.06947         verbatim  100%\n            2111.01267         verbatim  100%\n            2307.08563         verbatim   20%\n            2309.15922         verbatim    0%\n            2310.20045         verbatim  100%\n            2401.09908         verbatim   33%\n            2404.07704         verbatim  100%\n            2503.13599         verbatim  100%\n            2505.18074         verbatim   50%\n             2507.7811         verbatim   92%\n      knowledge-update         verbatim  100%\n         multi-session         verbatim  100%\n             multi_hop         verbatim   3"
+      "status": "ERROR: NameError: name 'by_type' is not defined",
+      "output": "Winner per question type (by evidence hit rate):\n                  type           winner   hit%\n------------------------------------------------\n[cell 4 raised] ERROR: NameError: name 'by_type' is not defined"
     }
   ],
   "tutorial/phase3_autoresearch/01_autoresearch_loop.ipynb": [
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.002,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.002,
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
     }
   ],
   "tutorial/phase3_autoresearch/02_run_your_group.ipynb": [
     {
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
-      "exec_seconds": 0.001,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.001,
+      "exec_seconds": 0.002,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.002,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
     },
     {
       "cell": 2,
-      "first_line": "GROUP = 'A'  # A | B | C | D",
+      "first_line": "GROUP = 'A' # A | B | C | D",
       "exec_seconds": 877,
       "delay_seconds": 0,
       "total_seconds": 877,
       "modal": true,
-      "status": "skipped(modal:real-timing)",
-      "output": "group A done -> leaderboard/A.json"
+      "status": "skipped(modal)",
+      "output": "group A done"
     }
   ],
   "tutorial/phase3_autoresearch/03_aggregate_and_debug.ipynb": [
@@ -644,40 +644,40 @@
       "cell": 1,
       "first_line": "# Self-contained setup - works standalone in Google Colab or locally.",
       "exec_seconds": 0.003,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.003,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.003,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False"
+      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
     },
     {
       "cell": 2,
-      "first_line": "import json, pathlib",
-      "exec_seconds": 0.003,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.003,
+      "first_line": "# Aggregate the shared leaderboard",
+      "exec_seconds": 0.004,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.004,
       "modal": false,
       "status": "ok",
-      "output": "depth 4 batch 32 val_bpb 1.254 (group A)\ndepth 6 batch 32 val_bpb 1.3024 (group A)\nBest: (4, 32, 1.254, 'A')"
+      "output": "depth batch   val_bpb group\n    4    32     1.254     A\n    6    32    1.3024     A\n\nBest (lowest val_bpb): depth 4 batch 32 = 1.254 (group A)"
     },
     {
       "cell": 3,
-      "first_line": "if rows:",
-      "exec_seconds": 7.874,
-      "delay_seconds": 3.0,
-      "total_seconds": 10.874,
+      "first_line": "# Memory-debug loop (keep / revise / discard) + plot",
+      "exec_seconds": 0.246,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.246,
       "modal": false,
       "status": "ok",
-      "output": "depth 4 batch 32 val_bpb 1.254 -> keep\ndepth 6 batch 32 val_bpb 1.302 -> keep"
+      "output": "depth  4 batch 32 val_bpb 1.254 -> keep\ndepth  6 batch 32 val_bpb 1.302 -> keep\nSaved figure to /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_phase3_sweep.png"
     }
   ],
   "tutorial/phase3_autoresearch/04_memory_diagnostic.ipynb": [
     {
       "cell": 1,
-      "first_line": "# Re-run the diagnostic (needs the dahono gateway + the frozen surface",
-      "exec_seconds": 0.0,
-      "delay_seconds": 3.0,
-      "total_seconds": 3.0,
+      "first_line": "# Re-run the diagnostic (needs an OpenAI-compatible endpoint + the fro",
+      "exec_seconds": 0.001,
+      "delay_seconds": 20.0,
+      "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
       "output": "Run python scripts/phase3_diagnostic_v3.py first (needs OPENAI_API_KEY)"

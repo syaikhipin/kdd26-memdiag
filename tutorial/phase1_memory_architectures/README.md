@@ -1,6 +1,6 @@
 # Phase 1 — 30 agent-memory techniques (8 independent notebooks)
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/experiment/github_submission/phase1_memory_architectures/)
+[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/01_short_term_memory.ipynb)
 
 Each notebook is **self-contained** — open any one in Google Colab (or locally) and run top-to-bottom.
 The setup cell auto-clones the repo + installs deps, and uses the LLM gateway when a key is set
@@ -21,7 +21,7 @@ The setup cell auto-clones the repo + installs deps, and uses the LLM gateway wh
 real LLM calls via an OpenAI-compatible endpoint (with offline fallback). Set `OPENAI_API_KEY` + `OPENAI_BASE_URL`
 before launching.
 
-Full AMT versions of curated techniques are in `amt_curated/`.
+Each notebook above is self-contained — no external technique notebooks are required.
 Attribution: adapted from *Agent Memory Techniques* by Nir Diamant, Apache-2.0.
 
 **60-min plan:** 0:00–0:08 intro · 0:08–0:46 tour notebooks 01–06 (~6 min each) · 0:46–0:54 capstone (07) ·

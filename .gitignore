@@ -1,1 +1,7 @@
 notebooks/executed/
+__pycache__/
+*.pyc
+*.egg-info/
+.ipynb_checkpoints/
+logs/
+results/run_*

@@ -96,10 +96,10 @@ surveyed by family; you run a curated subset hands-on.</p>
 extracted_facts size=4 top="Alice: the user work as a data scientist ..."
 episodic size=2 top="Bob: OOM at batch 256; fixed with batch 64 ..."
 hybrid size=6 top="Alice: I work as a data scientist in Berlin"</code></pre>
- <p class="sub">Then open any vendored curated notebook in <code>tutorial/phase1_memory_architectures/amt_curated/</code>
- (01, 06, 09, 10, 13, 20) — they pick up the gateway from the env vars above.</p>
+ <p class="sub">Each technique notebook (01–08) is self-contained and picks up the gateway from the
+ interactive LLM-setup cell at the top (or the env vars above) — no external notebooks required.</p>
 </div>
-<p><strong>Time:</strong> ~5 s for the core demo; ~10 min one-time AMT deps + a few min per curated notebook.</p>
+<p><strong>Time:</strong> ~5 s for the core demo; ~10 min one-time deps if running the LLM techniques.</p>
 
 <h2 id="phase2"><span class="pill p2">Phase 2</span> Public datasets (60 min, offline, no key)</h2>
 <p><strong>Goal:</strong> diagnose retrieval vs utilization failures, then benchmark the providers on
@@ -178,7 +178,7 @@ import; subsequent plots are instant.</p>
 <footer>
  <p><strong>Credits:</strong> Phase 1 hands-on is adapted from <em>Agent Memory Techniques</em> by
  Nir Diamant (https://github.com/NirDiamant/Agent_Memory_Techniques), Apache-2.0 — see
- <code>tutorial/phase1_memory_architectures/amt_curated/NOTICE</code> and <code>licenses/APACHE-2.0.txt</code>. Other code is
+ <code>licenses/APACHE-2.0.txt</code>. Other code is
  original (MIT). See <code>SCHEDULE.md</code> for the full minute-by-minute plan and
  <code>results/RESULTS_MANIFEST.md</code> for result provenance.</p>
 </footer>

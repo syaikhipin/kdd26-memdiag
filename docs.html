@@ -33,7 +33,7 @@
  th{background:var(--sidebar);font-weight:600}
  .card{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:16px;margin:12px 0}
  .pill{display:inline-block;padding:2px 8px;border-radius:10px;font-size:.78em;font-weight:600;margin-right:4px}
- .p1{background:#e8f5e9;color:var(--green)}.p2{background:#fff3e0;color:var(--amber)}.p3{background:#e3f2fd;color:var(--accent)}
+ .p1{background:#e8f5e9;color:var(--green)}.p2{background:#fff3e0;color:var(--amber)}.p3{background:#e3f2fd;color:var(--accent)}.p4{background:#ede9fe;color:#6d28d9}
  .note{background:#fff8e1;border-left:3px solid var(--amber);padding:10px 14px;margin:10px 0;border-radius:0 6px 6px 0;font-size:.9em}
  .ok{color:var(--green)}.warn{color:var(--amber)}
  a{color:var(--accent)}
@@ -57,6 +57,7 @@
  <a href="#phase1"><span class="pill p1">1</span> Memory Techniques</a>
  <a href="#phase2"><span class="pill p2">2</span> Public Datasets</a>
  <a href="#phase3"><span class="pill p3">3</span> Autoresearch</a>
+ <a href="#phase4"><span class="pill p4">4</span> Cognitive Memory</a>
  <h3>Reference</h3>
  <a href="#results">Results</a>
  <a href="#cli">CLI Package</a>
@@ -71,15 +72,16 @@
 <h1 id="overview">Memory Systems in Autonomous AI Research Agents</h1>
 <p><strong>A hands-on KDD'26 tutorial</strong> · <em>Systematic Diagnosis and Benchmarking of Memory Systems
 in Autonomous AI Research Agents: A Low-Resource Framework</em></p>
-<p>3 phases · 60 min each · 17 independent Colab notebooks · runs offline with no API key.</p>
+<p>4 phases · 18 independent Colab notebooks · runs offline with no API key (Phase 4 is fully offline).</p>
 
 <div class="card">
-<strong>Three phases at a glance:</strong>
+<strong>Four phases at a glance:</strong>
 <table>
 <tr><th>Phase</th><th>Notebooks</th><th>What</th><th>Key</th></tr>
 <tr><td><span class="pill p1">1</span> Memory Techniques</td><td>8</td><td>All 30 techniques across 6 families</td><td> LLM demos</td></tr>
 <tr><td><span class="pill p2">2</span> Public Datasets</td><td>5</td><td>Diagnose + benchmark on real data</td><td>3-probe + LLM judge</td></tr>
 <tr><td><span class="pill p3">3</span> Autoresearch</td><td>4</td><td>Real LLM-pretraining sweep on Modal L4</td><td>Group-split + diagnostic</td></tr>
+<tr><td><span class="pill p4">4</span> Cognitive Memory</td><td>1</td><td>Constraint-aware "CML-lite" provider</td><td>Zero-overlap retrieval</td></tr>
 </table>
 </div>
 
@@ -139,6 +141,18 @@ benchmark-cli compare --providers verbatim,extracted_facts,episodic,hybrid --sam
 <tr><td><code>04_memory_diagnostic</code></td><td>Interventional memory diagnostic (5 conditions)</td><td>see below</td></tr>
 </table>
 
+<h2 id="phase4">Phase 4 — Cognitive Memory Layer (1 notebook, offline)</h2>
+<p>Build a pure-Python "CML-lite" provider that adds <strong>constraint awareness</strong> &mdash; surfacing a
+stored rule (&ldquo;I&rsquo;m allergic to shellfish&rdquo;, &ldquo;depth 16 &rarr; OOM&rdquo;) even on zero-overlap queries &mdash; then
+diagnose it with the 3-probe harness from Phase 2. Inspired by the <em>Cognitive Memory Layer</em>
+(<a href="https://github.com/avinash-mall/CognitiveMemoryLayer">avinash-mall/CognitiveMemoryLayer</a>); its
+full stack (Docker + Neo4j + ~25 GB of models) cannot run in Colab, so we capture the cognitive core in
+~90 lines of pure Python.</p>
+<table>
+<tr><th>Notebook</th><th>What</th><th>Time</th></tr>
+<tr><td><code>11_cognitive_constraint_layer</code></td><td>Constraint extraction + zero-overlap retrieval + 3-probe diagnostic</td><td>&lt;1s</td></tr>
+</table>
+
 <h2 id="results">Results (honest, tutorial-scale)</h2>
 <div class="note">These are <strong>teaching samples</strong> (LoCoMo 40 / LongMemEval 50 / MemoryArena 86 questions),
 not paper-scale benchmarks. See <a href="results/RESULTS_MANIFEST.md">RESULTS_MANIFEST.md</a>.</div>
@@ -170,15 +184,16 @@ benchmark-cli compare --providers verbatim,extracted_facts,episodic,hybrid --sam
 benchmark-cli serve --port 8080 # serve the results dashboard</code></pre>
 
 <h2 id="timing">Rehearsal Timing</h2>
-<p>Full rehearsal: 65 cells across 17 notebooks, <strong>0 errors</strong>, using an OpenAI-compatible endpoint.</p>
+<p>Full rehearsal: 18 notebooks, <strong>0 errors</strong>, using an OpenAI-compatible endpoint (Phase 4 is offline).</p>
 <table>
 <tr><th>Phase</th><th>Execution</th><th>Speech delay (3s/cell)</th><th>Total</th></tr>
 <tr><td>Phase 1 (8 notebooks)</td><td>182.4s</td><td>126s</td><td>308.4s</td></tr>
 <tr><td>Phase 2 (5 notebooks)</td><td>30.5s</td><td>48s</td><td>78.5s</td></tr>
 <tr><td>Phase 3 (4 notebooks)</td><td>885.0s</td><td>18s</td><td>903.0s</td></tr>
-<tr><td><strong>Total</strong></td><td><strong>1098s (18.3 min)</strong></td><td><strong>192s (3.2 min)</strong></td><td><strong>1290s (21.5 min)</strong></td></tr>
+<tr><td>Phase 4 (1 notebook)</td><td>1.0s</td><td>15s</td><td>16.0s</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>1099s (18.3 min)</strong></td><td><strong>207s (3.5 min)</strong></td><td><strong>1306s (21.8 min)</strong></td></tr>
 </table>
-<p>For a 180-min session: <strong>159 min spare</strong> for lecture, discussion, Q&A. Adjust delay via <code>CELL_DELAY=N</code>.</p>
+<p>For a 180-min session: <strong>158 min spare</strong> for lecture, discussion, Q&A. Adjust delay via <code>CELL_DELAY=N</code>.</p>
 
 <h2 id="diagnostic">Memory Diagnostic (Phase 3D)</h2>
 <p>Interventional probes with a real LLM agent (frozen pre-decision snapshots). 5 memory conditions:</p>
@@ -199,6 +214,10 @@ counterproductive (any-OOM increases 12%→30%). Structured rules approach oracl
  <li><strong>Phase 1</strong> adapted from <em>Agent Memory Techniques</em> by Nir Diamant
  (<a href="https://github.com/NirDiamant/Agent_Memory_Techniques">GitHub</a>, Apache-2.0). See
  <code>licenses/APACHE-2.0.txt</code>.</li>
+ <li><strong>Phase 4</strong> "CML-lite" provider is an original pure-Python re-implementation of the key
+ idea of the <em>Cognitive Memory Layer</em>
+ (<a href="https://github.com/avinash-mall/CognitiveMemoryLayer">GitHub</a>). MIT; the reference system is
+ neuro-inspired and is not vendored.</li>
  <li>All other code is original (MIT). See <code>source/pyproject.toml</code>.</li>
  <li>Dataset topics retain upstream licenses (<code>data/README.md</code>).</li>
 </ul>

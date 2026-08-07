@@ -29,7 +29,7 @@ li{margin:4px 0}
 .tip{background:#e8f5e9;border-left:4px solid var(--green);padding:12px 16px;margin:12px 0;border-radius:0 6px 6px 0;font-size:.92em}
 .card{background:var(--card);border:1px solid var(--border);border-radius:10px;padding:18px;margin:14px 0}
 .pill{display:inline-block;padding:2px 10px;border-radius:12px;font-size:.78em;font-weight:600;margin-right:4px}
-.p1{background:#e8f5e9;color:var(--green)}.p2{background:#fff3e0;color:var(--amber)}.p3{background:#e3f2fd;color:var(--accent)}
+.p1{background:#e8f5e9;color:var(--green)}.p2{background:#fff3e0;color:var(--amber)}.p3{background:#e3f2fd;color:var(--accent)}.p4{background:#ede9fe;color:#6d28d9}
 .btn{display:inline-block;padding:8px 18px;border-radius:8px;background:var(--accent);color:#fff!important;text-decoration:none!important;font-weight:600;margin:4px 4px 4px 0;font-size:.92em}
 .btn:hover{opacity:.9}
 .btn.sec{background:var(--card);color:var(--ink)!important;border:1px solid var(--border)}
@@ -70,10 +70,11 @@ abbr:hover{color:var(--accent);border-bottom-color:var(--accent)}
  <a href="#what">What You'll Learn</a>
  <a href="#setup">Setup (5 min)</a>
  <a href="#quick">Quick Start</a>
- <h4>The Three Phases</h4>
+ <h4>The Four Phases</h4>
  <a href="#phase1">Phase 1: Techniques</a>
  <a href="#phase2">Phase 2: Datasets</a>
  <a href="#phase3">Phase 3: Autoresearch</a>
+ <a href="#phase4">Phase 4: Cognitive Memory</a>
  <h4>Reference</h4>
  <a href="#results">Results</a>
  <a href="#cli"><abbr title="Command-Line Interface">CLI</abbr> Package</a>
@@ -113,28 +114,21 @@ autonomous research agents. Everything runs on a laptop; no <abbr title="Graphic
 <div class="card" style="font-family:monospace;font-size:.82em;line-height:1.8;background:var(--card)">
 <pre style="background:none;border:none;padding:0;margin:0">
 ┌─────────────────────────────────────────────────────────────────────┐
-│                    3-PHASE HANDS-ON TUTORIAL                        │
-├─────────────┬──────────────────┬───────────────────────────────────┤
-│  Phase 1    │    Phase 2       │          Phase 3                  │
-│  (60 min)   │    (60 min)      │          (60 min)                 │
-│             │                  │                                   │
-│  30 memory  │  Diagnose +      │  Real LLM-pretraining             │
-│  techniques │  Benchmark       │  sweep on Modal L4                │
-│  (6 families│  on public data  │  (groups split by depth/batch)    │
-│  × 8 books) │  (5 notebooks)   │  (4 notebooks + diagnostic)       │
-│             │                  │                                   │
-│  <abbr title="Large Language Model">LLM</abbr> demos  │  3-probe diag.   │  Memory diagnostic:               │
-│  (offline   │  Utilization lab │  5 conditions × K=5 probes        │
-│   fallback) │  LLM-as-judge    │  (M0→M4, real LLM agent)         │
-│             │  Type analysis   │                                   │
-├─────────────┼──────────────────┼───────────────────────────────────┤
-│     Agent Memory       │     Memory Diagnosis     │   Autoresearch  │
-│     Techniques          │     & Benchmarking       │   Memory Debug  │
-│     (Apache-2.0)        │     (MIT)                │   (Modal L4)    │
-└─────────────────────────┴──────────────────────────┴────────────────┘
-         ↑                         ↑                        ↑
-    4 genuine providers:  verbatim | extracted_facts | episodic | hybrid
-    Honest metrics:  util ≠ hit  |  semantic_pass ≠ hit  |  3-arm reader
+│                  4-PHASE HANDS-ON TUTORIAL (180 min)                │
+├─────────────────────────────────────────────────────────────────────┤
+│  Phase 1 (45 min)  30 memory techniques &times; 6 families (8 books) │
+│                    <abbr title="Large Language Model">LLM</abbr> demos (offline fallback)            │
+│  Phase 2 (40 min)  Diagnose + benchmark on public data (5 books)    │
+│                    3-probe diag &middot; utilization lab &middot; <abbr title="Large Language Model">LLM</abbr>-as-judge    │
+│  Phase 3 (35 min)  Real <abbr title="Large Language Model">LLM</abbr>-pretraining sweep on Modal L4 (4 books) │
+│                    groups split by depth/batch &middot; memory diagnostic │
+│  Phase 4 (50 min)  Cognitive Memory Layer &mdash; constraint-aware    │
+│                    memory: CML-lite build + diagnose (1 notebook)   │
+├─────────────────────────────────────────────────────────────────────┤
+│  4 storage providers: verbatim | extracted_facts | episodic | hybrid │
+│  + cognitive_constraint (Phase 4) &mdash; constraint-aware retrieval   │
+│  Honest metrics: util &ne; hit | semantic_pass &ne; hit | 3-arm reader │
+└─────────────────────────────────────────────────────────────────────┘
 </pre>
 </div>
 
@@ -144,7 +138,7 @@ left-to-right, or jump to any phase.</p>
 <p>
  <a class="btn" href="#quick">Quick Start</a>
  <a class="btn sec" href="#quick">Step-by-step Guide</a>
- <a class="btn sec" href="#schedule">3-Phase Schedule</a>
+ <a class="btn sec" href="#schedule">4-Phase Schedule</a>
  <a class="btn sec" href="#faq">FAQ</a>
 </p>
 </div>
@@ -159,6 +153,9 @@ left-to-right, or jump to any phase.</p>
  episodic, hierarchical) on real public datasets (LoCoMo, LongMemEval, MemoryArena).</li>
  <li><strong>The autonomous-research case study</strong> &mdash; run a real LLM-pretraining sweep on a
  cloud GPU, aggregate results across groups, and diagnose memory failures.</li>
+ <li><strong>Cognitive / constraint-aware memory</strong> &mdash; build a pure-Python "CML-lite" provider
+ that surfaces stored constraints (allergies, OOM rules) even on zero-overlap queries, then diagnose it
+ with the same 3-probe harness.</li>
 </ol>
 </div>
 
@@ -170,8 +167,9 @@ notebook in Google Colab &mdash; the setup cell auto-clones the repo and install
 <tr><td><span class="pill p1">1</span></td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase1_memory_architectures/01_short_term_memory.ipynb"><strong>01 Short-term Memory 🔬</strong></a></td><td>8 notebooks</td></tr>
 <tr><td><span class="pill p2">2</span></td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase2_public_datasets/01_diagnostic_framework.ipynb"><strong>01 Diagnostic Framework 🔬</strong></a></td><td>5 notebooks</td></tr>
 <tr><td><span class="pill p3">3</span></td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase3_autoresearch/01_autoresearch_loop.ipynb"><strong>01 Autoresearch Loop 🔬</strong></a></td><td>4 notebooks</td></tr>
+<tr><td><span class="pill p4">4</span></td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase4_cognitive_memory/11_cognitive_constraint_layer.ipynb"><strong>11 Cognitive Memory Layer 🔬</strong></a></td><td>1 notebook</td></tr>
 </table>
-<p style="font-size:.85em;color:var(--muted)">Individual notebook links (all 17) are in the Phase tables below.</p>
+<p style="font-size:.85em;color:var(--muted)">Individual notebook links (all 18) are in the Phase tables below.</p>
 
 <h2 id="setup">Setup (5 minutes)</h2>
 <h3>Prerequisites</h3>
@@ -281,6 +279,38 @@ and diagnose memory failures.</p>
 <tr><td>03</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase3_autoresearch/03_aggregate_and_debug.ipynb"><code>aggregate_and_debug</code> 🔬</a></td><td>Aggregate sweep + keep/revise/discard</td><td>8s</td></tr>
 <tr><td>04</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase3_autoresearch/04_memory_diagnostic.ipynb"><code>memory_diagnostic</code> 🔬</a></td><td>5-condition interventional diagnostic</td><td>pilot</td></tr>
 </table>
+<h2 id="phase4"><span class="pill p4">Phase 4</span> Cognitive Memory Layer (50 min, offline)</h2>
+<p><strong>Goal:</strong> go beyond <em>storage</em> memory. Build a tiny "CML-lite" provider that adds the one
+thing verbatim / episodic / extracted / hybrid all lack &mdash; <strong>constraint awareness</strong>: surfacing a
+stored rule ("I'm allergic to shellfish", "depth 16 &rarr; OOM") even when the query shares zero words with it.
+Then diagnose it with the same 3-probe / LoCoMo harness from Phase 2.</p>
+<p><em>Inspired by the <strong>Cognitive Memory Layer</strong>
+(<a href="https://github.com/avinash-mall/CognitiveMemoryLayer">avinash-mall/CognitiveMemoryLayer</a>), a
+neuro-inspired system (Docker + Postgres + Neo4j + Redis + ~25 GB of models) we cannot run in a Colab slot
+&mdash; so we capture its cognitive core in ~90 lines of pure Python, fully offline.</em></p>
+<h3>The 5 cognitive constraint types</h3>
+<table>
+<tr><th>Type</th><th>Example</th><th>When the cognitive layer surfaces it</th></tr>
+<tr><td><strong>POLICY</strong></td><td>"I'm allergic to shellfish"</td><td>Always (safety-critical)</td></tr>
+<tr><td><strong>STATE</strong></td><td>"the GPU server is down"</td><td>Always</td></tr>
+<tr><td><strong>CAUSAL</strong></td><td>"depth 16 batch 32 &rarr; OOM"</td><td>Action / config queries (Phase 3 tie-in!)</td></tr>
+<tr><td><strong>GOAL</strong></td><td>"I want to lose weight"</td><td>Recommendation queries</td></tr>
+<tr><td><strong>VALUE</strong></td><td>"I value privacy over convenience"</td><td>Recommendation queries</td></tr>
+</table>
+<div class="tip"><strong>The zero-overlap win:</strong> store "I'm allergic to shellfish", then ask
+"recommend a restaurant". Plain lexical memory (verbatim) retrieves <em>nothing</em> (cosine &asymp; 0);
+CML-lite's read path <strong>injects the POLICY constraint regardless of overlap</strong>. This is exactly
+where standard <abbr title="Retrieval-Augmented Generation">RAG</abbr> fails but cognitive memory succeeds &mdash;
+and it turns the Phase-3 OOM rule into a first-class CAUSAL constraint.</div>
+<h3>Phase 4 notebook (1)</h3>
+<table>
+<tr><th>#</th><th>Notebook</th><th>What</th><th>Time</th></tr>
+<tr><td>11</td><td><a href="https://colab.research.google.com/github/syaikhipin/kdd26-memdiag/blob/tutorial-rebuild/tutorial/phase4_cognitive_memory/11_cognitive_constraint_layer.ipynb"><code>cognitive_constraint_layer</code> 🔬</a></td><td>Constraint extraction + zero-overlap retrieval + 3-probe diagnostic</td><td>&lt;1s</td></tr>
+</table>
+<div class="note"><strong>The honest read:</strong> CML-lite is deliberately a sketch. Mapping its gaps onto
+the <em>real</em> CML repo's LoCoMo-Plus profile (adversarial 75.3%, overall 48.6%, cognitive reasoning
+25.4%, multi-hop 34.6%, temporal 35.5%) is the tutorial's "diagnose a cognitive system" moment &mdash; even the
+system you admire has failure modes you can name.</div>
 <h2 id="results">Results (honest, tutorial-scale)</h2>
 <div class="note"><strong>Teaching sample</strong> (LoCoMo 40 / LongMemEval 50 / MemoryArena 86 questions).
 Full provenance in the note below.</div>
@@ -374,14 +404,15 @@ proxy misses. This is the proposal's headline evaluation protocol, demonstrated 
 <strong>Retrieval filtering is counterproductive</strong> (loses cross-task context, increases OOMs 2.5x).
 Structured rules approach oracle performance.</div>
 
-<h2 id="schedule">3-Phase Schedule (180 min)</h2>
+<h2 id="schedule">4-Phase Schedule (180 min)</h2>
 <div class="card">
 <table>
 <tr><th>Time</th><th>Phase</th><th>Activity</th></tr>
-<tr><td>0:00&ndash;1:00</td><td><span class="pill p1">1</span></td><td>30 memory techniques (8 notebooks) + hands-on exercise</td></tr>
-<tr><td>1:00&ndash;1:10</td><td>&mdash;</td><td>Break (install Modal for Phase 3)</td></tr>
-<tr><td>1:10&ndash;2:10</td><td><span class="pill p2">2</span></td><td>Diagnose + benchmark (5 notebooks) + LLM-as-judge lab + type analysis</td></tr>
-<tr><td>2:10&ndash;3:00</td><td><span class="pill p3">3</span></td><td>Autoresearch groups (4 notebooks) + memory diagnostic + presentations</td></tr>
+<tr><td>0:00&ndash;0:45</td><td><span class="pill p1">1</span></td><td>30 memory techniques (8 notebooks) + hands-on exercise</td></tr>
+<tr><td>0:45&ndash;0:55</td><td>&mdash;</td><td>Break (install Modal for Phase 3)</td></tr>
+<tr><td>0:55&ndash;1:35</td><td><span class="pill p2">2</span></td><td>Diagnose + benchmark (5 notebooks) + LLM-as-judge lab + type analysis</td></tr>
+<tr><td>1:35&ndash;2:10</td><td><span class="pill p3">3</span></td><td>Autoresearch groups (4 notebooks) + memory diagnostic</td></tr>
+<tr><td>2:10&ndash;3:00</td><td><span class="pill p4">4</span></td><td>Cognitive Memory Layer &mdash; CML-lite build + diagnose (1 notebook) + discussion</td></tr>
 </table>
 <p style="font-size:.85em;color:var(--muted);margin-top:8px">
 Prerequisites: Python 3.10+, 8 GB RAM, no GPU for Phases 1&ndash;2. Phase 3 uses Modal L4 (~$0.5&ndash;1/group).
@@ -395,9 +426,10 @@ An OpenAI-compatible API key enables richer LLM demos in Phase 1 (offline fallba
 <tr><td>Phase 1 (8 notebooks)</td><td>182s</td><td>126s</td><td>308s (5.1 min)</td></tr>
 <tr><td>Phase 2 (5 notebooks)</td><td>31s</td><td>48s</td><td>79s (1.3 min)</td></tr>
 <tr><td>Phase 3 (4 notebooks)</td><td>885s</td><td>18s</td><td>903s (15.1 min)</td></tr>
-<tr><td><strong>Total</strong></td><td><strong>1098s (18.3 min)</strong></td><td><strong>192s</strong></td><td><strong>1290s (21.5 min)</strong></td></tr>
+<tr><td>Phase 4 (1 notebook)</td><td>1s</td><td>15s</td><td>16s (0.3 min)</td></tr>
+<tr><td><strong>Total</strong></td><td><strong>1099s (18.3 min)</strong></td><td><strong>207s</strong></td><td><strong>1306s (21.8 min)</strong></td></tr>
 </table>
-<p>For a 180-min session: <strong>159 min spare</strong> for lecture, discussion, Q&amp;A.</p>
+<p>For a 180-min session: <strong>158 min spare</strong> for lecture, discussion, Q&amp;A.</p>
 <h2 id="faq">FAQ</h2>
 <div class="collapsible" onclick="toggleCollapsible(this)">Do I need an API key?</div>
 <div class="collapsible-content"><p>Phase 1 LLM demos use an OpenAI-compatible endpoint. Without a key, offline
@@ -459,6 +491,10 @@ Marie Sk&lstrok;odowska-Curie grant agreement No. 101073381.
 see <code>licenses/APACHE-2.0.txt</code>. The Phase 1 technique notebooks are self-contained adaptations.</li>
 <li><strong>Memory providers</strong> (verbatim, extracted_facts, episodic, hybrid) &mdash; original
 implementations inspired by techniques 06/10/09/13. MIT-licensed.</li>
+<li><strong>Phase 4 cognitive-constraint provider</strong> ("CML-lite") &mdash; original pure-Python
+re-implementation of the key idea of the <em>Cognitive Memory Layer</em>
+(<a href="https://github.com/avinash-mall/CognitiveMemoryLayer">avinash-mall/CognitiveMemoryLayer</a>).
+MIT-licensed; the reference system is neuro-inspired and is not vendored.</li>
 <li><strong>LoCoMo</strong> &mdash; snap-research/locomo (research use).</li>
 <li><strong>LongMemEval</strong> &mdash; xiaowu0162/longmemeval-cleaned (research use).</li>
 <li><strong>MemoryArena</strong> &mdash; ZexueHe/memoryarena (research use).</li>

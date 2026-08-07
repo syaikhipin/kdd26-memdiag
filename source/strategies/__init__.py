@@ -3,6 +3,7 @@ from .verbatim import VerbatimStrategy
 from .extracted_facts import ExtractedFactsStrategy
 from .episodic import EpisodicStrategy
 from .hybrid import HybridStrategy
+from .cognitive_constraint import CognitiveConstraintStrategy
 
 
 ALL_STRATEGIES = {
@@ -11,4 +12,5 @@ ALL_STRATEGIES = {
     "extracted_facts": ExtractedFactsStrategy,
     "episodic": EpisodicStrategy,
     "hybrid": HybridStrategy,
+    "cognitive_constraint": CognitiveConstraintStrategy,
 }

@@ -1,5 +1,5 @@
 {
-  "surface_path": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/autoresearch/frozen_surface.json",
+  "surface_path": "<repo>/source/data/topics/autoresearch/frozen_surface.json",
   "n_configs": 10,
   "n_episodes": 10000,
   "n_proposals": 8,

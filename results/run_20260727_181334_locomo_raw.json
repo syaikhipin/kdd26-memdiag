@@ -9,8 +9,8 @@
     "api_key_present": false,
     "top_k": 5,
     "seed": 0,
-    "locomo_path": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/locomo/locomo10.json",
-    "autoresearch_dir": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/autoresearch",
+    "locomo_path": "<repo>/source/data/topics/locomo/locomo10.json",
+    "autoresearch_dir": "<repo>/source/data/topics/autoresearch",
     "max_conversations": 1,
     "max_questions": 20,
     "datasets": [
@@ -19,8 +19,8 @@
       "memoryarena"
     ],
     "max_items": null,
-    "longmemeval_dir": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/longmemeval",
-    "memoryarena_dir": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/memoryarena",
+    "longmemeval_dir": "<repo>/source/data/topics/longmemeval",
+    "memoryarena_dir": "<repo>/source/data/topics/memoryarena",
     "benchmark_metrics": "None",
     "use_cases": [
       "locomo",

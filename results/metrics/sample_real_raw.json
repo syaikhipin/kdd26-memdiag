@@ -9,8 +9,8 @@
     "api_key_present": false,
     "top_k": 5,
     "seed": 0,
-    "locomo_path": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/locomo/locomo10.json",
-    "autoresearch_dir": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/autoresearch",
+    "locomo_path": "<repo>/source/data/topics/locomo/locomo10.json",
+    "autoresearch_dir": "<repo>/source/data/topics/autoresearch",
     "max_conversations": 1,
     "max_questions": 40,
     "datasets": [
@@ -19,8 +19,8 @@
       "memoryarena"
     ],
     "max_items": 486,
-    "longmemeval_dir": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/longmemeval",
-    "memoryarena_dir": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/memoryarena",
+    "longmemeval_dir": "<repo>/source/data/topics/longmemeval",
+    "memoryarena_dir": "<repo>/source/data/topics/memoryarena",
     "benchmark_metrics": "None",
     "use_cases": [
       "locomo",
@@ -51176,7 +51176,7 @@
       "source": "snap-research/locomo",
       "tutorial_use": "Conversational long-horizon memory evaluation",
       "available_local": true,
-      "default_path": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/locomo/locomo10.json",
+      "default_path": "<repo>/source/data/topics/locomo/locomo10.json",
       "status": "available locally"
     },
     {
@@ -51184,7 +51184,7 @@
       "source": "ZexueHe/memoryarena",
       "tutorial_use": "Multi-session agent memory tasks",
       "available_local": true,
-      "default_path": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/memoryarena",
+      "default_path": "<repo>/source/data/topics/memoryarena",
       "files": [
         "formal_reasoning_phys.jsonl"
       ],
@@ -51195,7 +51195,7 @@
       "source": "xiaowu0162/longmemeval-cleaned",
       "tutorial_use": "Long-term memory benchmarking",
       "available_local": true,
-      "default_path": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/longmemeval",
+      "default_path": "<repo>/source/data/topics/longmemeval",
       "files": [
         "longmemeval_oracle.json"
       ],

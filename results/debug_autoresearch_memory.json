@@ -1,5 +1,5 @@
 {
-  "surface": "/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source/data/topics/autoresearch/frozen_surface.json",
+  "surface": "<repo>/source/data/topics/autoresearch/frozen_surface.json",
   "n_configs": 10,
   "n_ok": 7,
   "n_oom": 3,

@@ -8,7 +8,7 @@
       "total_seconds": 20.382,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
@@ -70,7 +70,7 @@
       "total_seconds": 20.018,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
@@ -142,7 +142,7 @@
       "total_seconds": 20.016,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
@@ -234,7 +234,7 @@
       "total_seconds": 20.007,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
@@ -286,7 +286,7 @@
       "total_seconds": 20.013,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
@@ -338,7 +338,7 @@
       "total_seconds": 20.015,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
@@ -380,7 +380,7 @@
       "total_seconds": 20.015,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
@@ -402,7 +402,7 @@
       "total_seconds": 20.014,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nLLM backend: abstract | API key: True\nsetup OK | turns = 8"
     },
     {
       "cell": 2,
@@ -444,7 +444,7 @@
       "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nSOURCE_DIR = <repo>/source"
     },
     {
       "cell": 2,
@@ -454,7 +454,7 @@
       "total_seconds": 20.996,
       "modal": false,
       "status": "ok",
-      "output": "strategy\tquestions\tretr_p\tretr_r\thit\tutil\tlat_ms\tcost\tmem\tsem_cov\tsem\tsem_pass\tfaith\tctx\tans\nverbatim\t20\t0.060\t0.275\t0.300\t0.200\t0.22\t12.4\t419\t1.000\t0.265\t0.000\t0.050\t0.695\t0.050\nextracted_facts\t20\t0.060\t0.275\t0.300\t0.300\t4.39\t29.6\t1282\t1.000\t0.274\t0.050\t0.096\t0.628\t0.096\nepisodic\t20\t0.002\t0.142\t0.200\t0.100\t0.08\t4.4\t19\t1.000\t0.118\t0.000\t0.017\t0.321\t0.017\nhybrid\t20\t0.005\t0.250\t0.250\t0.150\t0.33\t12.8\t438\t1.000\t0.241\t0.000\t0.042\t0.641\t0.042\n\nRaw trace: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_raw.json\nMetrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_metrics.json\nSummary TSV: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_summary.tsv"
+      "output": "strategy\tquestions\tretr_p\tretr_r\thit\tutil\tlat_ms\tcost\tmem\tsem_cov\tsem\tsem_pass\tfaith\tctx\tans\nverbatim\t20\t0.060\t0.275\t0.300\t0.200\t0.22\t12.4\t419\t1.000\t0.265\t0.000\t0.050\t0.695\t0.050\nextracted_facts\t20\t0.060\t0.275\t0.300\t0.300\t4.39\t29.6\t1282\t1.000\t0.274\t0.050\t0.096\t0.628\t0.096\nepisodic\t20\t0.002\t0.142\t0.200\t0.100\t0.08\t4.4\t19\t1.000\t0.118\t0.000\t0.017\t0.321\t0.017\nhybrid\t20\t0.005\t0.250\t0.250\t0.150\t0.33\t12.8\t438\t1.000\t0.241\t0.000\t0.042\t0.641\t0.042\n\nRaw trace: <repo>/results/run_20260727_151149_locomo_raw.json\nMetrics: <repo>/results/run_20260727_151149_locomo_metrics.json\nSummary TSV: <repo>/results/run_20260727_151149_locomo_summary.tsv"
     }
   ],
   "tutorial/phase2_public_datasets/02_utilization_lab.ipynb": [
@@ -466,7 +466,7 @@
       "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nSOURCE_DIR = <repo>/source"
     },
     {
       "cell": 2,
@@ -498,7 +498,7 @@
       "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nSOURCE_DIR = <repo>/source"
     },
     {
       "cell": 2,
@@ -508,7 +508,7 @@
       "total_seconds": 23.179,
       "modal": false,
       "status": "ok",
-      "output": "Figures:\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_real_retrieval.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_semantic_scores.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_memory_growth.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_failures.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_semantic_vs_retrieval.png\n  /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_evaluator_coverage.png\ndataset\tstrategy\tquestions\tretr_p\tretr_r\thit\tutil\tlat_ms\tcost\tmem\tsem_cov\tsem\tsem_pass\tfaith\tctx\tans\nMemoryArena\tverbatim\t20\t0.950\t0.950\t0.950\t0.950\t0.02\t2.4\t1\t1.000\t0.445\t0.300\t0.474\t0.385\t0.474\nMemoryArena\textracted_facts\t20\t0.950\t0.950\t0.950\t0.950\t0.04\t4.1\t6\t1.000\t0.287\t0.050\t0.281\t0.298\t0.281\nMemoryArena\tepisodic\t20\t0.950\t0.950\t0.950\t0.950\t0.02\t2.4\t1\t1.000\t0.135\t0.050\t0.158\t0.089\t0.158\nMemoryArena\thybrid\t20\t0.950\t0.950\t0.950\t0.950\t0.04\t2.4\t2\t1.000\t0.445\t0.300\t0.474\t0.385\t0.474\n\nRaw trace"
+      "output": "Figures:\n  <repo>/results/figure_real_retrieval.png\n  <repo>/results/figure_semantic_scores.png\n  <repo>/results/figure_memory_growth.png\n  <repo>/results/figure_failures.png\n  <repo>/results/figure_semantic_vs_retrieval.png\n  <repo>/results/figure_evaluator_coverage.png\ndataset\tstrategy\tquestions\tretr_p\tretr_r\thit\tutil\tlat_ms\tcost\tmem\tsem_cov\tsem\tsem_pass\tfaith\tctx\tans\nMemoryArena\tverbatim\t20\t0.950\t0.950\t0.950\t0.950\t0.02\t2.4\t1\t1.000\t0.445\t0.300\t0.474\t0.385\t0.474\nMemoryArena\textracted_facts\t20\t0.950\t0.950\t0.950\t0.950\t0.04\t4.1\t6\t1.000\t0.287\t0.050\t0.281\t0.298\t0.281\nMemoryArena\tepisodic\t20\t0.950\t0.950\t0.950\t0.950\t0.02\t2.4\t1\t1.000\t0.135\t0.050\t0.158\t0.089\t0.158\nMemoryArena\thybrid\t20\t0.950\t0.950\t0.950\t0.950\t0.04\t2.4\t2\t1.000\t0.445\t0.300\t0.474\t0.385\t0.474\n\nRaw trace"
     }
   ],
   "tutorial/phase2_public_datasets/04_llm_as_judge_lab.ipynb": [
@@ -520,7 +520,7 @@
       "total_seconds": 20.002,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nSOURCE_DIR = <repo>/source"
     },
     {
       "cell": 2,
@@ -572,7 +572,7 @@
       "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nSOURCE_DIR = <repo>/source"
     },
     {
       "cell": 2,
@@ -614,7 +614,7 @@
       "total_seconds": 20.001,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nSOURCE_DIR = <repo>/source"
     }
   ],
   "tutorial/phase3_autoresearch/02_run_your_group.ipynb": [
@@ -626,7 +626,7 @@
       "total_seconds": 20.002,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nSOURCE_DIR = <repo>/source"
     },
     {
       "cell": 2,
@@ -648,7 +648,7 @@
       "total_seconds": 20.003,
       "modal": false,
       "status": "ok",
-      "output": "SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False\nSOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source"
+      "output": "SOURCE_DIR = <repo>/source | IN_COLAB = False\nSOURCE_DIR = <repo>/source"
     },
     {
       "cell": 2,
@@ -668,7 +668,7 @@
       "total_seconds": 20.246,
       "modal": false,
       "status": "ok",
-      "output": "depth  4 batch 32 val_bpb 1.254 -> keep\ndepth  6 batch 32 val_bpb 1.302 -> keep\nSaved figure to /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_phase3_sweep.png"
+      "output": "depth  4 batch 32 val_bpb 1.254 -> keep\ndepth  6 batch 32 val_bpb 1.302 -> keep\nSaved figure to <repo>/results/figure_phase3_sweep.png"
     }
   ],
   "tutorial/phase3_autoresearch/04_memory_diagnostic.ipynb": [

@@ -1,10 +1,10 @@
-KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission, delay=20.0s)
+KDD tutorial — cell-by-cell run (cwd=<repo>, delay=20.0s)
 ======================================================================
 
 ### tutorial/phase1_memory_architectures/01_short_term_memory.ipynb (6 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.38s +delay=20s =  20.38s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
         | LLM backend: abstract | API key: True
         | setup OK | turns = 8
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Technique 01 - Conversation Buffer: Save the full conversation verba
@@ -21,7 +21,7 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase1_memory_architectures/02_long_term_memory.ipynb (7 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.02s +delay=20s =  20.02s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
         | LLM backend: abstract | API key: True
         | setup OK | turns = 8
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Technique 06 - Vector Store: Embed turns; retrieve by similarity
@@ -40,7 +40,7 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase1_memory_architectures/03_cognitive_architectures.ipynb (9 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.02s +delay=20s =  20.02s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
         | LLM backend: abstract | API key: True
         | setup OK | turns = 8
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Technique 12 - Working Memory: Pin/evict context slots by priority
@@ -63,7 +63,7 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase1_memory_architectures/04_retrieval_multi_agent.ipynb (5 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.01s +delay=20s =  20.01s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
         | LLM backend: abstract | API key: True
         | setup OK | turns = 8
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Technique 20 - Retrieval Patterns: Compare semantic/recency/hybrid s
@@ -78,7 +78,7 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase1_memory_architectures/05_frameworks.ipynb (5 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.01s +delay=20s =  20.01s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
         | LLM backend: abstract | API key: True
         | setup OK | turns = 8
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Technique 24 - Graphiti (Zep): Time-aware knowledge graphs
@@ -101,7 +101,7 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase1_memory_architectures/06_evaluation_production.ipynb (4 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.01s +delay=20s =  20.01s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
         | LLM backend: abstract | API key: True
         | setup OK | turns = 8
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Technique 28 - Memory Evaluation: Precision/recall/staleness/contrad
@@ -114,7 +114,7 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase1_memory_architectures/07_capstone.ipynb (2 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.01s +delay=20s =  20.01s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
         | LLM backend: abstract | API key: True
         | setup OK | turns = 8
 [cell 2] exec=147.40s +delay=20s = 167.40s  ok  ::  for name in ['no_memory','verbatim','extracted_facts','episodic','hybr
@@ -127,7 +127,7 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase1_memory_architectures/08_exercise.ipynb (4 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.01s +delay=20s =  20.01s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
         | LLM backend: abstract | API key: True
         | setup OK | turns = 8
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Sample customer-support conversation (3 sessions)
@@ -147,8 +147,8 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase2_public_datasets/01_diagnostic_framework.ipynb (2 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source
 [cell 2] exec= 1.00s +delay=20s =  21.00s  ok  ::  import subprocess
         | strategy	questions	retr_p	retr_r	hit	util	lat_ms	cost	mem	sem_cov	sem	sem_pass	faith	ctx	ans
         | verbatim	20	0.060	0.275	0.300	0.200	0.22	12.4	419	1.000	0.265	0.000	0.050	0.695	0.050
@@ -156,15 +156,15 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
         | episodic	20	0.002	0.142	0.200	0.100	0.08	4.4	19	1.000	0.118	0.000	0.017	0.321	0.017
         | hybrid	20	0.005	0.250	0.250	0.150	0.33	12.8	438	1.000	0.241	0.000	0.042	0.641	0.042
         | 
-        | Raw trace: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_raw.json
-        | Metrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_metrics.json
-        | Summary TSV: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151149_locomo_summary.tsv
+        | Raw trace: <repo>/results/run_20260727_151149_locomo_raw.json
+        | Metrics: <repo>/results/run_20260727_151149_locomo_metrics.json
+        | Summary TSV: <repo>/results/run_20260727_151149_locomo_summary.tsv
 
 ### tutorial/phase2_public_datasets/02_utilization_lab.ipynb (3 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  import pathlib
         | sample_real_utilization_lab.tsv :
         | 
@@ -182,31 +182,31 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase2_public_datasets/03_benchmarking.ipynb (2 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source
 [cell 2] exec= 3.18s +delay=20s =  23.18s  ok  ::  import subprocess
         | Figures:
-        |   /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_real_retrieval.png
-        |   /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_semantic_scores.png
-        |   /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_memory_growth.png
-        |   /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_failures.png
-        |   /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_semantic_vs_retrieval.png
-        |   /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_evaluator_coverage.png
+        |   <repo>/results/figure_real_retrieval.png
+        |   <repo>/results/figure_semantic_scores.png
+        |   <repo>/results/figure_memory_growth.png
+        |   <repo>/results/figure_failures.png
+        |   <repo>/results/figure_semantic_vs_retrieval.png
+        |   <repo>/results/figure_evaluator_coverage.png
         | dataset	strategy	questions	retr_p	retr_r	hit	util	lat_ms	cost	mem	sem_cov	sem	sem_pass	faith	ctx	ans
         | MemoryArena	verbatim	20	0.950	0.950	0.950	0.950	0.02	2.4	1	1.000	0.445	0.300	0.474	0.385	0.474
         | MemoryArena	extracted_facts	20	0.950	0.950	0.950	0.950	0.04	4.1	6	1.000	0.287	0.050	0.281	0.298	0.281
         | MemoryArena	episodic	20	0.950	0.950	0.950	0.950	0.02	2.4	1	1.000	0.135	0.050	0.158	0.089	0.158
         | MemoryArena	hybrid	20	0.950	0.950	0.950	0.950	0.04	2.4	2	1.000	0.445	0.300	0.474	0.385	0.474
         | 
-        | Raw trace: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151333_real_raw.json
-        | Metrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151333_real_metrics.json
-        | Summary TSV: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/run_20260727_151333_real_summary.tsv
+        | Raw trace: <repo>/results/run_20260727_151333_real_raw.json
+        | Metrics: <repo>/results/run_20260727_151333_real_metrics.json
+        | Summary TSV: <repo>/results/run_20260727_151333_real_summary.tsv
 
 ### tutorial/phase2_public_datasets/04_llm_as_judge_lab.ipynb (5 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source
 [cell 2] exec= 0.02s +delay=20s =  20.02s  ok  ::  # Load 5 real benchmark records (LoCoMo, with retrieved context)
         | Loaded 5 records (LoCoMo / verbatim)
         |  [0] Q: When did Caroline go to the LGBTQ support group?... | hit=True
@@ -241,8 +241,8 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase2_public_datasets/05_question_type_analysis.ipynb (4 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ERROR: NameError: name 'json' is not defined  ::  # Load the raw benchmark trace
         | [cell 2 raised] ERROR: NameError: name 'json' is not defined
         !! cell 2 errored (continuing)
@@ -261,14 +261,14 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase3_autoresearch/01_autoresearch_loop.ipynb (1 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source
 
 ### tutorial/phase3_autoresearch/02_run_your_group.ipynb (2 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source
 [cell 2] MODAL (skipped; real = 877s) :: GROUP = 'A' # A | B | C | D
 [cell 2] exec=877.00s +delay=0s = 877.00s  skipped(modal)  ::  GROUP = 'A' # A | B | C | D
         | group A done
@@ -276,8 +276,8 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 ### tutorial/phase3_autoresearch/03_aggregate_and_debug.ipynb (3 code cells)
 ----------------------------------------------------------------------
 [cell 1] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Self-contained setup - works standalone in Google Colab or locally.
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source | IN_COLAB = False
-        | SOURCE_DIR = /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/source
+        | SOURCE_DIR = <repo>/source | IN_COLAB = False
+        | SOURCE_DIR = <repo>/source
 [cell 2] exec= 0.00s +delay=20s =  20.00s  ok  ::  # Aggregate the shared leaderboard
         | depth batch   val_bpb group
         |     4    32     1.254     A
@@ -287,7 +287,7 @@ KDD tutorial — cell-by-cell run (cwd=/Users/syaikhipin/Documents/Phd/Publish P
 [cell 3] exec= 0.25s +delay=20s =  20.25s  ok  ::  # Memory-debug loop (keep / revise / discard) + plot
         | depth  4 batch 32 val_bpb 1.254 -> keep
         | depth  6 batch 32 val_bpb 1.302 -> keep
-        | Saved figure to /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/github_submission/results/figure_phase3_sweep.png
+        | Saved figure to <repo>/results/figure_phase3_sweep.png
 
 ### tutorial/phase3_autoresearch/04_memory_diagnostic.ipynb (1 code cells)
 ----------------------------------------------------------------------

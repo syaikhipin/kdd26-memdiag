@@ -23,6 +23,6 @@ decisions	{"discard": 6, "keep": 3, "revise": 3}
 
 ## Outputs
 
-- Raw trace: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151732_autoresearch_agent_raw.json
-- Metrics: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151732_autoresearch_agent_metrics.json
-- Summary TSV: /Users/syaikhipin/Documents/Phd/Publish Paper/kdd/experiment/results/run_20260509_151732_autoresearch_agent_summary.tsv
+- Raw trace: <experiment>/results/run_20260509_151732_autoresearch_agent_raw.json
+- Metrics: <experiment>/results/run_20260509_151732_autoresearch_agent_metrics.json
+- Summary TSV: <experiment>/results/run_20260509_151732_autoresearch_agent_summary.tsv

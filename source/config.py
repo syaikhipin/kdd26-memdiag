@@ -119,6 +119,10 @@ def save_llm_config(base_url, api_key, model):
 def setup_llm(prompt=True):
     """Configure the OpenAI-compatible endpoint for the tutorial notebooks.
 
+    Precedence: environment (OPENAI_BASE_URL / OPENAI_MODEL / OPENAI_API_KEY) >
+        saved config (config/kdd26_memdiag_config.json or Google Drive) > generic
+        DEFAULT_*. Setting all three env vars skips the first-run prompt.
+
     prompt=True  (Phase 1-3): mount Drive in Colab, then prompt for base URL /
         model / hidden API key on first run (or when KDD_RECONFIG=1), persist
         them, and reuse everywhere. Headless runs fall back to generic defaults
@@ -135,7 +139,8 @@ def setup_llm(prompt=True):
             cfg = json.loads(path.read_text()) if path.exists() else {}
         except Exception:
             cfg = {}
-        if (not cfg) or os.environ.get("KDD_RECONFIG", "0") == "1":
+        _env_ready = all(os.environ.get(k) for k in ("OPENAI_BASE_URL", "OPENAI_API_KEY", "OPENAI_MODEL"))
+        if ((not cfg) and (not _env_ready)) or os.environ.get("KDD_RECONFIG", "0") == "1":
             d_base = cfg.get("base_url") or DEFAULT_BASE_URL   # generic, Colab-executable default
             d_model = cfg.get("model") or DEFAULT_MODEL        # never read local env -> no private-path leak
             print("Set up your OpenAI-compatible endpoint (press Enter to keep the default / run offline):")
@@ -158,9 +163,9 @@ def setup_llm(prompt=True):
     else:
         cfg = load_llm_config()
 
-    base_url = cfg.get("base_url") or DEFAULT_BASE_URL
-    api_key = cfg.get("api_key") or os.environ.get("OPENAI_API_KEY", "")
-    model = cfg.get("model") or DEFAULT_MODEL
+    base_url = os.environ.get("OPENAI_BASE_URL") or cfg.get("base_url") or DEFAULT_BASE_URL
+    api_key = os.environ.get("OPENAI_API_KEY") or cfg.get("api_key") or ""
+    model = os.environ.get("OPENAI_MODEL") or cfg.get("model") or DEFAULT_MODEL
     os.environ.update({"OPENAI_BASE_URL": base_url, "OPENAI_MODEL": model})
     if api_key:
         os.environ["OPENAI_API_KEY"] = api_key
@@ -173,13 +178,16 @@ def setup_llm(prompt=True):
 def resolve_endpoint(base_url=None, model=None, api_key=None):
     """Resolve the LLM endpoint for the CLI, sharing the notebook source of truth.
 
-    Precedence: explicit CLI flag > saved json (results/kdd26_memdiag_config.json)
-    > generic DEFAULT_*. ``api_key`` returns None when neither a flag nor the json
-    sets one, so ``LLMConfig(api_key=None, api_key_env=...)`` still falls back to the
-    environment via ``resolved_api_key()``. Read-only: never mounts Drive or prompts.
+    Precedence: explicit CLI flag > environment (OPENAI_BASE_URL / OPENAI_MODEL /
+    OPENAI_API_KEY) > saved json (config/kdd26_memdiag_config.json) > generic
+    DEFAULT_*. ``api_key`` returns None only when none of those set one, so
+    ``LLMConfig(api_key=None, api_key_env=...)`` still falls back to the environment
+    via ``resolved_api_key()``. Read-only: never mounts Drive or prompts.
     """
     cfg = load_llm_config()
-    base_url = base_url or cfg.get("base_url") or DEFAULT_BASE_URL
-    model = model or cfg.get("model") or DEFAULT_MODEL
-    api_key = api_key or cfg.get("api_key")  # None -> LLMConfig falls back to api_key_env
+    base_url = (base_url or os.environ.get("OPENAI_BASE_URL")
+                or cfg.get("base_url") or DEFAULT_BASE_URL)
+    model = (model or os.environ.get("OPENAI_MODEL")
+             or cfg.get("model") or DEFAULT_MODEL)
+    api_key = api_key or os.environ.get("OPENAI_API_KEY") or cfg.get("api_key")
     return base_url, model, api_key

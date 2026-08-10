@@ -93,8 +93,8 @@ in Autonomous AI Research Agents: A Low-Resource Framework</em></p>
  <li><strong>Phase 3:</strong> Modal account (<code>pip install modal && modal setup</code>) for L4 GPU (~$0.5–1/group)</li>
 </ul>
 <h3>Install</h3>
-<pre><code>git clone &lt;repo-url&gt; kdd-tutorial
-cd kdd-tutorial/experiment/github_submission
+<pre><code>git clone -b tutorial-rebuild https://github.com/syaikhipin/kdd26-memdiag kdd-tutorial
+cd kdd-tutorial
 pip install numpy matplotlib pyyaml # offline deps
 pip install -e source # CLI package (memory-diagnostic-toolkit)
 pip install -e "source[api]" # + openai/tiktoken for LLM demos

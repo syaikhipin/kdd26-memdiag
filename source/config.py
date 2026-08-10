@@ -55,7 +55,7 @@ class ExperimentConfig:
 # reused by every notebook / session, instead of each notebook re-implementing
 # the prompt+persist cell. Never prints absolute paths.
 _CONFIG_FILENAME = "kdd26_memdiag_config.json"
-_DRIVE_CONFIG_PATH = "/content/drive/MyDrive/kdd26_memdiag_config.json"
+_DRIVE_CONFIG_PATH = f"/content/drive/MyDrive/{_CONFIG_FILENAME}"
 
 # Drive mounts at most once per session (the original notebook cell could re-mount).
 _MOUNT_DONE = None

@@ -9,6 +9,7 @@ PROJECT_ROOT = ROOT.parent
 DATA_DIR = ROOT / "data"
 TOPICS_DIR = DATA_DIR / "topics"
 RESULTS_DIR = PROJECT_ROOT / "results"
+CONFIG_DIR = Path("config")  # repo-relative (display-safe); resolved vs PROJECT_ROOT in _local_config_path()
 DEFAULT_BASE_URL = "https://api.openai.com/v1"
 DEFAULT_MODEL = "gpt-4o"
 DEFAULT_LOCOMO_PATH = TOPICS_DIR / "locomo" / "locomo10.json"
@@ -49,7 +50,7 @@ class ExperimentConfig:
 # ---------------------------------------------------------------------------
 # Shared LLM endpoint config for the tutorial notebooks
 # ---------------------------------------------------------------------------
-# Single source of truth: results/kdd26_memdiag_config.json (gitignored, user
+# Single source of truth: config/kdd26_memdiag_config.json (gitignored, user
 # specific). setup_llm() prompts once (Colab Drive or local file) and is then
 # reused by every notebook / session, instead of each notebook re-implementing
 # the prompt+persist cell. Never prints absolute paths.
@@ -58,6 +59,16 @@ _DRIVE_CONFIG_PATH = "/content/drive/MyDrive/kdd26_memdiag_config.json"
 
 # Drive mounts at most once per session (the original notebook cell could re-mount).
 _MOUNT_DONE = None
+
+
+def _local_config_path():
+    """Absolute config path anchored to the repo root (CWD-independent).
+
+    CONFIG_DIR is kept repo-relative so nothing stores or prints a machine-specific
+    absolute path; this helper resolves it against PROJECT_ROOT (derived from __file__)
+    only for the actual file I/O, which must work regardless of the current work dir.
+    """
+    return PROJECT_ROOT / CONFIG_DIR / _CONFIG_FILENAME
 
 
 def _config_path_with_mount():
@@ -75,7 +86,7 @@ def _config_path_with_mount():
         drive.mount("/content/drive", force_remount=False)
         _MOUNT_DONE = (Path(_DRIVE_CONFIG_PATH), True)
     except Exception:
-        _MOUNT_DONE = (RESULTS_DIR / _CONFIG_FILENAME, False)
+        _MOUNT_DONE = (_local_config_path(), False)
     return _MOUNT_DONE
 
 
@@ -85,7 +96,7 @@ def load_llm_config():
     Checks the local results file first, then the Colab Drive path (if Drive is
     already mounted). Returns the parsed dict, or {} if nothing is configured.
     """
-    for cand in (RESULTS_DIR / _CONFIG_FILENAME, Path(_DRIVE_CONFIG_PATH)):
+    for cand in (_local_config_path(), Path(_DRIVE_CONFIG_PATH)):
         try:
             if cand.exists():
                 return json.loads(cand.read_text())
@@ -101,7 +112,7 @@ def save_llm_config(base_url, api_key, model):
     path.write_text(
         json.dumps({"base_url": base_url, "api_key": api_key, "model": model}, indent=2)
     )
-    shown = "Google Drive" if on_drive else "<repo>/" + str(path.relative_to(PROJECT_ROOT))
+    shown = "Google Drive" if on_drive else str(path.relative_to(PROJECT_ROOT))
     print("saved ->", shown)
 
 
@@ -157,3 +168,18 @@ def setup_llm(prompt=True):
     print("model    =", model)
     print("api_key  =", ("set " + api_key[:6] + "…") if api_key else "NOT set -> offline fallback")
     return base_url, api_key, model
+
+
+def resolve_endpoint(base_url=None, model=None, api_key=None):
+    """Resolve the LLM endpoint for the CLI, sharing the notebook source of truth.
+
+    Precedence: explicit CLI flag > saved json (results/kdd26_memdiag_config.json)
+    > generic DEFAULT_*. ``api_key`` returns None when neither a flag nor the json
+    sets one, so ``LLMConfig(api_key=None, api_key_env=...)`` still falls back to the
+    environment via ``resolved_api_key()``. Read-only: never mounts Drive or prompts.
+    """
+    cfg = load_llm_config()
+    base_url = base_url or cfg.get("base_url") or DEFAULT_BASE_URL
+    model = model or cfg.get("model") or DEFAULT_MODEL
+    api_key = api_key or cfg.get("api_key")  # None -> LLMConfig falls back to api_key_env
+    return base_url, model, api_key

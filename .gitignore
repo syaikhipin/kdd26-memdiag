@@ -5,5 +5,5 @@ __pycache__/
 .ipynb_checkpoints/
 logs/
 results/run_*
-# user-specific LLM credentials (saved by the per-notebook config cell; never commit)
-results/kdd26_memdiag_config.json
+# user-specific LLM credentials (kdd26_memdiag_config.json; never commit)
+config/kdd26_memdiag_config.json

@@ -11,12 +11,11 @@ from agent_simulator import ResearchEnvironment, SimulatedResearchAgent, run_epi
 from autoresearch_trace import autoresearch_records_to_episodes, inspect_autoresearch_dir
 from config import (
     DEFAULT_AUTORESEARCH_DIR,
-    DEFAULT_BASE_URL,
     DEFAULT_LOCOMO_PATH,
-    DEFAULT_MODEL,
     DEFAULT_STRATEGIES,
     DEFAULT_USE_CASES,
     ExperimentConfig,
+    resolve_endpoint,
 )
 from data_loaders import (
     DEFAULT_LONGMEMEVAL_DIR,
@@ -74,8 +73,10 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--max-items", type=int, default=None)
     parser.add_argument("--use-cases", nargs="+", default=DEFAULT_USE_CASES, choices=["locomo", "autoresearch", "memoryarena", "longmemeval"])
     parser.add_argument("--ideas-per-case", type=int, default=2)
-    parser.add_argument("--base-url", default=DEFAULT_BASE_URL)
-    parser.add_argument("--model", default=DEFAULT_MODEL)
+    # --base-url / --model default to None so absence is detectable; resolve_endpoint
+    # below fills in the saved json (kdd26_memdiag_config.json) then the generic DEFAULT_*.
+    parser.add_argument("--base-url", default=None)
+    parser.add_argument("--model", default=None)
     parser.add_argument("--api-key-env", default="OPENAI_API_KEY")
     parser.add_argument("--api-key", default=None)
     parser.add_argument("--eval-backend", default="offline", choices=["offline", "rhesis", "semantica", "all"])
@@ -98,7 +99,14 @@ def parse_args() -> argparse.Namespace:
     parser.add_argument("--metrics", type=Path, default=None)
     parser.add_argument("--raw", type=Path, default=None)
     parser.add_argument("--benchmark-metrics", type=Path, default=None)
-    return parser.parse_args()
+    args = parser.parse_args()
+    # Single source of truth for the endpoint: CLI flag > saved json > generic DEFAULT_*.
+    # Shares kdd26_memdiag_config.json with the tutorial notebooks; api_key stays None
+    # when unset so LLMConfig falls back to api_key_env (resolved_api_key).
+    args.base_url, args.model, args.api_key = resolve_endpoint(
+        base_url=args.base_url, model=args.model, api_key=args.api_key
+    )
+    return args
 
 
 def episode_to_record(strategy_name: str, episode, global_step: int, memory_entries: int) -> dict:

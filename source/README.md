@@ -134,8 +134,8 @@ export OPENAI_API_KEY
 python experiment/run.py \
   --mode tutorial \
   --backend openai-compatible \
-  --base-url http://127.0.0.1:8317/api/provider/codex/v1 \
-  --model gpt-5.5 \
+  --base-url https://api.openai.com/v1 \
+  --model gpt-4o \
   --locomo-path memory-probe/data/locomo10.json \
   --autoresearch-dir autoresearch \
   --use-cases locomo autoresearch hpo memoryarena longmemeval \

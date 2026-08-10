@@ -3,7 +3,6 @@ from __future__ import annotations
 import json, os, re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
-from typing import Any
 from memory_store import tokenize
 
 
@@ -40,7 +39,7 @@ class LLMClient(ABC):
 
 
 _SENT = re.compile(r"(?<=[.!?])\s+|\n+")
-_FP = re.compile(r"\b(I|I'm|I have|I've|I like|I prefer|my|me)\b", re.IGNORECASE)
+_FP = re.compile(r"\b(I'm|I've|I have|I like|I prefer|I|my|me)\b", re.IGNORECASE)  # longest-first: 'I' must come after the contractions/phrases or it shadows them
 
 
 def _norm(s):
@@ -95,6 +94,7 @@ class OpenAICompatibleClient(LLMClient):
         from openai import OpenAI
         self.client = OpenAI(api_key=key, base_url=config.base_url, timeout=config.timeout_s)
     def chat_text(self, system, prompt):
+        last = None
         for _ in range(self.config.max_retries):
             try:
                 r = self.client.chat.completions.create(model=self.config.model,

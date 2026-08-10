@@ -44,16 +44,27 @@
 <p class="sub"><em>Systematic Diagnosis and Benchmarking of Memory Systems in Autonomous AI Research
 Agents: A Low-Resource Framework.</em> Four phases · 45&ndash;50 min each · offline-first.</p>
 
+<div class="logos" style="display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:20px 0 2px">
+ <img src="slides/figures/logos/kdd2026.png" alt="KDD 2026" style="height:32px;background:#fff;border-radius:5px;padding:3px 8px" onerror="this.style.display='none'">
+ <span style="flex:1"></span>
+ <img src="slides/figures/logos/entrustdn.png" alt="ENTRUST-DN" style="height:30px;background:#fff;border-radius:5px;padding:3px 7px" onerror="this.style.display='none'">
+ <img src="slides/figures/logos/unipa.png" alt="University of Palermo" style="height:30px;background:#fff;border-radius:5px;padding:3px 7px" onerror="this.style.display='none'">
+ <img src="slides/figures/logos/singularlogic.png" alt="Singularlogic" style="height:30px;background:#fff;border-radius:5px;padding:3px 7px" onerror="this.style.display='none'">
+ <img src="slides/figures/logos/atmajaya.png" alt="Atma Jaya Catholic University" style="height:30px;background:#fff;border-radius:5px;padding:3px 7px" onerror="this.style.display='none'">
+</div>
+<p class="sub" style="margin-top:0">Funded by the European Union (Horizon Europe MSCA grant No.&nbsp;101073381).
+&middot; &#9656; <a href="slides/main.pdf">Slide deck (PDF, 52 slides)</a> &middot; &#9656; <a href="slides/quiz_questions.xlsx">Quiz questions (Excel for Google Forms)</a></p>
+
 <div class="card">
  <strong>Timeline at a glance</strong>
  <table>
  <tr><th>Phase</th><th>What you do</th><th>Compute time</th><th>Lecture-paced</th></tr>
  <tr><td><span class="pill p1">1</span> Agent Memory Techniques</td>
  <td>Survey all 30 techniques + curated hands-on (LLM)</td>
- <td>~5 s core (+ AMT deps install ~10 min once)</td><td>60 min</td></tr>
+ <td>~5 s core (+ AMT deps install ~10 min once)</td><td>45 min</td></tr>
  <tr><td><span class="pill p2">2</span> Public datasets</td>
  <td>Exercise 1 diagnose + Exercise 2 benchmark (offline)</td>
- <td>~6 s (1.3 s + 4.4 s)</td><td>60 min</td></tr>
+ <td>~6 s (1.3 s + 4.4 s)</td><td>40 min</td></tr>
  <tr><td><span class="pill p3">3</span> Autoresearch (groups)</td>
  <td>Each group runs a config slice on Modal L4; aggregate</td>
  <td>~14.5 min per group (measured); parallel = one wall-clock block</td><td>35 min</td></tr>
@@ -90,7 +101,7 @@ export OPENAI_BASE_URL=https://api.openai.com/v1</code></pre></li>
 <pre><code>pip install modal &amp;&amp; modal setup</code></pre></li>
 </ol>
 
-<h2 id="phase1"><span class="pill p1">Phase 1</span> Agent Memory Techniques (60 min)</h2>
+<h2 id="phase1"><span class="pill p1">Phase 1</span> Agent Memory Techniques (45 min)</h2>
 <p><strong>Goal:</strong> see how every memory pattern stores and retrieves. All 30 techniques are
 surveyed by family; you run a curated subset hands-on.</p>
 <div class="card">
@@ -106,7 +117,7 @@ hybrid size=6 top="Alice: I work as a data scientist in Berlin"</code></pre>
 </div>
 <p><strong>Time:</strong> ~5 s for the core demo; ~10 min one-time deps if running the LLM techniques.</p>
 
-<h2 id="phase2"><span class="pill p2">Phase 2</span> Public datasets (60 min, offline, no key)</h2>
+<h2 id="phase2"><span class="pill p2">Phase 2</span> Public datasets (40 min, offline, no key)</h2>
 <p><strong>Goal:</strong> diagnose retrieval vs utilization failures, then benchmark the providers on
 real data (LoCoMo · LongMemEval · MemoryArena).</p>
 
@@ -125,7 +136,7 @@ the retrieval-vs-utilization gap.) Time: <strong>~1.3 s</strong>.</p>
 <p>Compare accuracy/latency/cost across providers. Time: <strong>~4.4 s</strong>.</p>
 <p class="note">Or run it as a notebook: <code>tutorial/phase2_public_datasets/notebook.ipynb</code>.</p>
 
-<h2 id="phase3"><span class="pill p3">Phase 3</span> Autoresearch, group-split (60 min, Modal L4)</h2>
+<h2 id="phase3"><span class="pill p3">Phase 3</span> Autoresearch, group-split (35 min, Modal L4)</h2>
 <p><strong>Goal:</strong> the autonomous-research case study. Split into groups so each slice fits one
 L4 (deeper models use smaller batch — this avoids the depth≥12 OOM that breaks a single full run).</p>
 <table>
@@ -135,6 +146,23 @@ L4 (deeper models use smaller batch — this avoids the depth≥12 OOM that brea
  <tr><td>C</td><td>(12,16), (14,16)</td></tr>
  <tr><td>D</td><td>(16,16), (18,16)</td></tr>
 </table>
+<p><strong>Completed sweep</strong> (all four groups aggregated) &mdash; <code>val_bpb</code> on the byte-level LM
+(lower&nbsp;=&nbsp;better):</p>
+<table>
+ <tr><th>depth</th><th>batch</th><th>group</th><th>val_bpb</th><th>outcome</th></tr>
+ <tr><td>4</td><td>32</td><td>A</td><td class="ok"><strong>1.254</strong> (best)</td><td class="ok">ok</td></tr>
+ <tr><td>6</td><td>32</td><td>A</td><td>1.302</td><td class="ok">ok</td></tr>
+ <tr><td>8</td><td>32</td><td>B</td><td>1.433</td><td class="ok">ok</td></tr>
+ <tr><td>10</td><td>32</td><td>B</td><td>1.662</td><td class="ok">ok</td></tr>
+ <tr><td>12</td><td>16</td><td>C</td><td>1.785</td><td class="ok">ok</td></tr>
+ <tr><td>14</td><td>16</td><td>C</td><td>1.846</td><td class="ok">ok</td></tr>
+ <tr><td>16</td><td>16</td><td>D</td><td>&mdash;</td><td class="note">OOM</td></tr>
+ <tr><td>18</td><td>16</td><td>D</td><td>&mdash;</td><td class="note">OOM</td></tr>
+</table>
+<p class="sub">Surprise: the <em>shallowest</em> model wins on <code>val_bpb</code>; depth&nbsp;&ge;&nbsp;16 OOMs even at
+batch&nbsp;16 on one L4. Memory-debug loop (M0&rarr;M4): any-history OOM cut = 76%; naive retrieval
+filtering <em>raises</em> any-OOM 12%&rarr;30% (counterproductive); M3&nbsp;&asymp;&nbsp;oracle.
+Plot: <a href="slides/figures/figure_phase3_sweep.png">figure_phase3_sweep.png</a>.</p>
 <div class="card">
  <strong>Each group runs its slice</strong> (~14.5 min on an L4, measured):
  <pre><code>cd .. # back to github_submission/

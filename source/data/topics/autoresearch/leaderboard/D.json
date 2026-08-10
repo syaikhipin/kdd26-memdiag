@@ -1,0 +1,41 @@
+{
+  "group": "D",
+  "topic": "autoresearch",
+  "source": "autoresearch/train.py on Modal L4 (SDPA patch; real LLM-pretraining val_bpb)",
+  "metric": "val_bpb (lower is better)",
+  "n_trials": 2,
+  "best_trial_id": null,
+  "best_val_bpb": null,
+  "trials": [
+    {
+      "trial_id": "ar_trial_000",
+      "config": {
+        "depth": 16,
+        "device_batch_size": 16
+      },
+      "val_bpb": null,
+      "training_seconds": null,
+      "peak_vram_mb": null,
+      "num_steps": null,
+      "num_params_M": null,
+      "status": "fail",
+      "failure_type": "oom",
+      "error_tail": "thon3.10/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 129, in call_func_at_runtime_with_args\n    out = normalize_as_list(f(args))\n  File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 526, in wrapper\n    return compiled_fn(runtime_args)\n  File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 724, in inner_fn\n    outs = compiled_fn(args)\n  File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/output_code.py\", line 613, in __call__\n    return self.current_callable(inputs)\n  File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/utils.py\", line 3017, in run\n    out = model(new_inputs)\n  File \"/tmp/torchinductor_root/mv/cmvqkpxceohiwyr452invxmml6gg25emnoxs6txey4ielkwpisef.py\", line 4504, in call\n    buf608 = empty_strided_cuda((32768, 1024), (1024, 1), torch.bfloat16)\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 64.00 MiB. GPU 0 has a total capacity of 22.03 GiB of which 33.12 MiB is free. Process 1 has 21.99 GiB memory in use. Of the allocated memory 21.73 GiB is allocated by PyTorch, and 27.21 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+    },
+    {
+      "trial_id": "ar_trial_001",
+      "config": {
+        "depth": 18,
+        "device_batch_size": 16
+      },
+      "val_bpb": null,
+      "training_seconds": null,
+      "peak_vram_mb": null,
+      "num_steps": null,
+      "num_params_M": null,
+      "status": "fail",
+      "failure_type": "oom",
+      "error_tail": "hon3.10/site-packages/torch/_functorch/_aot_autograd/utils.py\", line 129, in call_func_at_runtime_with_args\n    out = normalize_as_list(f(args))\n  File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 526, in wrapper\n    return compiled_fn(runtime_args)\n  File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_functorch/_aot_autograd/runtime_wrappers.py\", line 724, in inner_fn\n    outs = compiled_fn(args)\n  File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/output_code.py\", line 613, in __call__\n    return self.current_callable(inputs)\n  File \"/root/autoresearch/.venv/lib/python3.10/site-packages/torch/_inductor/utils.py\", line 3017, in run\n    out = model(new_inputs)\n  File \"/tmp/torchinductor_root/k3/ck3dlwokjwp37z3t4drfro5lup6mqwyjm5upcziqyab6jbridiem.py\", line 4882, in call\n    buf565 = empty_strided_cuda((32768, 4608), (4608, 1), torch.bfloat16)\ntorch.OutOfMemoryError: CUDA out of memory. Tried to allocate 288.00 MiB. GPU 0 has a total capacity of 22.03 GiB of which 17.12 MiB is free. Process 1 has 22.01 GiB memory in use. Of the allocated memory 21.71 GiB is allocated by PyTorch, and 72.93 MiB is reserved by PyTorch but unallocated. If reserved but unallocated memory is large try setting PYTORCH_CUDA_ALLOC_CONF=expandable_segments:True to avoid fragmentation.  See documentation for Memory Management  (https://pytorch.org/docs/stable/notes/cuda.html#environment-variables)\n"
+    }
+  ]
+}

@@ -1,5 +1,5 @@
 {
-  "model": "dahono/claude-sonnet-4.5-free",
+  "model": "gpt-4o",
   "n_episodes": 10,
   "total_proposals": 80,
   "total_ooms": 13,

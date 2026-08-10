@@ -1,5 +1,5 @@
 {
-  "model": "dahono/claude-sonnet-4.5-free",
+  "model": "gpt-4o",
   "n_points": 8,
   "K": 5,
   "results": [

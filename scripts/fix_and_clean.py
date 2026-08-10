@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""One-shot fix script: re-apply the provider refactoring + fix broken files + clean dahono.
+"""One-shot fix script: re-apply the provider refactoring + fix broken files + clean the-gateway.
 Run from experiment/github_submission/"""
 import re, sys
 from pathlib import Path
@@ -289,9 +289,9 @@ def run_locomo(args: argparse.Namespace) -> tuple[dict, dict]:'''),
 ])
 
 # ============================================================
-# 6. Clean any remaining dahono in source
+# 6. Clean any remaining the-gateway in source
 # ============================================================
-print("=== 6. Clean dahono from source ===")
+print("=== 6. Clean the-gateway from source ===")
 for path in ROOT.rglob("*.py"):
     if "__pycache__" in str(path):
         continue

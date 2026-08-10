@@ -87,6 +87,7 @@ _SUM_P = 'Summarize in 1-2 sentences as JSON {"summary": "..."}.\n\nText:\n'
 
 
 class OpenAICompatibleClient(LLMClient):
+    backend = "openai-compatible"  # display-only override (base class default is "abstract")
     def __init__(self, config):
         self.config = config
         key = config.resolved_api_key()

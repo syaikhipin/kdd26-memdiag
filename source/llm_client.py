@@ -39,15 +39,16 @@ class LLMClient(ABC):
 
 
 _SENT = re.compile(r"(?<=[.!?])\s+|\n+")
-_FP = re.compile(r"\b(I'm|I've|I have|I like|I prefer|I|my|me)\b", re.IGNORECASE)  # longest-first: 'I' must come after the contractions/phrases or it shadows them
+_FP = re.compile(r"\b(I'm|I've|I'd|I'll|I have|I like|I prefer|I|my|me)\b", re.IGNORECASE)  # longest-first: every multi-token contraction/phrase must precede bare 'I' or it shadows them ('I'd' -> 'the user'd')
 
 
 def _norm(s):
     s = s.strip().strip("\"'.,")
     def _rw(m):
         w = m.group(0).lower()
-        return {"i":"the user","i'm":"the user is","i have":"the user has","i've":"the user has",
-                "i like":"the user likes","i prefer":"the user prefers","my":"the user's","me":"the user"}.get(w, w)
+        return {"i":"the user","i'm":"the user is","i'd":"the user would","i'll":"the user will",
+                "i have":"the user has","i've":"the user has","i like":"the user likes","i prefer":"the user prefers",
+                "my":"the user's","me":"the user"}.get(w, w)
     s = _FP.sub(_rw, s)
     w = s.split()
     if len(w) > 20: w = w[:20] + ["..."]
@@ -70,7 +71,12 @@ class OfflineLLMClient(LLMClient):
         from collections import Counter
         freq = Counter(tokenize(text))
         scored = sorted(ss, key=lambda x: sum(freq.get(t,0) for t in tokenize(x))/max(1,len(tokenize(x))), reverse=True)
-        return " ".join(_norm(x) for x in ss[:1] + scored[:1])
+        # lead sentence + best *different* sentence; without dedup, lead==best emits it twice
+        _pick = []
+        for x in list(ss[:1]) + list(scored):
+            if x not in _pick: _pick.append(x)
+            if len(_pick) >= 2: break
+        return " ".join(_norm(x) for x in _pick)
     def extract_topic_tags(self, text, n=3):
         toks = [t for t in tokenize(text) if len(t) > 3]
         if not toks: return []
@@ -128,7 +134,10 @@ class OpenAICompatibleClient(LLMClient):
     def judge(self, system, prompt):
         full = f"You are an LLM judge. {system}\nReturn JSON {{\"score\":float,\"rationale\":\"...\"}}.\n\n{prompt}"
         out = self.chat_json(system, full)
-        return out if isinstance(out, dict) and "score" in out else {"score":0.5,"rationale":"unparsed"}
+        if isinstance(out, dict) and "score" in out:
+            try: return {"score": float(out["score"]), "rationale": str(out.get("rationale",""))}
+            except (TypeError, ValueError): pass
+        return {"score":0.5,"rationale":"unparsed"}
 
 
 def make_client(config):

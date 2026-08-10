@@ -4,13 +4,14 @@ import json, os, re
 from abc import ABC, abstractmethod
 from dataclasses import dataclass
 from memory_store import tokenize
+from config import DEFAULT_BASE_URL, DEFAULT_MODEL
 
 
 @dataclass(frozen=True)
 class LLMConfig:
     backend: str = "offline"
-    base_url: str = "https://api.openai.com/v1"
-    model: str = "gpt-4o"
+    base_url: str = DEFAULT_BASE_URL
+    model: str = DEFAULT_MODEL
     api_key_env: str = "OPENAI_API_KEY"
     api_key: str | None = None
     timeout_s: int = 60

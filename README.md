@@ -79,6 +79,31 @@ python -m http.server 8000
 
 Then open `http://localhost:8000/`.
 
+## Citation
+
+If you use this tutorial or its code in your work, please cite the paper:
+
+> Nur Arifin Akbar, Rahool Dembani, Gregorius Airlangga, Ripto Mukti Wibowo, Biagio Lenzitti,
+> and Domenico Tegolo. 2026. *Systematic Diagnosis & Benchmarking of Memory Systems in
+> Autonomous AI Research Agents: A Low-Resource, Offline-First Framework*. In *Proceedings of
+> the ACM SIGKDD Conference on Knowledge Discovery and Data Mining Tutorials (KDD '26)*.
+> ACM. https://doi.org/10.1145/3770855.3816477
+
+```bibtex
+@inproceedings{akbar2026memdiag,
+  author    = {Akbar, Nur Arifin and Dembani, Rahool and Airlangga, Gregorius and
+               Wibowo, Ripto Mukti and Lenzitti, Biagio and Tegolo, Domenico},
+  title     = {Systematic Diagnosis \& Benchmarking of Memory Systems in Autonomous AI Research
+               Agents: A Low-Resource, Offline-First Framework},
+  booktitle = {Proceedings of the ACM SIGKDD Conference on Knowledge Discovery and Data Mining
+               Tutorials (KDD '26)},
+  year      = {2026},
+  publisher = {ACM},
+  doi       = {10.1145/3770855.3816477},
+  url       = {https://doi.org/10.1145/3770855.3816477}
+}
+```
+
 ## Credits & licenses
 
 - **Phase 1 hands-on is adapted from *Agent Memory Techniques* by Nir Diamant**
